@@ -4,7 +4,7 @@ require_once('./autoload.php');
 require_once('./controllers/HomeController.php');
 
 $home =new HomeController();
-$page=[];
+$page=['Accueille'];
 
 if(isset($_GET['page'])){
     if(in_array($_GET['page'],$page)){
@@ -13,7 +13,7 @@ if(isset($_GET['page'])){
       include('views/includes/404.php');
     }
 }else{
-        $home->index('login');
+        $home->index('Accueille');
     }
 
 
