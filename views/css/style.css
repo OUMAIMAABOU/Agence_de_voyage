@@ -252,29 +252,6 @@ html,body{
     border-top:2px solid #fff;
 }
 
-/*book-btn*/
-.book-btn {
-	background: #00d8ff;
-    border: 1px solid #00d8ff;
-    width: 60x;
-    height: 40px;
-    white-space: nowrap;
-    color: #fff;
-    font-size:14px;
-    font-family: 'Poppins', sans-serif;
-    text-transform: capitalize;
-    border-radius: 5px;
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -ms-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-}
-.book-btn:hover{
-    color: #fff;
-    background: #00d8d5;
-    border: 1px solid #00d8d5;
-}/*book-btn*/
 
 /*-------------------------------------
 		3. 	About
@@ -284,8 +261,6 @@ html,body{
     justify-content: center;
     align-items: center;
 	position: relative;
-    /* background-color: red; */
-
 	background-size: cover;
     background: url(../images/home/image_1.jpg)no-repeat;
 	background-position: center;
@@ -299,17 +274,6 @@ html,body{
     50%  {	background: url(../images/home/image_4.jpg)no-repeat;}
     75% {	background: url(../images/home/image_5.jpg)no-repeat;}
     100%   {	background: url(../images/home/image_6.JPG)no-repeat;}
-    /* 125%  {	background: url(../../assets/images/home/image_7.jpg)no-repeat;}
-    175%  {	background: url(../../assets/images/home/image_8.jpg)no-repeat;}
-    200% {	background: url(../../assets/images/home/image_9.jpg)no-repeat;}
-    225%  {	background: url(../../assets/images/home/image_10.jpg)no-repeat;}
-    250%  {	background: url(../../assets/images/home/image_11.jpg)no-repeat;}
-    275% {	background: url(../../assets/images/home/image_12.jpg)no-repeat;}
-    300%  {	background: url(../../assets/images/home/image_13.jpg)no-repeat;}
-    325%  {	background: url(../../assets/images/home/image_14.jpg)no-repeat;}
-    375% {	background: url(../../assets/images/home/image_15.jpg)no-repeat;}
-    400% {	background: url(../../assets/images/home/image_16.jpg)no-repeat;} */
-
   }
 .about-us:before{
 	position: absolute;

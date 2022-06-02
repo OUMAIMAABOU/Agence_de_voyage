@@ -49,11 +49,7 @@
 							<div class="logo">
 								<a href="index.html">
 									Happy<span>Travel</span>
-									<img src="./views/images/logo/logo.png" alt="" style=" position: absolute;
-    top: -23px;
-    left: 64px;
-    width: 53px;"
- >
+									<img src="./views/images/logo/logo.png" alt="" style=" position: absolute;top: -23px;left: 64px; width: 53px;">
 
 								</a>
 							</div>
@@ -75,10 +71,6 @@
 										<li class="smooth-menu"><a href="#spo">offres</a></li>
 										<li class="smooth-menu"><a href="#blog">Contact-nous</a></li>
 										<li class="smooth-menu"><a href="#subs">À propos </a></li>
-										<li>
-											<button class="book-btn">login
-											</button>
-										</li>
 									</ul>
 								</div>
 							</div>
@@ -164,27 +156,17 @@
 
 														<div class="travel-select-icon">
 															<select class="form-control ">
-
 															  	<option value="default">enter your destination country</option>
-
-															  	<option value="turkey">turkey</option>
-
-															  	<option value="russia">russia</option>
-															  	<option value="egept">egypt</option>
-
+																<?php $controller = new ClientController();$ville=$controller->getallville();foreach($ville as $x => $rows){?>
+															  	<option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
 															</select>
 														</div>
 
 														<div class="travel-select-icon">
 															<select class="form-control ">
-
 															  	<option value="default">enter your destination location</option>
-
-															  	<option value="istambul">istambul</option>
-
-															  	<option value="mosko">mosko</option>
-															  	<option value="cairo">cairo</option>
-
+																 <?php $ville=$controller->getallville();foreach($ville as $x => $rows){?>
+                                                                <option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
 															</select>
 														</div>
 
@@ -196,7 +178,7 @@
 														<h2>check in</h2>
 														<div class="travel-check-icon">
 															<form action="#">
-																<input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
+																<input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?> ">
 															</form>
 														</div>
 													</div>
@@ -207,7 +189,7 @@
 														<h2>check out</h2>
 														<div class="travel-check-icon">
 															<form action="#">
-																<input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="22 -01 - 2017 ">
+																<input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?>">
 															</form>
 														</div>
 													</div>
@@ -221,10 +203,8 @@
 
 															  	<option value="default">5</option>
 
-															  	<option value="10">10</option>
-
-															  	<option value="15">15</option>
-															  	<option value="20">20</option>
+															  	<?php for ($i=6; $i <=20 ; $i++) { ?>
+                                                                <option value="<?= $i;?>"><?= $i; }?></option>
 
 															</select>
 														</div>
@@ -237,12 +217,10 @@
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
-															  	<option value="default">1</option>
-
-															  	<option value="2">2</option>
-
-															  	<option value="4">4</option>
-															  	<option value="8">8</option>
+															  	<option value="1">1</option>
+																  <?php for ($i=2; $i <8 ; $i++) { ?>
+                                                                <option value="<?= $i;?>"><?= $i; }?></option>
+															  	
 
 															</select>
 														</div>
@@ -251,39 +229,15 @@
 
 											</div>
 
-											<div class="row">
-												<div class="col-sm-5">
-													<div class="travel-budget">
-														<div class="row">
-															<div class="col-md-3 col-sm-4">
-																<h3>budget : </h3>
-															</div>
-															<div class="co-md-9 col-sm-8">
-																<div class="travel-filter">
-																	<div class="info_widget">
-																		<div class="price_filter">
-																			
-																			<div id="slider-range"></div>
-
-																			<div class="price_slider_amount">
-																				<input type="text" id="amount" name="price"  placeholder="Add Your Price" />
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
+											
 												<div class="clo-sm-7">
 													<div class="about-btn travel-mrt-0 pull-right">
-														<button  class="about-view travel-btn">
+														<button  class="about-view travel-btn" style="margin-top: -54px;">
 															search	
 														</button>
 													</div>
 												</div>
 
-											</div>
 
 										</div>
 
@@ -303,10 +257,8 @@
 
 															  	<option value="default">enter your destination country</option>
 
-															  	<option value="turkey">turkey</option>
-
-															  	<option value="russia">russia</option>
-															  	<option value="egept">egypt</option>
+																  <?php $ville=$controller->getallville();foreach($ville as $x => $rows){?>
+                                                                <option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
 
 															</select>
 														</div>
@@ -316,10 +268,8 @@
 
 															  	<option value="default">enter your destination location</option>
 
-															  	<option value="istambul">istambul</option>
-
-															  	<option value="mosko">mosko</option>
-															  	<option value="cairo">cairo</option>
+																  <?php $ville=$controller->getallville();foreach($ville as $x => $rows){?>
+                                                                <option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
 
 															</select>
 														</div>
@@ -332,7 +282,7 @@
 														<h2>check in</h2>
 														<div class="travel-check-icon">
 															<form action="#">
-																<input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
+																<input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?> ">
 															</form>
 														</div>
 													</div>
@@ -343,7 +293,7 @@
 														<h2>check out</h2>
 														<div class="travel-check-icon">
 															<form action="#">
-																<input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="22 -01 - 2017 ">
+																<input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?> ">
 															</form>
 														</div>
 													</div>
@@ -357,10 +307,8 @@
 
 															  	<option value="default">5</option>
 
-															  	<option value="10">10</option>
-
-															  	<option value="15">15</option>
-															  	<option value="20">20</option>
+																  <?php for ($i=6; $i <=20 ; $i++) { ?>
+                                                                <option value="<?= $i;?>"><?= $i; }?></option>
 
 															</select>
 														</div>
@@ -373,12 +321,10 @@
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
-															  	<option value="default">1</option>
+															  	<option value="1">1</option>
 
-															  	<option value="2">2</option>
-
-															  	<option value="4">4</option>
-															  	<option value="8">8</option>
+															  	<?php for ($i=1; $i <8 ; $i++) { ?>
+                                                                <option value="<?= $i;?>"><?= $i; }?></option>
 
 															</select>
 														</div>
@@ -388,10 +334,9 @@
 											</div>
 
 											<div class="row">
-												<div class="col-sm-5"></div>
 												<div class="clo-sm-7">
 													<div class="about-btn travel-mrt-0 pull-right">
-														<button  class="about-view travel-btn">
+														<button  class="about-view travel-btn"  style="margin-top: -54px;">
 															search	
 														</button>
 													</div>
@@ -503,29 +448,21 @@
 								 
 						  		<div class="row">
 							
-										
-										
-									
+
 									<tr>
-								 <?php $hotel = new ClientController();
-                                  $hotels=$hotel->getallhotel();
-                                  foreach($hotels as $x => $rows){
-									//   $rows[0];
-									//   $rows[1];
-									//   $rows[0];
-								   ?>
+								 <?php $voyage=$controller->getallvoyage();foreach($voyage as $x => $rows){?>
                                         <td hidden><?php  $rows[0]; ?></td>
 
                                         
 										<td class="">
-										<div class="column campagne" >
+										<div class="column <?=  $rows[9]; ?>" >
 											<div class="filtr-item">
-												<img src="./views/images/gallary/<?=$rows[8];?>" alt="portfolio image"/>
+												<img src="./views/images/gallary/<?=$rows[1];?>" alt="portfolio image"/>
 												<div class="item-title">
 													<a href="#">
-													<?=$rows[3];  ?>
+													
 													</a>
-													<p><span>12 tours</span><span>9 places</span></p>
+													<p><span><?=$rows[4];?>   tours</span><span><?=$rows[5];?> Personne</span></p>
 											  </div>
 										</div>
 										</div></td>
@@ -601,245 +538,54 @@
 				</div>
 				<div class="packages-content">
 					<div class="row">
+				    	<?php $hotel=$controller->getallhotel(); foreach($hotel as $x => $rows){?>
 
 						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="./views/images/packages/Marrakech.jpg" alt="package-place" style="width: 500px;	height: 266px;">
-								<div class="single-package-item-txt">
-									<h3>Marrakech <span class="pull-right">700dh</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 10 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div>
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div>
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div>
-								</div>
-							</div>
 
-						</div>
-
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="./views/images/packages/ifran2.jpg" alt="package-place" style="width: 500px;	height: 266px;">
+						        <div class="single-package-item">	
+								<img src="./views/images/packages/<?=  $rows[5]?>" alt="package-place" style="width: 500px;	height: 266px;">
 								<div class="single-package-item-txt">
-									<h3>Ifran <span class="pull-right">1000Dh</span></h3>
+								
+									<h3> <?=  $rows[3]?> <span class="pull-right"><?=  $rows[11]?> Dh</span></h3>
 									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div>
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div>
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div>
+									<p>
+										<span>
+											<i class="fa fa-angle-right"></i> 5 daays 6 nights
+										</span>
+										<i class="fa fa-angle-right"></i> <?= $rows[2]?> star accomodation
+									</p>
+									<p>
+										<span>
+											<i class="fa fa-angle-right"></i>  transportation
+										</span>
+										<i class="fa fa-angle-right"></i>  food facilities
+									</p>
 								</div>
-							</div>
-
-						</div>
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="./views/images/packages/widiane-suites-spa.jpg" alt="package-place"  style="width: 500px;	height: 266px;">
-								<div class="single-package-item-txt">
-									<h3>Benimellal<span class="pull-right">1000dh</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div>
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div>
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div>
+								<div class="packages-review">
+									<p>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<span>2544 review</span>
+									</p>
 								</div>
-							</div>
-
-						</div>
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="./views/images/packages/hbiqa-pavilion.jpg" alt="package-place"     style="width: 500px;	height: 266px;" >
-								<div class="single-package-item-txt">
-									<h3>Agadir <span class="pull-right">800dh</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div>
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div>
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div>
+								<div class="about-btn">
+									<button  class="about-view packages-btn">
+										book now
+									</button>
 								</div>
-							</div>
-
-						</div>
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="./views/images/packages/Laayoune-Sakia-El-Hamra.jpg" alt="package-place" style=" width: 500px;	height: 266px;">
-								<div class="single-package-item-txt">
-									<h3>Zagoura <span class="pull-right">300dh</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div>
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div>
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="./views/images/packages/Sahara-Maroc-Morocco-e1562965551379.jpg" alt="package-place" style="width: 500px;	height: 266px;" >
-								<div class="single-package-item-txt">
-									<h3>Laayoune <span class="pull-right">900Dh</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div>
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div>
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div>
-								</div>
+								
 							</div>
 
 						</div>
 
 					</div>
+					<?php }?>
 				</div>
 			</div>
-
+			
 		</section>
 		
 
@@ -856,127 +602,30 @@
 					</p>
 
 				</div>
+				<div class="col-md-4 col-sm-6">
 
-				<div class="owl-carousel owl-theme" id="testemonial-carousel">
+				<?php $commentaire=$controller->getallcommentair(); foreach($commentaire as $x => $rows){?>
 
 					<div class="home1-testm item">
+
 						<div class="home1-testm-single text-center">
+
 							<div class="home1-testm-img">
-								<img src="./views/images/client/The.jpg" alt="img" />
+								<img src="./views/images/client/<?= $rows[3];?>" alt="img"/>
 							</div>
 							<div class="home1-testm-txt">
-								<span class="icon section-icon">
-									<i class="fa fa-quote-left" aria-hidden="true"></i>
-								</span>
-								<p>
-									Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
-								</p>
-								<h3>
-									<a href="#">
-										kevin watson
-									</a>
-								</h3>
-								<h4>london, england</h4>
+								<span class="icon section-icon"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+								<p><?= $rows[2];?></p>
+								<h3><a href="#"><?= $rows[1];?></a></h3>
 							</div>
 						</div>
 
 					</div>
-
-					<div class="home1-testm item">
-						<div class="home1-testm-single text-center">
-							<div class="home1-testm-img">
-								<img src="./views/images/client/1ca8.jpg" alt="img"/>
-							</div>
-							<div class="home1-testm-txt">
-								<span class="icon section-icon">
-									<i class="fa fa-quote-left" aria-hidden="true"></i>
-								</span>
-								<p>
-									Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
-								</p>
-								<h3>
-									<a href="#">
-										kevin watson
-									</a>
-								</h3>
-								<h4>london, england</h4>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="home1-testm item">
-						<div class="home1-testm-single text-center">
-							<div class="home1-testm-img">
-								<img src="./views/images/client/Mich.jpg" alt="img"/>
-							</div>
-							<div class="home1-testm-txt">
-								<span class="icon section-icon">
-									<i class="fa fa-quote-left" aria-hidden="true"></i>
-								</span>
-								<p>
-									Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
-								</p>
-								<h3>
-									<a href="#">
-										kevin watson
-									</a>
-								</h3>
-								<h4>london, england</h4>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="home1-testm item">
-						<div class="home1-testm-single text-center">
-							<div class="home1-testm-img">
-								<img src="./views/images/client/ulzzangs.jpg" alt="img"/>
-							</div>
-							<div class="home1-testm-txt">
-								<span class="icon section-icon">
-									<i class="fa fa-quote-left" aria-hidden="true"></i>
-								</span>
-								<p>
-									Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
-								</p>
-								<h3>
-									<a href="#">
-										kevin watson
-									</a>
-								</h3>
-								<h4>london, england</h4>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="home1-testm item">
-						<div class="home1-testm-single text-center">
-							<div class="home1-testm-img">
-								<img src="./views/images/client/testimonial2.jpg" alt="img"/>
-							</div>
-							<div class="home1-testm-txt">
-								<span class="icon section-icon">
-									<i class="fa fa-quote-left" aria-hidden="true"></i>
-								</span>
-								<p>
-									Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
-								</p>
-								<h3>
-									<a href="#">
-										kevin watson
-									</a>
-								</h3>
-								<h4>london, england</h4>
-							</div>
-						</div>
-
-					</div>
+						<?php }?>
 
 				</div>
 			</div>
-
+			
 		</section>	
 		
 
@@ -1082,8 +731,6 @@
 										
 														
 														<div class="row">
-										
-															
 															<div class="col-md-6">
 																<div class="md-form mb-2 mt-2">
 																	<label for="name" class="">Nom</label>
@@ -1091,9 +738,7 @@
 																	<input type="text" id="name" name="name" class="form-control">
 																</div>
 															</div>
-															
-										
-															
+
 															<div class="col-md-6 ">
 																<div class="md-form  mb-2 mt-2">
 																	<label for="email" class=""> Email</label>
@@ -1101,12 +746,7 @@
 																	<input type="text" id="email" name="email" class="form-control">
 																</div>
 															</div>
-															
-										
 														</div>
-														
-										
-														
 														<div class="row">
 															<div class="col-md-12">
 																<div class="md-form  mb-2 mt-2">
@@ -1178,13 +818,12 @@
 
 						<div class="col-sm-3">
 							<div class="single-footer-item">
-								<div class="footer-logo">
+								<div class="footer-logo d-flex" >
 									<a href="index.html">
-										tour<span>Nest</span>
+									<div style="margin-left: 55px;"><img src="./views/images/logo/logo.png" alt="" style=" width: 53px;"></div>
+									<div>Happy<span>Travel</span></div>	
+
 									</a>
-									<p>
-										best travel agency
-									</p>
 								</div>
 							</div>
 						</div>
