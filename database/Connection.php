@@ -1,13 +1,6 @@
 <?php
 class Dbconnect
 {
- public $localhost="localhost";
- public $dbname="agence_voyage";
- public $root="root";
- public $password="";
-
- 
-
      public  function connect()
     {
       try
@@ -18,13 +11,13 @@ class Dbconnect
       
     }
  
-  //   public function GetALL($table)
-  // {
-  //   try
-  //   {
-  //   return $this->connect()->query("select * from '$table'")->fetchALL();
-  //   }catch (PDOException $ex) {echo $ex->getMessage();}
-  // }
+    public function GetALL($table)
+  {
+    try
+    {
+    return $this->connect()->query("select * from $table")->fetchALL();
+    }catch (PDOException $ex) {echo $ex->getMessage();}
+  }
 
   // public function GetOne($table,$id,$getid)
   // {

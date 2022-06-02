@@ -14,7 +14,6 @@ function autoload($class){
         $file=sprintf($path.'%s.php',$name);
         if(is_file($file)){
             require_once $file;
-
         }
      
 

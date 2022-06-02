@@ -47,25 +47,14 @@
 					<div class="row" style="MARGIN-TOP: 29px;">
 						<div class="col-sm-2">
 							<div class="logo">
-								<a href="index.html">
-									Happy<span>Travel</span>
-									<img src="./views/images/logo/logo.png" alt="" style=" position: absolute;top: -23px;left: 64px; width: 53px;">
-
-								</a>
+								<a href="Accueille">Hapy<span>Travel</span><img src="./views/images/logo/logo.png" alt="" style=" position: absolute;top: -23px;left: 64px; width: 53px;"></a>								
 							</div>
 						</div>
 						<div class="col-sm-10">
-							<div class="main-menu">
-							
-							
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-										<i class="fa fa-bars"></i>
-									</button>
-								</div>
+							<div class="main-menu">						
 								<div class="collapse navbar-collapse">		  
 									<ul class="nav navbar-nav navbar-right">
-										<li class="smooth-menu"><a href="#home">home</a></li>
+										<li class="smooth-menu"><a href="#home">Accueille</a></li>
 										<li class="smooth-menu"><a href="#gallery">Destination</a></li>
 										<li class="smooth-menu"><a href="#pack">Voyage</a></li>
 										<li class="smooth-menu"><a href="#spo">offres</a></li>
@@ -79,12 +68,7 @@
 					<div class="home-border"></div>
 				</div>
 			</div>
-
 		</header>
-		
-
-		
-		
 		<section id="home" class="about-us">
 			<div class="container">
 				<div class="about-us-content">
@@ -92,94 +76,50 @@
 						<div class="col-sm-12">
 							<div class="single-about-us">
 								<div class="about-us-txt">
-									<h2>
-										Explore the Beauty of the Beautiful World 
-
-									</h2>
-									<div class="about-btn">
-										<button  class="about-view">
-											explore now
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-0">
-							<div class="single-about-us">
-								
-							</div>
+									<h2>Explorez la beauté du beau monde</h2><div class="about-btn"><a href="#gallery"><button  class="about-view">explorer maintenant</button></a></div>				
+							   </div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-		</section>
-		
-
-		
+		</section>	
 		<section  class="travel-box">
         	<div class="container">
         		<div class="row">
         			<div class="col-md-12">
         				<div class="single-travel-boxes">
         					<div id="desc-tabs" class="desc-tabs">
-
 								<ul class="nav nav-tabs" role="tablist">
-
-									<li role="presentation" class="active">
-									 	<a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">
-									 		<i class="fa fa-tree"></i>
-									 		tours
-									 	</a>
-									</li>
-
-									<li role="presentation">
-										<a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">
-											<i class="fa fa-building"></i>
-											hotels
-										</a>
-									</li>
-
+									<li role="presentation" class="active"><a href="#tours" aria-controls="tours" role="tab" data-toggle="tab"><i class="fa fa-tree"></i>Tour</a></li>
+									<li role="presentation"><a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab"><i class="fa fa-building"></i>Hôtels</a></li>
 								</ul>
-
-								<!-- Tab panes -->
 								<div class="tab-content">
-
 									<div role="tabpanel" class="tab-pane active fade in" id="tours">
 										<div class="tab-para">
-
 											<div class="row">
 												<div class="col-lg-4 col-md-4 col-sm-12">
 													<div class="single-tab-select-box">
-
 														<h2>destination</h2>
-
-														<div class="travel-select-icon">
+												     	<div class="travel-select-icon">
 															<select class="form-control ">
-															  	<option value="default">enter your destination country</option>
-																<?php $controller = new ClientController();$ville=$controller->getallville();foreach($ville as $x => $rows){?>
-															  	<option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
+															  	<option value="default">entrez votre pays de destination</option><?php $controller = new ClientController();$ville=$controller->getallville();foreach($ville as $x => $rows){?>
+																<option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
 															</select>
 														</div>
 
 														<div class="travel-select-icon">
 															<select class="form-control ">
-															  	<option value="default">enter your destination location</option>
-																 <?php $ville=$controller->getallville();foreach($ville as $x => $rows){?>
+															  	<option value="default">entrez votre lieu de destination</option><?php $ville=$controller->getallville();foreach($ville as $x => $rows){?>
                                                                 <option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
 															</select>
 														</div>
-
 													</div>
 												</div>
-
 												<div class="col-lg-2 col-md-3 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>check in</h2>
+														<h2>Depart</h2>
 														<div class="travel-check-icon">
-															<form action="#">
-																<input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?> ">
-															</form>
+														<input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?> ">
 														</div>
 													</div>
 												</div>
@@ -188,253 +128,137 @@
 													<div class="single-tab-select-box">
 														<h2>check out</h2>
 														<div class="travel-check-icon">
-															<form action="#">
-																<input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?>">
-															</form>
+																<input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?>">	
 														</div>
 													</div>
 												</div>
 
 												<div class="col-lg-2 col-md-1 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>duration</h2>
+														<h2>Durée</h2>
 														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="default">5</option>
-
-															  	<?php for ($i=6; $i <=20 ; $i++) { ?>
-                                                                <option value="<?= $i;?>"><?= $i; }?></option>
-
-															</select>
+															<select class="form-control "><option value="default">5</option><?php for ($i=6; $i <=20 ; $i++) {?><option value="<?= $i;?>"><?= $i; }?></option></select>
 														</div>
 													</div>
 												</div>
-
 												<div class="col-lg-2 col-md-1 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>members</h2>
+														<h2>Membres</h2>
 														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="1">1</option>
-																  <?php for ($i=2; $i <8 ; $i++) { ?>
-                                                                <option value="<?= $i;?>"><?= $i; }?></option>
-															  	
-
-															</select>
+															<select class="form-control"><option value="1">1</option><?php for ($i=2; $i <8 ; $i++){?><option value="<?= $i;?>"><?= $i; }?></option></select>	
 														</div>
 													</div>
 												</div>
-
+											</div>																						
+											<div class="clo-sm-7">
+													<div class="about-btn travel-mrt-0 pull-right"><button  class="about-view travel-btn" style="margin-top: -54px;"> Chercher</button></div>
 											</div>
-
-											
-												<div class="clo-sm-7">
-													<div class="about-btn travel-mrt-0 pull-right">
-														<button  class="about-view travel-btn" style="margin-top: -54px;">
-															search	
-														</button>
-													</div>
-												</div>
-
-
 										</div>
-
 									</div>
-
 									<div role="tabpanel" class="tab-pane fade in" id="hotels">
 										<div class="tab-para">
-
 											<div class="row">
 												<div class="col-lg-4 col-md-4 col-sm-12">
 													<div class="single-tab-select-box">
-
-														<h2>destination</h2>
-
+														<h2>Destination</h2>
 														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="default">enter your destination country</option>
-
-																  <?php $ville=$controller->getallville();foreach($ville as $x => $rows){?>
-                                                                <option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
-
+															<select class="form-control "><option value="default">entrez votre pays de destination</option>
+																<?php $ville=$controller->getallville();foreach($ville as $x => $rows){?> <option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
 															</select>
 														</div>
-
 														<div class="travel-select-icon">
 															<select class="form-control ">
-
-															  	<option value="default">enter your destination location</option>
-
-																  <?php $ville=$controller->getallville();foreach($ville as $x => $rows){?>
+															  	<option value="default">entrez votre lieu de destination</option> <?php $ville=$controller->getallville();foreach($ville as $x => $rows){?>
                                                                 <option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
-
 															</select>
 														</div>
-
 													</div>
 												</div>
 
 												<div class="col-lg-2 col-md-3 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>check in</h2>
-														<div class="travel-check-icon">
-															<form action="#">
-																<input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?> ">
-															</form>
-														</div>
+														<h2>date de depart</h2>
+														<div class="travel-check-icon"><input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?>"></div>
 													</div>
 												</div>
 
 												<div class="col-lg-2 col-md-3 col-sm-4">
 													<div class="single-tab-select-box">
 														<h2>check out</h2>
-														<div class="travel-check-icon">
-															<form action="#">
-																<input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?> ">
-															</form>
+														<div class="travel-check-icon"><input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="<?= date('d-m-y'); ?>"></div>
+													</div>
+												</div>
+
+												<div class="col-lg-2 col-md-1 col-sm-4">
+													<div class="single-tab-select-box">
+														<h2>Durée</h2>
+														<div class="travel-select-icon">
+															<select class="form-control "><option value="default">5</option>  <?php for ($i=6; $i <=20 ; $i++) {?><option value="<?= $i;?>"><?= $i; }?></option></select>	
 														</div>
 													</div>
 												</div>
 
 												<div class="col-lg-2 col-md-1 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>duration</h2>
+														<h2>Membres</h2>
 														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="default">5</option>
-
-																  <?php for ($i=6; $i <=20 ; $i++) { ?>
-                                                                <option value="<?= $i;?>"><?= $i; }?></option>
-
-															</select>
+															<select class="form-control"><option value="1">1</option><?php for ($i=1; $i <8 ; $i++){?><option value="<?= $i;?>"><?= $i; }?></option></select>	
 														</div>
 													</div>
 												</div>
-
-												<div class="col-lg-2 col-md-1 col-sm-4">
-													<div class="single-tab-select-box">
-														<h2>members</h2>
-														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="1">1</option>
-
-															  	<?php for ($i=1; $i <8 ; $i++) { ?>
-                                                                <option value="<?= $i;?>"><?= $i; }?></option>
-
-															</select>
-														</div>
-													</div>
-												</div>
-
 											</div>
-
 											<div class="row">
 												<div class="clo-sm-7">
-													<div class="about-btn travel-mrt-0 pull-right">
-														<button  class="about-view travel-btn"  style="margin-top: -54px;">
-															search	
-														</button>
-													</div>
+													<div class="about-btn travel-mrt-0 pull-right"><button  class="about-view travel-btn"  style="margin-top: -54px;">Chercher</button></div>
 												</div>
-
 											</div>
-
 										</div>
-
+									</div>	
 									</div>
-
-								
-										
-									</div>
-
 								</div>
 							</div>
         				</div>
         			</div>
         		</div>
         	</div>
-
         </section>
-		
 
-        
 		<section id="service" class="service">
 			<div class="container">
-
 				<div class="service-counter text-center">
-
-					<div class="col-md-4 col-sm-4">
+					<div class="col-md-6 col-sm-6">
 						<div class="single-service-box">
 							<div class="service-img">
 								<img src="./views/images/service/s1.png" alt="service-icon" />
 							</div>
 							<div class="service-content">
-								<h2>
-									<a href="#">
-									amazing tour packages
-									</a>
-								</h2>
+								<h2><a href="#">forfaits touristiques incroyables</a></h2>								
 								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
 							</div>
 						</div>
 					</div>
 
-					<div class="col-md-4 col-sm-4">
+					<div class="col-md-6 col-sm-6">
 						<div class="single-service-box">
 							<div class="service-img">
 								<img src="./views/images/service/s2.png" alt="service-icon" />
 							</div>
 							<div class="service-content">
-								<h2>
-									<a href="#">
-										book top class hotel
-									</a>
-								</h2>
+								<h2><a href="#">réserver un hôtel de première classe</a></h2>
 								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
 							</div>
 						</div>
 					</div>
-
-					<div class="col-md-4 col-sm-4">
-						<div class="single-service-box">
-							<div class="statistics-img">
-								<img src="./views/images/service/s3.png" alt="service-icon" />
-							</div>
-							<div class="service-content">
-
-								<h2>
-									<a href="#">
-										online flight booking
-									</a>
-								</h2>
-								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
-							</div>
-						</div>
-					</div>
-
-				</div>
-					
+				</div>		
 			</div>
 
 		</section>
-		
-
-		
 		<section id="gallery" class="gallery">
 			<div class="container">
 				<div class="gallery-details">
 					<div class="gallary-header text-center">
-						<h2>
-							top destination
-						</h2>
-						<p>
-							Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  
-						</p>
+						<h2>top destination</h2>						
+						<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p> 								
 					</div>
 					<div id="myBtnContainer">
 					<button class="btn active" onclick="filterSelection('all')"> Show all</button>
@@ -444,85 +268,41 @@
 					</div>
 					<div class="gallery-box">
 						<div class="gallery-content">
-						  	<div class="filtr-container">
-								 
+						  	<div class="filtr-container">	 
 						  		<div class="row">
-							
-
-									<tr>
 								 <?php $voyage=$controller->getallvoyage();foreach($voyage as $x => $rows){?>
-                                        <td hidden><?php  $rows[0]; ?></td>
-
-                                        
-										<td class="">
 										<div class="column <?=  $rows[9]; ?>" >
-											<div class="filtr-item">
+											<div class="filtr-item w-100 shadow-1-strong rounded mb-4">
 												<img src="./views/images/gallary/<?=$rows[1];?>" alt="portfolio image"/>
 												<div class="item-title">
-													<a href="#">
-													
-													</a>
-													<p><span><?=$rows[4];?>   tours</span><span><?=$rows[5];?> Personne</span></p>
+													<a href="#"><?=$rows[2];?> </a>
+													<p><span><?=$rows[4];?>tours</span><span><?=$rows[5];?> Personne</span></p>
 											  </div>
 										</div>
-										</div></td>
-								
-                                      
-										<?php };?>
-                                       
-                                    </tr>
-
-						  		
-
-						  		
-
-						  		
-
-						  			
-
-									  
-
+										</div><?php };?>
 						  		</div>
-
 						  	</div>
 						</div>
 					</div>
-				
-
 		</section>
-		
-
-
-		
+			
 		<section class="discount-offer">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="dicount-offer-content text-center">
-							<h2>Join with us within 21 January, 2018 and get upto 40% Discount</h2>
+							<h2>Rejoignez-nous d'ici le 21 janvier 2022 et obtenez jusqu'à 40% de réduction</h2>
 							<div class="campaign-timer">
 								<div id="timer">
-									<div class="time time-after" id="days">
-										<span></span>
-									</div>
-									<div class="time time-after" id="hours">
-
-									</div>
-									<div class="time time-after" id="minutes">
-
-									</div>
-									<div class="time" id="seconds">
-
-									</div>
+									<div class="time time-after" id="days"><span></span></div>				
+									<div class="time time-after" id="hours"></div>								
+									<div class="time time-after" id="minutes"></div>
+									<div class="time" id="seconds"></div>
 								</div>
 							</div>
 							<div class="about-btn">
-								<button  class="about-view discount-offer-btn">
-									join now
-								</button>
+								<button  class="about-view discount-offer-btn">Adhérer maintenant</button>
 							</div>
-
-
 						</div>
 					</div>
 				</div>
@@ -534,32 +314,21 @@
 				<div class="gallary-header text-center">
 					<h2>Voyage organise	</h2>
 					<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla. </p> 
-					
 				</div>
 				<div class="packages-content">
 					<div class="row">
 				    	<?php $hotel=$controller->getallhotel(); foreach($hotel as $x => $rows){?>
-
 						<div class="col-md-4 col-sm-6">
-
 						        <div class="single-package-item">	
 								<img src="./views/images/packages/<?=  $rows[5]?>" alt="package-place" style="width: 500px;	height: 266px;">
 								<div class="single-package-item-txt">
 								
 									<h3> <?=  $rows[3]?> <span class="pull-right"><?=  $rows[11]?> Dh</span></h3>
 									<div class="packages-para">
-									<p>
-										<span>
-											<i class="fa fa-angle-right"></i> 5 daays 6 nights
-										</span>
-										<i class="fa fa-angle-right"></i> <?= $rows[2]?> star accomodation
-									</p>
-									<p>
-										<span>
-											<i class="fa fa-angle-right"></i>  transportation
-										</span>
-										<i class="fa fa-angle-right"></i>  food facilities
-									</p>
+									<p><span><i class="fa fa-angle-right"></i> 5 daays 6 nights</span>
+									<i class="fa fa-angle-right"></i> <?= $rows[2]?> star accomodation</p>
+									<p><span><i class="fa fa-angle-right"></i>  transportation</span>
+										<i class="fa fa-angle-right"></i>  food facilities</p>	
 								</div>
 								<div class="packages-review">
 									<p>
@@ -572,139 +341,36 @@
 									</p>
 								</div>
 								<div class="about-btn">
-									<button  class="about-view packages-btn">
-										book now
-									</button>
-								</div>
-								
+									<a href="reservation"><button type="submit"  class="about-view packages-btn">Reserve</button></a>
+								</div>		
 							</div>
-
-						</div>
-
-					</div>
-					<?php }?>
+ 		          	 </div>
+					</div><?php }?>				
 				</div>
-			</div>
-			
-		</section>
+     			</div>	
+    	</section>
 		
 
 		
 		<section   class="testemonial">
 			<div class="container">
-
-				<div class="gallary-header text-center">
-					<h2>
-						Avis Clients
-					</h2>
-					<p>
-						Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla. 
-					</p>
-
+				<div class="gallary-header text-center"><h2>Avis Clients</h2>
+					<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
 				</div>
-				<div class="col-md-4 col-sm-6">
-
-				<?php $commentaire=$controller->getallcommentair(); foreach($commentaire as $x => $rows){?>
-
+				<div class="owl-carousel owl-theme" id="testemonial-carousel">
+				<?php $commentaire=$controller->getallcommentair();foreach($commentaire as $x => $rows){?>
 					<div class="home1-testm item">
-
 						<div class="home1-testm-single text-center">
-
-							<div class="home1-testm-img">
-								<img src="./views/images/client/<?= $rows[3];?>" alt="img"/>
-							</div>
-							<div class="home1-testm-txt">
-								<span class="icon section-icon"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
-								<p><?= $rows[2];?></p>
-								<h3><a href="#"><?= $rows[1];?></a></h3>
-							</div>
+							<div class="home1-testm-img"><img src="./views/images/client/<?= $rows['image'];?>" alt="img" /></div>
+							<div class="home1-testm-txt"><span class="icon section-icon"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+							<p><?= $rows['commentaire'];?></p>	<h3><a href="#"><?= $rows['name'];?></a></h3></div>
 						</div>
-
 					</div>
-						<?php }?>
-
+                   <?php }?>
 				</div>
-			</div>
-			
+				</div>
 		</section>	
-		
-
-
-		
-		<section id="spo" class="special-offer">
-			<div class="container">
-				<div class="special-offer-content">
-					<div class="row">
-						<div class="col-sm-8">
-							<div class="single-special-offer">
-								<div class="single-special-offer-txt">
-									<h2>thiland</h2>
-									<div class="packages-review special-offer-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div>
-									<div class="packages-para special-offer-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<span>
-												<i class="fa fa-angle-right"></i> 2 person
-											</span>
-											<span>
-												<i class="fa fa-angle-right"></i>  5 star accomodation
-											</span>
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<span>
-												<i class="fa fa-angle-right"></i>  food facilities
-											</span>  
-										</p>
-										<p class="offer-para">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem ut labore et dolore magna  aliqua. Ut enim ad minim veniam, quis nostrud exercitation una <br> ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-										</p>
-									</div>
-									<div class="offer-btn-group">
-										<div class="about-btn">
-											<button  class="about-view packages-btn offfer-btn">
-												make tour
-											</button>
-										</div>
-										<div class="about-btn">
-											<button  class="about-view packages-btn">
-												book now
-											</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="single-special-offer">
-								<div class="single-special-offer-bg">
-									<img src="./views/images/offer/offer-shape.png" alt="offer-shape">
-								</div>
-								<div class="single-special-shape-txt">
-									<h3>special offer</h3>
-									<h4><span>40%</span><br>off</h4>
-									<p><span>$999</span><br>reguler $ 1450</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</section>
+	
 		
 
 		
@@ -721,20 +387,14 @@
 						</div>
 						<div class="blog-content">
 							<div class="row d-flex">
-
 								<div class="col">
 											<div class="row">
-
-												
 												<div class="col-md-10 mb-md-2 mt-3 mb-3">
-													<form id="contact-form" name="contact-form" action="mail.php" method="POST">
-										
-														
+													<form id="contact-form" name="contact-form" action="operation" method="POST">
 														<div class="row">
 															<div class="col-md-6">
 																<div class="md-form mb-2 mt-2">
 																	<label for="name" class="">Nom</label>
-
 																	<input type="text" id="name" name="name" class="form-control">
 																</div>
 															</div>
@@ -742,11 +402,11 @@
 															<div class="col-md-6 ">
 																<div class="md-form  mb-2 mt-2">
 																	<label for="email" class=""> Email</label>
-
 																	<input type="text" id="email" name="email" class="form-control">
 																</div>
 															</div>
 														</div>
+
 														<div class="row">
 															<div class="col-md-12">
 																<div class="md-form  mb-2 mt-2">
@@ -756,59 +416,33 @@
 															</div>
 														</div>
 														
-														<div class="row">
-										
-															<div class="col-md-12">
-										
+														<div class="row">			
+															<div class="col-md-12">										
 																<div class="md-form  mb-2 mt-2">
 																	<label for="message">Message</label>
-
 																	<textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-																</div>
-										
+																</div>										
 															</div>
 														</div>
-														<button class="appsLand-btn subscribe-btn mt-5">envoyer</button>
-
-										
+														<button class="appsLand-btn subscribe-btn mt-5">envoyer</button>										
 													</form>
-										
-												
 												</div>
-											
-												
-												</div>
-												
-										
-											</div>
-										
-									
+												</div>																				
+											</div>																			
 									</div>
-
 								</div>
-
-
 							</div>
 						</div>
-					</div>
-				
-
+					</div>				
 		</section>
 		
 		<section id="subs" class="subscribe">
 			<div class="container">
 				<div class="subscribe-title text-center">
-					<h2>
-						À propos de nous	
-					</h2>
-					<p>
-						Vous avez prévu de partir en vacances et vous cherchez les meilleures offres de vols et d'hôtels pour partir pas cher ? Réserver votre voyage à travers d'une agence de voyage en ligne vous permettra de bénéficier des meilleurs tarifs sans avoir à vous déplacer.
-
-						Accessible depuis un ordinateur, une tablette ou un Smartphone, une agence de voyage en ligne vous permet en effet de comparer en temps réel les offres de milliers de prestataires touristiques et notamment de compagnies aériennes, d'hôtels et de loueurs de voiture. Il vous suffit d'indiquer vos critères de recherche (dates de voyage, destination, nombre de voyageurs, etc) sur le moteur de recherche pour obtenir, en quelques secondes seulement et sans rien avoir à faire, l'ensemble des offres répondant à vos attentes. Vous pourrez ensuite les filtrer afin de trouver celle qui convient le mieux à vos besoins et à votre budget.					</p>
+					<h2>À propos de nous</h2>
+					<p>Vous avez prévu de partir en vacances et vous cherchez les meilleures offres de vols et d'hôtels pour partir pas cher ? Réserver votre voyage à travers d'une agence de voyage en ligne vous permettra de bénéficier des meilleurs tarifs sans avoir à vous déplacer.</p>
 				</div>
-				
 			</div>
-
 		</section>
 	
 		<footer  class="footer-copyright">
@@ -821,9 +455,7 @@
 								<div class="footer-logo d-flex" >
 									<a href="index.html">
 									<div style="margin-left: 55px;"><img src="./views/images/logo/logo.png" alt="" style=" width: 53px;"></div>
-									<div>Happy<span>Travel</span></div>	
-
-									</a>
+									<div>Happy<span>Travel</span></div></a>	
 								</div>
 							</div>
 						</div>

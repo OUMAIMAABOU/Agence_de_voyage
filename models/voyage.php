@@ -18,8 +18,8 @@ public $type_de_chambre;
 }
 public function getAllville(){
    
-        $req=$this->connect()->query("SELECT * from ville");
-        return $req->fetchAll();
+       
+        return $this->GetALL('ville');
 }
 
 
