@@ -15,37 +15,51 @@
   <p>Type something in the input field to search the table for first names, last names or emails:</p>  
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br>
-  <table class="table table-bordered table-striped">
+  <table class="bg-green merriweather " style=" height: 53px;">
     <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
+    <th>Matricule</th>
+    <th>Nom complet</th>
+    <th>Genre</th>
+    <th>job</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Options</th>
+    </tr>
     </thead>
-    <tbody id="myTable">
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@mail.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@greatstuff.com</td>
-      </tr>
-      <tr>
-        <td>Anja</td>
-        <td>Ravendale</td>
-        <td>a_r@test.com</td>
-      </tr>
-    </tbody>
-  </table>
+   
+  <tbody  class="fw-bold" id="myTable" >
+                  
+                  <tr>
+                     <td hidden data-target="id"> </td>
+                      <td></td>
+                      <td data-target="nomcomplet"> ouma </td>
+                      <td data-target="genre">aa</td>
+                     
+                      <td data-target="job">ano</td>
+                      <td data-target="adrs">111</td>
+                      <td data-target="phone">3232</td>
+                      <td class="d-flex  align-items-start">
+                      <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
+                      <form action="operation" method="POST" ><button type="submit" name ="deletparent" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<?= $rows['Matricule']?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
+                      </td>
+                  </tr>
+              
+                  <tr>
+                     <td hidden data-target="id"> </td>
+                      <td></td>
+                      <td data-target="nomcomplet"> ama </td>
+                      <td data-target="genre">test</td>
+                     
+                      <td data-target="job">ano</td>
+                      <td data-target="adrs">222</td>
+                      <td data-target="phone">000</td>
+                      <td class="d-flex  align-items-start">
+                      <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
+                      <form action="operation" method="POST" ><button type="submit" name ="deletparent" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<?= $rows['Matricule']?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
+                      </td>
+                  </tr>                     
+
+              </tbody>
   
   <p>Note that we start the search in tbody, to prevent filtering the table headers.</p>
 </div>

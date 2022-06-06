@@ -10,6 +10,8 @@ class Dbconnect
       }catch (PDOException $ex) {echo $ex->getMessage();}
       
     }
+    public function getdata($req){
+      return $this->connect()->prepare($req);}
  
     public function GetALL($table)
   {
@@ -19,23 +21,23 @@ class Dbconnect
     }catch (PDOException $ex) {echo $ex->getMessage();}
   }
 
-  // public function GetOne($table,$id,$getid)
-  // {
-  //   try
-  //   {
-  //     return $this->connect()->prepare("select * from '$table' where $id='?'")->execute([$getid]);
+  public function GetOne($table,$id,$getid)
+  {
+    try
+    {
+      return $this->connect()->prepare("select * from '$table' where $id='?'")->execute([$getid]);
 
-  //   }catch (PDOException $ex) {echo $ex->getMessage();}
-  // }
-  // public function Delete($table,$id,$getid)
-  // {
-  //   try
-  //   {
-  //    $requet= $this->connect()->prepare("delete from '$table' where $id='?'");
-  //    $requet->execute([$getid]);
-  //     return  $requet->fetch();
-  //   }catch (PDOException $ex) {echo $ex->getMessage();}
-  // }
+    }catch (PDOException $ex) {echo $ex->getMessage();}
+  }
+  public function Delete($table,$id,$getid)
+  {
+    try
+    {
+     $requet= $this->connect()->prepare("delete from '$table' where $id='?'");
+     $requet->execute([$getid]);
+      return  $requet->fetch();
+    }catch (PDOException $ex) {echo $ex->getMessage();}
+  }
  
 
 

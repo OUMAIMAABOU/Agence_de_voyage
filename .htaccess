@@ -1,7 +1,4 @@
 Options All -Indexes
-
 RewriteEngine On
-
 RewriteBase /Agence_de_voyage/
-
 RewriteRule ^([-a-zA-Z0-9]+)$ index.php?page=$1

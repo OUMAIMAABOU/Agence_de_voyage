@@ -62,13 +62,13 @@
 	transition: padding-bottom 0.4s ease-in-out, border-color 0.3s ease;
 }
 .bg{
-    background: white;
-    border-radius: 12px;
-    padding: 39px 9px;
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 39px 9px !important;
 }
 .cc-navbar .nav-link:hover {
-	padding-bottom: 20px;
-	border-bottom-color: var(--bs-teal);
+	padding-bottom: 20px !important;
+	border-bottom-color: var(--bs-teal) !important;
 }
 
 .banner,
@@ -95,21 +95,21 @@
 }
 
 .btn-order {
-	color: var(--bs-teal);
-	border-color: var(--bs-teal);
-	transition: 0.5s;
+	color: var(--bs-teal) !important;
+	border-color: var(--bs-teal) !important;
+	transition: 0.5s !important;
 }
 .btn-order2{
-	background-color:var(--bs-teal) ;
-	color:#fff;
-	border-color: var(--bs-teal);
-	transition: 0.5s;
+	background-color:var(--bs-teal) !important ;
+	color:#fff !important;
+	border-color: var(--bs-teal) !important;
+	transition: 0.5s !important;
 
 }
 
 .btn-order:hover,
 .btn-order:focus,
 .btn-order:active {
-	color: #fff;
-	background-color: var(--bs-teal);
+	color: #fff !important;
+	background-color: var(--bs-teal) !important;
 }
