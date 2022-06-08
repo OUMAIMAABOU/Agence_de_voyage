@@ -7,7 +7,10 @@
     <title>pay</title>
  
 
-
+<?php
+//  $test= new AdministrateurController();
+//  $test->insrtadmin();
+?>
 
 
 </head>
@@ -49,7 +52,7 @@
                      
                         <tr class="bg-green merriweather " style=" height: 53px;">
                            
-                            <th>Matricule</th>
+                            <th></th>
                             <th>Nom complet</th>
                             <th>Genre</th>
                             <th>Email</th>
@@ -61,40 +64,23 @@
                         </tr>
                     </thead>
                     <tbody  class="fw-bold" id="myTable" >
-                  
-                        <tr>
-                           <td hidden data-target="id"> </td>
-                            <td></td>
-                            <td data-target="nomcomplet"> ouma </td>
-                            <td data-target="genre">aa</td>
-                           
-                            <td data-target="job">ano</td>
-                            <td data-target="adrs">111</td>
-                            <td data-target="phone">3232</td>
-                            <td data-target="phone">3232</td>
-                            <td data-target="phone">3232</td>
-                            
-                            <td class="d-flex  align-items-start">
-                            <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
-                            <form action="operation" method="POST" ><button type="submit" name ="deletparent" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<?= $rows['Matricule']?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                           <td hidden data-target="id"> </td>
-                            <td></td>
-                            <td data-target="nomcomplet"> ama </td>
-                            <td data-target="genre">test</td>
-                           
-                            <td data-target="job">ano</td>
-                            <td data-target="adrs">222</td>
-                            <td data-target="phone">000</td>
-                            <td class="d-flex  align-items-start">
-                            <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
-                            <form action="operation" method="POST" ><button type="submit" name ="deletparent" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="Matricule" value="<?= $rows['Matricule']?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
-                            </td>
-                        </tr>                     
-      
+                        <?php  $admine = new AdministrateurController(); $admines=$admine->getAlladmin();foreach($admines as $x => $admine){?>
+                            <tr>
+                            <td hidden data-target="id"><?= $admine[0] ?></td>
+                                <td><?= $x+1?></td>
+                                <td data-target="image"><?= $admine[6] ?></td>
+                                <td data-target="nom complet"> <?= $admine[1] ?> </td>
+                                <td data-target="Email"><?= $admine[2] ?>/td>
+                                <td data-target="Genre"><?= $admine[3] ?></td>
+                                <td data-target="Type"><?= $admine[4] ?></td>
+                                <td data-target="password"><?= $admine[5] ?></td>
+                                <td data-target="Phone"><?= $admine[7] ?></td>
+                                <td class="d-flex  align-items-start">
+                                <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
+                                <form action="operation" method="POST" ><button type="submit" name ="deletparent" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $admine['id']?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
+                                </td>
+                            </tr>
+                        <?php }?>
                     </tbody>
                     </table>
                 </div>
@@ -103,11 +89,11 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ajouter les parents </h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Ajouter Amdin </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                        <form class="form-container" action="operation" method="POST" onsubmit="return validation()">  
+                        <form class="form-container" action="operation" method="POST">  
                                         <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                             <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
@@ -145,7 +131,7 @@
              
                                     <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" name="saveparent" class="btn btn-warning mT-3">Save</button>
+                                            <button type="submit" name="saveadmin" class="btn btn-warning mT-3">Save</button>
                                     </div>
                                 </form>              
                         </div>

@@ -62,9 +62,9 @@
 	transition: padding-bottom 0.4s ease-in-out, border-color 0.3s ease;
 }
 .bg{
-    background: white !important;
-    border-radius: 12px !important;
-    padding: 39px 9px !important;
+    background: white;
+    border-radius: 12px;
+    padding: 39px 9px;
 }
 .cc-navbar .nav-link:hover {
 	padding-bottom: 20px !important;

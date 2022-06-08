@@ -1,6 +1,12 @@
 <?php
 $Controller= new ClientController();
-$Controller->InsertContact();
+// $Controller->InsertContact();
+
+$Controllers= new AdministrateurController();
+$Controllers->insrtadmin();
+$Controllers->DeleteAdmin();
+
+
 
 
 ?>

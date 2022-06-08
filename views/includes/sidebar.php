@@ -14,7 +14,7 @@
              
            </div>
             <div class="list-group ">
-              <img src="./views/assets/img/ulzzangs .jpg" alt="profile picture"
+              <img src="views\assets\images\client\ulzzangs.jpg" alt="profile picture"
                   class=" profile img-fluid rounded-circle mx-auto my-2 p-4  d-block" style="height: 190px;width: 190px;">
               <div class="text-center ">
                   <h2  class="fs-4 merriweather "style="color : #dcdcdc"> Admin name </h2>
