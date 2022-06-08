@@ -4,48 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pay</title>
- 
-
-<?php
-//  $test= new AdministrateurController();
-//  $test->insrtadmin();
-?>
-
-
+    <title>Admin</title>
 </head>
-
     <body class="row">
-     
-    <main>
-
-      
-
+      <main>
         <div id="page-content-dashboard">
-          
-    
-
             <div class=" px-0 ">
-                  <div class="d-flex justify-content-between border-bottom">
-                 <?php include ('views/includes/sidebar.php'); ?> 
-
-                  </div>
-
-
-
+                <div class="d-flex justify-content-between border-bottom">
+                    <?php include ('views/includes/sidebar.php'); ?> 
+                </div>
             <div class="container-fluid px-5 pt-3">
-            <?php include ('./views/includes/header.php');?>
-
-    
+              <?php include ('./views/includes/header.php');?>
               <div class="row">
                 <div class="table-wrapper">
-                    
                  <div class="d-flex align-items-baseline  justify-content-between">
-                    <form class="col-sm-6 input-group mb-3 mt-5" method="POST" style="max-width:500px;">
-                                 
+                    <form class="col-sm-6 input-group mb-3 mt-5" method="POST" style="max-width:500px;">            
                      </form>
                       <a href="#addetud" class="btn btn-order  btn-lg fs-3 mb-1 rounded-3 merriweather" data-bs-toggle="modal" data-bs-target="#exampleModal" > + </a></div>
-      
                     <div class="table-responsive">
                     <table class="table table-striped table align-middle">
                     <thead>
@@ -53,10 +28,10 @@
                         <tr class="bg-green merriweather " style=" height: 53px;">
                            
                             <th></th>
+                            <th>image</th>
                             <th>Nom complet</th>
-                            <th>Genre</th>
                             <th>Email</th>
-                            <th>Address</th>
+                            <th>Genre</th>
                             <th>type</th>
                             <th>password</th>
                             <th>Phone</th>
@@ -64,23 +39,26 @@
                         </tr>
                     </thead>
                     <tbody  class="fw-bold" id="myTable" >
-                        <?php  $admine = new AdministrateurController(); $admines=$admine->getAlladmin();foreach($admines as $x => $admine){?>
+                        <?php  $admine = new AdministrateurController(); $admines=$admine->getAllAdmin();foreach($admines as $x => $admine){?>
                             <tr>
-                            <td hidden data-target="id"><?= $admine[0] ?></td>
+                            <td hidden data-target="id"><?= $admine['id'] ?></td>
                                 <td><?= $x+1?></td>
-                                <td data-target="image"><?= $admine[6] ?></td>
-                                <td data-target="nom complet"> <?= $admine[1] ?> </td>
-                                <td data-target="Email"><?= $admine[2] ?>/td>
-                                <td data-target="Genre"><?= $admine[3] ?></td>
-                                <td data-target="Type"><?= $admine[4] ?></td>
-                                <td data-target="password"><?= $admine[5] ?></td>
-                                <td data-target="Phone"><?= $admine[7] ?></td>
+                                <td data-target="image"><?= $admine['image'] ?></td>
+                                <td data-target="nom complet"> <?= $admine['name'] ?> </td>
+                                <td data-target="Email"><?= $admine['email'] ?></td>
+                                <td data-target="Genre"><?= $admine['genre'] ?></td>
+                                <td data-target="Type"><?= $admine['type'] ?></td>
+                                <td data-target="password"><?= $admine['password'] ?></td>
+                                <td data-target="Phone"><?= $admine['Phone'] ?></td>
                                 <td class="d-flex  align-items-start">
                                 <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
-                                <form action="operation" method="POST" ><button type="submit" name ="deletparent" class="btn btn-outline-danger " style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $admine['id']?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
+                                <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?" >
+                                    <button type="submit" name ="deletparent" class="btn btn-outline-danger" 
+                                    
+                                style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $admine['id']?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
                                 </td>
                             </tr>
-                        <?php }?>
+                             <?php }?>
                     </tbody>
                     </table>
                 </div>
@@ -97,8 +75,6 @@
                                         <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                             <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
-                                            <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
-                                            <span id="nomid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
                                         </div>
                                
                                         <div class="mb-3  fw-bold"  >
@@ -109,10 +85,17 @@
                                          </select>
                                         </div>
                                        
-                               
                                         <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Job</label>
-                                            <input type="text" class="form-control" name="Job" placeholder="Enter le Job">
+                                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                            <input type="email" class="form-control" name="email" placeholder="Enter le Job">
+                                        </div>
+                                        <div class="mb-3  fw-bold"  >
+                                            <label for="exampleFormControlInput1" class="form-label">Type</label>
+                                          
+                                        </div>
+                                        <div class="mb-3  fw-bold"  >
+                                            <label for="exampleFormControlInput1" class="form-label">password</label>
+                                            <input type="text" class="form-control" name="password" placeholder="Enter le Job">
                                             <p id="img2" style="margin-bottom: -1rem;"></p>
                                             <span id="Jobid" style="color:red; font-weight: bold;"></span>
                                         </div>
@@ -130,8 +113,8 @@
                                         </div>
              
                                     <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" name="saveadmin" class="btn btn-warning mT-3">Save</button>
+                                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                                            <input type="submit" name="saveadmin" class="btn btn-warning mT-3" value="Save">
                                     </div>
                                 </form>              
                         </div>
@@ -231,11 +214,30 @@
                })
             </script>
             <script src="views/assets/js/script.js"></script>
-
+                       
            
    
      
     
    </main> 
+
+   <script>
+                document.querySelectorAll('.confirm-submit').forEach(form=>{
+                    form.addEventListener('submit',(e)=>{
+                        if(!confirm(e.target.dataset.confirmMsg)){
+                            e.preventDefault();
+                        }
+                    });
+                })
+                // document.querySelectorAll('.confirm-submit').forEach(form=>{
+                //     form.addEventListener('click',(e)=>{
+                //         if(!confirm(e.target.dataset.confirmMsg)){
+                //             e.preventDefault();
+                //         }
+                //     });
+                // })
+
+            </script>
+           
 </body>
 </html>

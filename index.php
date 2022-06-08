@@ -7,7 +7,6 @@ if( basename($_SERVER['REQUEST_URI'])=="Acueille"){
 include ('./views/includes/navbar.php');}
 
 
-
 $home =new HomeController();
 $page=['Acueille','test','reservation','operation','agent','navbar','index1','admin','chart'];
 
@@ -20,6 +19,7 @@ if(isset($_GET['page'])){
 }else{
         $home->index('Acueille');
     }
+ 
 
 
 

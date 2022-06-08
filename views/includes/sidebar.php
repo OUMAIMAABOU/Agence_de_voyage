@@ -6,10 +6,10 @@
     
 
 <div class="d-flex" id="dashboard">
-        <div class="bg" id="sidebar-dashboard">
+        <div class="bg m-2" id="sidebar-dashboard">
           
               
-            <div class=" redressed fw-bolder  m-2 dark-text fs-5 fw-bold border-start px-2">
+            <div class=" redressed fw-bolder m-2 dark-text fs-5 fw-bold border-start px-2">
               <h1 class="text-light"> <span style="color:#90f5d7;">Happy</span>Travel</a></h1>
              
            </div>
@@ -23,7 +23,7 @@
               
                 <a href="chart" class="list-group-item mx-5 border-0  merriweather bg-transparent mt-3" style="color:#90f5d7;">
                     <i class="fas fa-home"></i> Home</a>
-                <a href="admin" class="list-group-item mx-5 border-0 merriweather bg-transparent ">
+                <a href="admin"  class="list-group-item mx-5 border-0 merriweather bg-transparent ">
                     <i class="far fa-bookmark"></i> Admin </a>
                 <a href="agent" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
                     <i class="fas fa-graduation-cap"></i> agent</a>

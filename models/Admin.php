@@ -1,5 +1,5 @@
 <?php
-class Administrateur extends Dbconnect{
+class Administrateur extends Dbconnect {
     public $id;
     public $name;
     public $email;
@@ -11,14 +11,16 @@ class Administrateur extends Dbconnect{
     
     public function insert(){
         try{
-            return $this->getdata("insert into admin values(NULL,?,?,?,?,?,?,?,)")->execute([ $this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone]);
+            return Dbconnect::getdata("insert into admin values(NULL,?,?,?,?,?,?,?)")->execute([ $this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone]);
            }catch(PDOException $e){ return $e->getMessage();}
         }
-       public function DeleteAdmin(){
-        return $this->getdata("delete from admin where id =?")->execute([$this->id]); 
+      static public  function DeleteAdmin(){
+        return Dbconnect :: getdata("delete from admin where id =?")->execute([self::$id]); 
         }
-        
-       public function Afficher(){return $this->GetALL('admin');}
+
+      static  public  function Afficher(){return static :: GetALL('admin');}
+      static public  function Affichertype(){return static ::GetALL('type');}
+
 
 
 
