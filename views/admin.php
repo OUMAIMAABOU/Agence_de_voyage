@@ -71,7 +71,11 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                        <form class="form-container" action="operation" method="POST" data-parsley-validate>  
+                        <form class="form-container" action="operation" method="POST" data-parsley-validate> 
+                                      <div class="mb-3 fw-bold" >
+                                            <label for="exampleFormControlInput1" class="form-label">Image</label>
+                                            <input type="file" class="form-control"  id ="image"  name="image"  placeholder="Enter name complet" >
+                                        </div> 
                                         <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                             <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" data-parsley-length="[4, 20]" parsley-error data-parsley-trigger="keyup" required>
@@ -145,6 +149,10 @@
                                        <input type="text" hidden class="form-control" id="id" name="id"  >
                                        
                                    </div>
+                                   <div class="mb-3 fw-bold" >
+                                            <label for="exampleFormControlInput1" class="form-label">Image</label>
+                                            <input type="file" class="form-control"  id ="image"  name="image"  placeholder="Enter name complet" >
+                                        </div>
                                       <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                             <input type="text" class="form-control"  id ="name"  name="nom"  placeholder="Enter name complet" >

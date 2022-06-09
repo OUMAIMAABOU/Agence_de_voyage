@@ -94,7 +94,7 @@
 				    	<?php $hotel=$controller->getallhotel(); foreach($hotel as $x => $rows){?>
 						<div class="col-md-3 col-sm-6 bg-light vogare-item ">
 						        <div class="">	
-								<img src="./views/images/packages/<?=  $rows[5]?>" alt="package-place" style=" BORDER-RADIUS: 40px; width: 100%;height: 200px; max-width: 100%; box-sizing: border-box;">
+								<img src="views/assets/images/packages/<?=  $rows[5]?>" alt="package-place" style=" BORDER-RADIUS: 40px; width: 100%;height: 200px; max-width: 100%; box-sizing: border-box;">
 								<div class="">
 								
 									<h3> <?=  $rows[3]?> <span class=""><?=  $rows[11]?> Dh</span></h3>
@@ -165,7 +165,7 @@
 
 						<div class="col-3">
 							<div class="card">
-								<img src="./views/images/gallary/<?=$rows[1];?>" class="card-img-top" alt="..." />
+								<img src="views/assets/images/gallary/<?=$rows[1];?>" class="card-img-top" alt="..." />
 								<div class="card-body">
 									<h5 class="card-title"><?=$rows[2];?></h5>
 									<p class="card-text">
