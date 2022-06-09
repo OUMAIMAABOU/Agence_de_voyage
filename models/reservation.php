@@ -1,5 +1,5 @@
 <?php
-class Administrateur extends Dbconnect {
+class Reservation extends Dbconnect {
     public $id;
     public $name;
     public $email;

@@ -7,19 +7,24 @@ class AdministrateurController{
 
     if(isset($_POST['saveadmin'])){
       // if(!empty([$_POST['nom']])|| !empty([$_POST['genre']])|| !empty($_POST['Phone']))
+     
        
+    
 
         $admin->Setname($_POST['nom']);
         $admin->Setemail($_POST['email']);
         $admin->Setpassword($_POST['password']);
         $admin->SetAdress($_POST['adres']);
-        $admin->Setimage('$_POST[nom]');
+        // $admin->Setimage($_POST[$_FILES['image']['name']]);
+                $admin->Setimage($_POST['image']);
+
         $admin->SetPhone($_POST['Phone']);
         $admin->Settype($_POST['type']);
         // $admin->Setimage($_POST['image']);
         $admin->SetGenre($_POST['genre']);
 
         if ($admin->insert())header('location:admin');  
+       
      }  
   } 
   public function Delete(){
@@ -37,13 +42,7 @@ public function getType(){
  return Administrateur::Afficher();
 }
 public function update(){
-  if(isset($_FILES['image'])){
-    $errors= array();
-    $file_name = $_FILES['image']['name'];
-    $file_tmp =$_FILES['image']['tmp_name'];
-    move_uploaded_file($file_tmp,"views/assets/images/avatar".$file_name);
-   
-  }
+
   if(isset($_POST['update'])){
   
     $admin=new Administrateur();
@@ -52,7 +51,7 @@ public function update(){
         $admin->Setemail($_POST['email']);
         $admin->Setpassword($_POST['password']);
         $admin->SetAdress($_POST['adres']);
-        $admin->Setimage($_POST['image']);
+        $admin->Setimage($_FILES['image']['name']);
         $admin->SetPhone($_POST['Phone']);
         $admin->Settype($_POST['type']);
         $admin->Setimage($_POST['image']);
