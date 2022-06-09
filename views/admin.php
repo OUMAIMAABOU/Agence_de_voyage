@@ -13,14 +13,14 @@
                 <div class="d-flex justify-content-between border-bottom">
                     <?php include ('views/includes/sidebar.php'); ?> 
                 </div>
-            <div class="container-fluid px-2 pt-3">
+            <div class="container-fluid px-2 pt-2 pe-4">
               <?php include ('./views/includes/header.php');?>
               <div class="row">
                 <div class="table-wrapper">
                  <div class="d-flex align-items-baseline  justify-content-between">
                     <form class="col-sm-6 input-group mb-3 mt-5" method="POST" style="max-width:500px;">            
                      </form>
-                      <a href="#addetud" class="btn btn-order  btn-lg fs-3 mb-1 rounded-3 merriweather" data-bs-toggle="modal" data-bs-target="#exampleModal" > + </a></div>
+                      <a href="#addetud" class="btn btn-order  btn-lg fs-3 mb-1 mx-4 rounded-3 merriweather" data-bs-toggle="modal" data-bs-target="#exampleModal" > + </a></div>
                     <div class="table-responsive">
                     <table class="table table-striped table align-middle">
                     <thead>
@@ -71,10 +71,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                        <form class="form-container" action="operation" method="POST">  
+                        <form class="form-container" action="operation" method="POST" data-parsley-validate>  
                                         <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
-                                            <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                            <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;"data-parsley-length="[4, 20]" parsley-error data-parsley-trigger="keyup" required>
                                         </div>
                                
                                         <div class="mb-3  fw-bold"  >
@@ -87,34 +87,37 @@
                                        
                                         <div class="mb-3  fw-bold"  >
                                             <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                            <input type="email" class="form-control" name="email" placeholder="Enter le Job">
+                                            <input type="email" class="form-control" name="email" placeholder="Enter votre email"  required data-parsley-trigger="keyup">
                                         </div>
                                         <div class="mb-3  fw-bold"  >
                                             <label for="exampleFormControlInput1" class="form-label">Type</label>
-                                          
+                                            <select class="form-control" name="type"  required data-parsley-trigger="keyup">
+                                           
+                                         <option value="1">admin general </option>
+                                         <option value="2">admin secondaire </option>
+                                         <option value="5">Agent </option>
+
+                                         </select>
                                         </div>
                                         <div class="mb-3  fw-bold"  >
                                             <label for="exampleFormControlInput1" class="form-label">password</label>
-                                            <input type="text" class="form-control" name="password" placeholder="Enter le Job">
+                                            <input type="text" class="form-control" name="password" placeholder="Enter le Job"  required data-parsley-trigger="keyup">
                                             <p id="img2" style="margin-bottom: -1rem;"></p>
                                             <span id="Jobid" style="color:red; font-weight: bold;"></span>
                                         </div>
                                         <div class="mb-3  fw-bold" >
                                             <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                                            <span id="addressid"  class ="mt-5 text-danger"style="font-weight: bold;"></span>
-                                            <textarea class="form-control"  name="adres" rows="3"></textarea>
-                                            <p id="img4" style="margin-bottom: -1rem;"></p> <span id="addid" style="color:red; font-weight: bold;"></span>
+                                            <textarea class="form-control"  name="adres" rows="3"  required data-parsley-trigger="keyup"></textarea>
                                         </div>
                                         <div class="mb-3  fw-bold"  >
                                             <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                                            <input type="text" class="form-control"  name="Phone" placeholder="Enter phone">
-                                            <p id="img2" style="margin-bottom: -1rem;"></p>
-                                            <span id="Phoneid" style="color:red; font-weight: bold;"></span>
+                                            <input type="text" class="form-control"  name="Phone" placeholder="Enter phone"  required data-parsley-trigger="keyup">
+                                           
                                         </div>
              
                                     <div class="modal-footer">
-                                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                                            <input type="submit" name="saveadmin" class="btn btn-warning mT-3" value="Save">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" name="saveadmin" class="btn btn-warning mT-3">Save</button>
                                     </div>
                                 </form>              
                         </div>
@@ -138,52 +141,54 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                        <form class="form-container" action="operation" method="POST" >  
                         <div class="mb-3 fw-bold" >
-                                            <input type="text" hidden class="form-control" id="matricule" name="matricule"  style="margin-bottom: 32px;">
-                                            <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
-                                            <span id="nomid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
-                                        </div>
-                                        <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
-                                            <input type="text" class="form-control" id="nom" name="nom"  style="margin-bottom: 32px;">
-                                            <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
-                                            <span id="nomid" class ="mt-5 text-danger"style="font-weight: bold;"></span>
+                                            <input type="text" class="form-control"  id ="name" name="nome" placeholder="Enter name complet" style="margin-bottom: 32px;">
                                         </div>
                                
                                         <div class="mb-3  fw-bold"  >
                                             <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                            <select class="form-control" id="genre"  name="genre" >
+                                            <select class="form-control" name="genre" id="genre" >
                                              <option value="Femme">Femme </option>
                                              <option value="Homme" selected>Homme </option>
                                          </select>
                                         </div>
-                                        
+                                       
                                         <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Job</label>
-                                            <input type="text" class="form-control" id="Job" name="Job" placeholder="Enter le Job">
-                                            <p id="img2" style="margin-bottom: -1rem;"></p>
-                                            <span id="Jobid" style="color:red; font-weight: bold;"></span>
+                                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter votre email">
+                                        </div>
+                                        <div class="mb-3  fw-bold"  >
+                                            <label for="exampleFormControlInput1" class="form-label">Type</label>
+                                            <select class="form-control" name="type" id="type">
+                                           
+                                         <option value="1">admin general </option>
+                                         <option value="2">admin secondaire </option>
+                                         <option value="5">Agent </option>
+
+                                         </select>
+                                        </div>
+                                        <div class="mb-3  fw-bold"  >
+                                            <label for="exampleFormControlInput1" class="form-label">password</label>
+                                            <input type="text" class="form-control" name="password" id ="password" placeholder="Enter votre password">
+                                          
                                         </div>
                                         <div class="mb-3  fw-bold" >
                                             <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                                            <span id="addressid"  class ="mt-5 text-danger"style="font-weight: bold;"></span>
-                                            <textarea class="form-control" id="adress" name="adres" rows="3"></textarea>
-                                            <p id="img4" style="margin-bottom: -1rem;"></p> <span id="addid" style="color:red; font-weight: bold;"></span>
+                                            <textarea class="form-control"  name="adres" id="adress" rows="3"></textarea>
                                         </div>
                                         <div class="mb-3  fw-bold"  >
                                             <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                                            <input type="text" class="form-control" id="phone" name="Phone" placeholder="Enter phone">
-                                            <p id="img2" style="margin-bottom: -1rem;"></p>
-                                            <span id="Phoneid" style="color:red; font-weight: bold;"></span>
+                                            <input type="text" class="form-control" id="phone"  name="Phone" placeholder="Enter phone">
+                                         
                                         </div>
-                                        <div class="modal-footer">
+             
+                                    <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" name="bntupdate" class="btn btn-primary">update</button>
-                                        </div>
-                                        </div>
-                                  
+                                            <button type="submit" name="update" class="btn btn-warning mT-3">Update</button>
+                                    </div>
                                 </form>              
+                        </div>           
                         </div>
                         <div class="modal-footer">
                       
@@ -197,21 +202,43 @@
             </div>
         </div>
      
-            <script>
+            <!-- <script>
                 $(document).ready(function()
                 {
                     $("#myTable").on('click','.update',function()
                     {
                         var currentRow=$(this).closest("tr"); 
-                        $('#matricule').val(currentRow.find("td:eq(0)").text());
-                        $('#nom').val(currentRow.find("td:eq(2)").text());
-                        $('#genre').val(currentRow.find("td:eq(3)").text());
-                        $('#Job').val(currentRow.find("td:eq(4)").text());
-                        $('#adress').val(currentRow.find("td:eq(5)").text());
-                        $('#phone').val(currentRow.find("td:eq(6)").text());
+                        $('#id').val(currentRow.find("td:eq(0)").text());
+                        $('#nom').val(currentRow.find("td:eq(3)").text());
+                        $('#genre').val(currentRow.find("td:eq(5)").text());
+                        $('#email').val(currentRow.find("td:eq(4)").text());
+                        $('#type').val(currentRow.find("td:eq(6)").text());
+                        $('#password').val(currentRow.find("td:eq(7)").text());
+                        // $('#adress').val(currentRow.find("td:eq(6)").text());
+                        $('#Phone').val(currentRow.find("td:eq(8)").text());
+
      
                     })
                })
+            </script> -->
+            <script>
+                    $(document).ready(function() {
+        $("#myTable").on('click', '.update', function() {
+            var currentRow = $(this).closest("tr");
+            colM = currentRow.find("td:eq(0)").text();
+            col0 = currentRow.find("td:eq(2)").text();
+            col1 = currentRow.find("td:eq(3)").text();
+            col3 = currentRow.find("td:eq(4)").text();
+            $('#matricule').val(colM);
+            $('#nome').val(col0);
+            $('#gen').val(col1);
+            $('#dateN').val(col3);
+            $('#Email').val(currentRow.find("td:eq(5)").text());
+            $('#NAMEP').val(currentRow.find("td:eq(6)").text());
+            $('#ads').val(currentRow.find("td:eq(7)").text());
+            $('#cla').val(currentRow.find("td:eq(8)").text());
+        })
+    })
             </script>
             <script src="views/assets/js/script.js"></script>
                        
@@ -238,6 +265,16 @@
                 // })
 
             </script>
+      <script>
+        var el = document.getElementById("dashboard");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
            
 </body>
 </html>

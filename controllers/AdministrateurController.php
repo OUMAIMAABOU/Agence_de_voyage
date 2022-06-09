@@ -11,12 +11,14 @@ class AdministrateurController{
 
         $admin->Setname($_POST['nom']);
         $admin->Setemail($_POST['email']);
-        $admin->Setpassword('$_POST[password]');
+        $admin->Setpassword($_POST['password']);
+        $admin->SetAdress($_POST['adres']);
         $admin->Setimage('$_POST[nom]');
         $admin->SetPhone($_POST['Phone']);
-        $admin->Settype(1);
-        // $admin->Setimage($_POST['nom']);
+        $admin->Settype($_POST['type']);
+        // $admin->Setimage($_POST['image']);
         $admin->SetGenre($_POST['genre']);
+
         if ($admin->insert())header('location:admin');  
      }  
   } 
@@ -32,8 +34,7 @@ class AdministrateurController{
    return  $admin;
 }
 public function getType(){
-  $admin=new Administrateur();
- return $admin->Afficher();
+ return Administrateur::Afficher();
 }
 
 

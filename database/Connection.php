@@ -21,7 +21,7 @@ class Dbconnect
     }catch (PDOException $ex) {echo $ex->getMessage();}
   }
   
-  static public  function insertone($table,$id,$array)
+  static public  function Add($table,$id,$array)
   {
     try{return self::connect()->prepare("insert into $table values $id ")->execute($array);
     }catch (PDOException $ex) {echo $ex->getMessage();}

@@ -8,10 +8,11 @@ class Administrateur extends Dbconnect {
     public $image;
     public $phone;
     public $genre;
+    public $adresse;
     
     // public function insert(){
     //     try{
-    //         return Dbconnect::getdata("insert into admin values(NULL,?,?,?,?,?,?,?)")->execute([ $this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone]);
+    //         return Dbconnect::getdata("insert into admin values(NULL,?,?,?,?,?,?,?,?)")->execute([ $this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone]);
     //        }catch(PDOException $e){ return $e->getMessage();}
     //     }
        public  function DeleteAdmin(){
@@ -19,12 +20,12 @@ class Administrateur extends Dbconnect {
         }
 
       static  public  function Afficher(){return static :: GetALL('users');}
-      static public  function Affichertype(){return static ::GetALL('type');}
+      static public  function Affichertype(){return static ::GetALL('types');}
 
       public function insert(){
         try{
             
-            return Dbconnect::insertone('users',"(NULL,?,?,?,?,?,?,?)",[$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone]);
+            return Dbconnect::add('users',"(NULL,?,?,?,?,?,?,?,?)",[$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone,$this->adresse]);
            }catch(PDOException $e){ return $e->getMessage();}
         }
 
@@ -56,6 +57,8 @@ class Administrateur extends Dbconnect {
         public function Setimage($image){$this->image=$image;}
         public function Setphone($phone){$this->phone=$phone;}
         public function SetGenre($genre){$this->genre=$genre;}
+        public function SetAdress($adresse){$this->adresse=$adresse;}
+
 
 
 
