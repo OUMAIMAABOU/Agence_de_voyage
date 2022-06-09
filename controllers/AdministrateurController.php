@@ -17,10 +17,7 @@ class AdministrateurController{
         $admin->Settype(1);
         // $admin->Setimage($_POST['nom']);
         $admin->SetGenre($_POST['genre']);
-
-        $admin->insert();
-        header('location:admin');
-  
+        if ($admin->insert())header('location:admin');  
      }  
   } 
   public function DeleteAdmin(){

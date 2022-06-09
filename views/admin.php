@@ -13,7 +13,7 @@
                 <div class="d-flex justify-content-between border-bottom">
                     <?php include ('views/includes/sidebar.php'); ?> 
                 </div>
-            <div class="container-fluid px-5 pt-3">
+            <div class="container-fluid px-2 pt-3">
               <?php include ('./views/includes/header.php');?>
               <div class="row">
                 <div class="table-wrapper">

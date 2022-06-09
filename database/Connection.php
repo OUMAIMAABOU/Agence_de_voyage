@@ -17,7 +17,20 @@ class Dbconnect
   
  static public  function GetOne($table,$id,$getid)
   {
-    try{return self::connect()->prepare("select * from '$table' where '$id'= ?")->execute([$getid]);
+    try{return self::connect()->prepare("select * from '$table' where '$id'= ?")->execute($getid);
+    }catch (PDOException $ex) {echo $ex->getMessage();}
+  }
+  
+  static public  function insertone($table,$id,$array)
+  {
+    try{return self::connect()->prepare("insert into $table values $id ")->execute($array);
+    }catch (PDOException $ex) {echo $ex->getMessage();}
+  }
+
+ 
+  static public  function delete($table,$id,$array)
+  {
+    try{return self::connect()->prepare("delete from $table where $id = ? ")->execute($array);
     }catch (PDOException $ex) {echo $ex->getMessage();}
   }
 
