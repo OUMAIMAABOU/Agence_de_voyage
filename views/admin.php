@@ -140,6 +140,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                         <form class="form-container" action="operation" method="POST" data-parsley-validate>   
                                   <div class="mb-3 fw-bold" >
                                        <input type="text" hidden class="form-control" id="id" name="id"  >
                                        

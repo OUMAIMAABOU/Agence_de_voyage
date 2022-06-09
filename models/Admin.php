@@ -29,6 +29,15 @@ class Administrateur extends Dbconnect {
            }catch(PDOException $e){ return $e->getMessage();}
         }
 
+         public function Update(){
+          try{
+    
+            $sql=Dbconnect::getdata("UPDATE users SET name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=? WHERE id = ? ");
+            return $sql->execute([$this->name,$this->email,$this->genre,$this->type,$this->password,$this->image,$this->phone,$this->adresse,$this->id]);
+
+          }catch(PDOException $e){ return $e->getMessage();} 
+          }
+
 
 
 

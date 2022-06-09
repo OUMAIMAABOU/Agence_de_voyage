@@ -4,8 +4,9 @@ $Controller= new ClientController();
 
 $Controllers= new AdministrateurController();
 
-$Controllers->insrtadmin();
-$Controllers->DeleteAdmin();
+$Controllers->insert();
+$Controllers->Delete();
+$Controllers->update();
 
 
 

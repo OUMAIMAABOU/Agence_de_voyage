@@ -1,7 +1,7 @@
 <?php
 class AdministrateurController{
     
-  Public function insrtadmin()
+  Public function insert()
   {
     $admin=new Administrateur();
 
@@ -22,7 +22,7 @@ class AdministrateurController{
         if ($admin->insert())header('location:admin');  
      }  
   } 
-  public function DeleteAdmin(){
+  public function Delete(){
     if(isset($_POST['deletparent'])){
        $p = new Administrateur();
        $p->Setid($_POST['id']);
@@ -36,6 +36,24 @@ class AdministrateurController{
 public function getType(){
  return Administrateur::Afficher();
 }
+public function update(){
+  if(isset($_POST['update'])){
+    $admin=new Administrateur();
+        $admin->SetId($_POST['id']);
+        $admin->Setname($_POST['nom']);
+        $admin->Setemail($_POST['email']);
+        $admin->Setpassword($_POST['password']);
+        $admin->SetAdress($_POST['adres']);
+        $admin->Setimage('$_POST[nom]');
+        $admin->SetPhone($_POST['Phone']);
+        $admin->Settype($_POST['type']);
+        // $admin->Setimage($_POST['image']);
+        $admin->SetGenre($_POST['genre']);
+       
+      if($admin->Update())header('location:admin');
+      print_r($_POST);
+    }
+ }
 
 
     
