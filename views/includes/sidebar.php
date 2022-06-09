@@ -31,7 +31,7 @@
                     <i class="fas fa-dollar-sign "></i> Reservation </a>
                 <a href="#" class="list-group-item mx-5 border-0  merriweather bg-transparent ">
                     <i class="far fa-file-alt"></i> client    </a>
-                <a href="#" class="list-group-item mx-5 border-0 merriweather bg-transparent ">
+                <a href="setting" class="list-group-item mx-5 border-0 merriweather bg-transparent ">
                     <i class="fas fa-sliders-h"></i> Settings</a>
                 <a href="index.html" class="list-group-item mx-5 border-0 merriweather bg-transparent  mt-5 mb-2 ">
                     Logout <i class="fas fa-sign-out-alt"></i> </a>
