@@ -27,7 +27,7 @@
                     <i class="far fa-bookmark"></i> Admin </a>
                 <a href="agent" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
                     <i class="fas fa-graduation-cap"></i> agent</a>
-                <a href="payement" class="list-group-item merriweather mx-5 border-0 bg-transparent" >
+                <a href="tableReservation" class="list-group-item merriweather mx-5 border-0 bg-transparent" >
                     <i class="fas fa-dollar-sign "></i> Reservation </a>
                 <a href="#" class="list-group-item mx-5 border-0  merriweather bg-transparent ">
                     <i class="far fa-file-alt"></i> client    </a>
