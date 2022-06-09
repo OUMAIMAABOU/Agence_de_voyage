@@ -22,7 +22,7 @@
                      </form>
                       <a href="#addetud" class="btn btn-order  btn-lg fs-3 mb-1 mx-4 rounded-3 merriweather" data-bs-toggle="modal" data-bs-target="#exampleModal" > + </a></div>
                     <div class="table-responsive">
-                    <table class="table table-striped table align-middle">
+                    <table class="table table-striped table align-middle" id="myTable">
                     <thead>
                      
                         <tr class="bg-green merriweather " style=" height: 53px;">
@@ -38,7 +38,7 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody  class="fw-bold" id="myTable" >
+                    <tbody  class="fw-bold" >
                         <?php  $admine = new AdministrateurController(); $admines=$admine->getAllAdmin();foreach($admines as $x => $admine){?>
                             <tr>
                             <td hidden data-target="id"><?= $admine['id'] ?></td>
@@ -74,7 +74,7 @@
                         <form class="form-container" action="operation" method="POST" data-parsley-validate>  
                                         <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
-                                            <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" style="margin-bottom: 32px;"data-parsley-length="[4, 20]" parsley-error data-parsley-trigger="keyup" required>
+                                            <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" data-parsley-length="[4, 20]" parsley-error data-parsley-trigger="keyup" required>
                                         </div>
                                
                                         <div class="mb-3  fw-bold"  >
@@ -102,8 +102,7 @@
                                         <div class="mb-3  fw-bold"  >
                                             <label for="exampleFormControlInput1" class="form-label">password</label>
                                             <input type="text" class="form-control" name="password" placeholder="Enter le Job"  required data-parsley-trigger="keyup">
-                                            <p id="img2" style="margin-bottom: -1rem;"></p>
-                                            <span id="Jobid" style="color:red; font-weight: bold;"></span>
+                                   
                                         </div>
                                         <div class="mb-3  fw-bold" >
                                             <label for="exampleFormControlTextarea1" class="form-label">Address</label>
@@ -111,13 +110,13 @@
                                         </div>
                                         <div class="mb-3  fw-bold"  >
                                             <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                                            <input type="text" class="form-control"  name="Phone" placeholder="Enter phone"  required data-parsley-trigger="keyup">
+                                            <input type="text" class="form-control"  name="Phone" id="Tele" placeholder="Enter phone"  required data-parsley-trigger="keyup">
                                            
                                         </div>
              
                                     <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" name="saveadmin" class="btn btn-warning mT-3">Save</button>
+                                            <button type="button" class="btn btn-secondary btn-lg rounded-3 merriweather" data-dismiss="modal">Close</button>
+                                            <button type="submit" name="saveadmin" class="btn btn-order btn-lg rounded-3 merriweather ">Save</button>
                                     </div>
                                 </form>              
                         </div>
@@ -141,9 +140,13 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                        <div class="mb-3 fw-bold" >
+                                  <div class="mb-3 fw-bold" >
+                                       <input type="text" hidden class="form-control" id="id" name="id"  >
+                                       
+                                   </div>
+                                      <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
-                                            <input type="text" class="form-control"  id ="name" name="nome" placeholder="Enter name complet" style="margin-bottom: 32px;">
+                                            <input type="text" class="form-control"  id ="name"  name="nom"  placeholder="Enter name complet" >
                                         </div>
                                
                                         <div class="mb-3  fw-bold"  >
@@ -202,45 +205,26 @@
             </div>
         </div>
      
-            <!-- <script>
+            <script>
                 $(document).ready(function()
                 {
                     $("#myTable").on('click','.update',function()
                     {
                         var currentRow=$(this).closest("tr"); 
                         $('#id').val(currentRow.find("td:eq(0)").text());
-                        $('#nom').val(currentRow.find("td:eq(3)").text());
+                        $('#name').val(currentRow.find("td:eq(3)").text());
                         $('#genre').val(currentRow.find("td:eq(5)").text());
                         $('#email').val(currentRow.find("td:eq(4)").text());
                         $('#type').val(currentRow.find("td:eq(6)").text());
                         $('#password').val(currentRow.find("td:eq(7)").text());
                         // $('#adress').val(currentRow.find("td:eq(6)").text());
-                        $('#Phone').val(currentRow.find("td:eq(8)").text());
+                        $('#phone').val(currentRow.find("td:eq(8)").text());
 
      
                     })
                })
-            </script> -->
-            <script>
-                    $(document).ready(function() {
-        $("#myTable").on('click', '.update', function() {
-            var currentRow = $(this).closest("tr");
-            colM = currentRow.find("td:eq(0)").text();
-            col0 = currentRow.find("td:eq(2)").text();
-            col1 = currentRow.find("td:eq(3)").text();
-            col3 = currentRow.find("td:eq(4)").text();
-            $('#matricule').val(colM);
-            $('#nome').val(col0);
-            $('#gen').val(col1);
-            $('#dateN').val(col3);
-            $('#Email').val(currentRow.find("td:eq(5)").text());
-            $('#NAMEP').val(currentRow.find("td:eq(6)").text());
-            $('#ads').val(currentRow.find("td:eq(7)").text());
-            $('#cla').val(currentRow.find("td:eq(8)").text());
-        })
-    })
             </script>
-            <script src="views/assets/js/script.js"></script>
+              
                        
            
    

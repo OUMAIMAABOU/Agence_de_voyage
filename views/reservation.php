@@ -14,8 +14,8 @@
 <body>
    
  
-    <section class="order-form py-5">
-			<div class="container">
+    <section class="order-form py-5 pt-5">
+			<div class="container mt-5">
 				<h2 class="merriweather text-center text-light mb-4">Passer une commande</h2>
 				<form>
 					<div class="row">
@@ -66,9 +66,11 @@
 						</div>
 						<div class="input-group">
 							<span class="input-group-text">Autres informations</span>
-							<textarea class="form-control" aria-label="With textarea"></textarea>
+							<input type="text" class="form-control" placeholder="Adresse zone Ex:. Ekounou, Avenu 52" />
 						</div>
 					</div>
+					<button  class="btn btn-order2  btn-lg rounded-0 merriweather mt-5" style="margin-top: -8px;"> Chercher</button>
+
 				</form>
 			</div>
 		</section>

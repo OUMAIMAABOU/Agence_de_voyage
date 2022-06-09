@@ -3,12 +3,14 @@
 require_once('./autoload.php');
 require_once('./controllers/HomeController.php');
 require_once('./views/includes/alerts.php');
-if( basename($_SERVER['REQUEST_URI'])=="Acueille"){
-include ('./views/includes/navbar.php');}
+
+if( basename($_SERVER['REQUEST_URI'])=="Acueille"||basename($_SERVER['REQUEST_URI'])=="reservation"){
+include ('./views/includes/navbar.php');
+}
 
 
 $home =new HomeController();
-$page=['Acueille','test','reservation','operation','agent','navbar','index1','admin','chart','tableReservation','setting'];
+$page=['Acueille','test','reservation','operation','agent','index1','admin','chart','tableReservation','setting'];
 
 if(isset($_GET['page'])){
     if(in_array($_GET['page'],$page)){
@@ -19,6 +21,10 @@ if(isset($_GET['page'])){
 }else{
         $home->index('Acueille');
     }
+
+    if( basename($_SERVER['REQUEST_URI'])=="Acueille"){
+     
+        include('./views/includes/footer.php');}
  
 
 

@@ -39,7 +39,7 @@ border-radius: 0% !important;
    min-width: 100%;
  }
  #dashboard.toggled #sidebar-dashboard {
-   margin-left: 0;
+   margin: 10px;
  }
  #menu-toggle {
    cursor: pointer;
@@ -53,7 +53,8 @@ border-radius: 0% !important;
 
  @media (min-width: 768px) {
    #sidebar-dashboard {
-     margin-left: 0;
+     margin: 10px;
+     
    }
    .py-2 form button span{
     font-size: 100%;

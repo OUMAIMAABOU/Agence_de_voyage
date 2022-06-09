@@ -1,6 +1,6 @@
 
-		<link rel="stylesheet" href="views/assets/css/style.css">
-		<link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./views/assets/css/style.css">
+		<link rel="stylesheet" href="./views/assets/css/bootstrap.min.css">
 
 
     <nav class="cc-navbar navbar navbar-expand-lg navbar-dark position-fixed w-100">

@@ -31,7 +31,7 @@
 
 
 
-            <div class="container-fluid px-5 pt-3">
+            <div class="container-fluid px-1 pt-3">
             <?php include ('./views/includes/header.php');?>
 
               <div class="row">
