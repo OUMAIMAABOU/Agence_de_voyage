@@ -17,93 +17,48 @@
               <?php include ('./views/includes/header.php');?>
               <div class="row vogare-item mt-5">
                  <div class="d-flex align-items-baseline  justify-content-center ">
-                 <form class="mt-5">
-  <div class="row mb-4 ">
-    <div class="col">
-      <div class="form-outline">
-        <input type="text" id="form6Example1" class="form-control" />
-        <label class="form-label" for="form6Example1">First name</label>
-      </div>
-    </div>
-    <div class="col">
-      <div class="form-outline">
-        <input type="text" id="form6Example2" class="form-control" />
-        <label class="form-label" for="form6Example2">Nom de tour</label>
-      </div>
-    </div>
-    <div class="form-outline col">
-    <input type="text" id="form6Example3" class="form-control" />
-    <label class="form-label" for="form6Example3">destination</label>
-  </div>
-  </div>
-  <div class="row mb-4 ">
-    <div class="col">
-      <div class="form-outline">
-        <input type="text" id="form6Example1" class="form-control" />
-        <label class="form-label" for="form6Example1">Enfant</label>
-      </div>
-    </div>
-    <div class="col">
-      <div class="form-outline">
-        <input type="text" id="form6Example2" class="form-control" />
-        <label class="form-label" for="form6Example2">Adulte</label>
-      </div>
-    </div>
-    <div class="form-outline col">
-    <input type="text" id="form6Example3" class="form-control" />
-    <label class="form-label" for="form6Example3">chambre</label>
-  </div>
-  </div>
-
-  <div class="row mb-4 ">
-       
-    <div class="form-outline col">
-    <input type="text" id="form6Example4" class="form-control" />
-    <label class="form-label" for="form6Example4">nomber de jour</label>
-  </div>
-
-  <div class="form-outline col">
-    <input type="email" id="form6Example5" class="form-control" />
-    <label class="form-label" for="form6Example5">Nombre de personne</label>
-  </div>
-
-  <div class="form-outline col">
-    <input type="number" id="form6Example6" class="form-control" />
-    <label class="form-label" for="form6Example6">discription</label>
-  </div>
-    
-  </div>
-
-
-  <div class="row mb-4">
-  <div class="form-outline col">
-    <input class="form-control" id="form6Example7" >
-    <label class="form-label" for="form6Example7">transport</label>
-  </div>
-  <div class="form-outline col">
-    <input class="form-control" id="form6Example7" >
-    <label class="form-label" for="form6Example7">hotel</label>
-  </div>
-  <div class="form-outline col">
-    <input class="form-control" id="form6Example7" >
-    <label class="form-label" for="form6Example7">prix</label>
-  </div>
-
-  </div>
-  <div class="form-outline col-12 mb-4">
-  <textarea class="form-control" rows='3'></textarea>
-    <label class="form-label" for="form6Example7">prix</label>
-  </div>
-  
-
-  <button type="submit" class="btn btn-order btn-lg rounded-3 merriweather mb-4">Place order</button>
-</form>
+               
      
      
             </div>
             <script src="views/assets/bootstrap.bundle.min.js" ></script>
             <script src="views/assets/js/bootstrap.bundle.min.js" ></script>
+            <form action="" method="post" class="php-email-form">
+                                        <div class="row gy-4">
+                  
+                                          <div class="col-md-6">
+                                            <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
+                                          </div>
+                  
+                                          <div class="col-md-6 ">
+                                            <input type="email" class="form-control" name="email" placeholder="nom Hotel" required>
+                                          </div>
+                  
+                                          <div class="col-md-6 ">
+                                            <input type="email" class="form-control" name="email" placeholder="image" required>
 
+                                          </div>
+                                          <div class="col-md-6 ">
+                                            <input type="email" class="form-control" name="email" placeholder="adresse" required>
+                                          </div>
+                                          <div class="col-md-6 ">
+                                            <input type="email" class="form-control" name="email" placeholder="téléphone" required>
+                                          </div>
+                                          <div class="col-md-6 ">
+                                            <input type="email" class="form-control" name="email" placeholder="Description" required>
+                                          </div>
+                                          <div class="col-md-6 ">
+                                            <input type="email" class="form-control" name="email" placeholder="prix" required>
+                                          </div>
+                  
+                                          <div class="col-md-12 text-center">
+                                            <button type="submit" class="btn  w-25 mb-3" style="background:#90f5d7 ; color: #012970; ">Modifier
+                                            </button>
+                                          </div>
+                  
+                                        </div>
+                                      </form>
+                                </div>
 
             </div>
         </div>
