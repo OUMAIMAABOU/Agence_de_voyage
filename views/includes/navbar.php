@@ -1,6 +1,8 @@
 
 		<link rel="stylesheet" href="./views/assets/css/style.css">
 		<link rel="stylesheet" href="./views/assets/css/bootstrap.min.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
 
     <nav class="cc-navbar navbar navbar-expand-lg navbar-dark position-fixed w-100">

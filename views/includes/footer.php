@@ -1,3 +1,7 @@
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({duration:1500,});
+</script>
 <section class="cc-footer py-5">
 			<div class="container">
 				<div class="row">

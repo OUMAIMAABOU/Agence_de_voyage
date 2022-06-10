@@ -84,15 +84,15 @@
 
 
 		<section class="mt-5" >
-			<div class="container mt-5">
+			<div class="container mt-5 " >
 				<div class="text-center">
 					<h2>Voyage organise	</h2>
 					<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla. </p> 
 				</div>
 				<div class="mt-5">
-					<div class="row "  >
+					<div class="row "   >
 				    	<?php $hotel=$controller->getallhotel(); foreach($hotel as $x => $rows){?>
-						<div class="col-md-3 col-sm-6 bg-light vogare-item ">
+						<div class="col-md-3 col-sm-6 bg-light vogare-item " data-aos="fade-up">
 						        <div class="">	
 								<img src="views/assets/images/packages/<?=  $rows[5]?>" alt="package-place" style=" BORDER-RADIUS: 40px; width: 100%;height: 200px; max-width: 100%; box-sizing: border-box;">
 								<div class="">
@@ -123,6 +123,21 @@
 				</div>
      			</div>	
     	</section>
+		<section class="container  "  id="review" >
+		<h1 class="text-center mt-5">Client's Review</h1>
+			<div class="overflow-auto d-flex" data-aos="zoom-in">
+				<?php  $hotel=$controller->getallcommentair(); foreach($hotel as $x => $rows){?>
+				<div class="col-3 d-flex flex-column vogare-item p-3">
+					<div>
+					<img src="views\assets\images\client\<?= $rows[3]?>" alt=""  class="rounded-circle mx-auto d-block" style="width: 73px;  height: 73px;">
+					</div>
+					<h3 class="text-center" style="color:#40c29b"><?= $rows[1]?></h3>
+					<p class="text-center"><?= $rows[2]?></p>
+				</div>
+				<?php }?>
+			</div>
+		</section>
+	
 
 
 
