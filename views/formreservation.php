@@ -23,7 +23,7 @@
             </div>
             <script src="views/assets/bootstrap.bundle.min.js" ></script>
             <script src="views/assets/js/bootstrap.bundle.min.js" ></script>
-            <form action="" method="post" class="php-email-form">
+            <form action="operation" method="post" class="php-email-form">
                                         <div class="row gy-4 mt-4">
                   
                                           <div class="col-md-6">
@@ -31,22 +31,26 @@
                                           </div>
                   
                                           <div class="col-md-6 ">
-                                            <input type="email" class="form-control" name="email" placeholder="Ville" required>
+                                            <input type="text" class="form-control" name="ville" placeholder="Ville" required>
                                           </div>
                   
                                           <div class="col-md-6 ">
-                                            <input type="email" class="form-control" name="email" placeholder="Adresse" required>
+                                            <input type="text" class="form-control" name="Adresse" placeholder="Adresse" required>
 
                                           </div>
                                           <div class="col-md-6 ">
-                                            <input type="email" class="form-control" name="email" placeholder="Telephone" required>
+                                            <input type="text" class="form-control" name="Telephone" placeholder="Telephone" required>
                                           </div>
                                           <div class="col-md-6 ">
-                                            <input type="email" class="form-control" name="email" placeholder="Prix" required>
+                                            <input type="text" class="form-control" name="Prix" placeholder="Prix" required>
                                           </div>
                                           <div class="col-md-6 ">
-                                          <select class="form-control" name="Etoile" placeholder="Etoile"  required data-parsley-trigger="keyup">
-                                           
+                                            <input type="email" class="form-control" name="email" placeholder="email" required>
+                                          </div>
+                                          <div class="col-md-6 ">
+                                          <select class="form-control" name="Etoile"   required data-parsley-trigger="keyup">
+                                          <option value="default">Etoile </option> 
+
                                            <option value="1">2 </option>
                                            <option value="2">3 </option>
                                            <option value="5">4 </option>
@@ -54,7 +58,7 @@
                                            </select>                                          
                                           </div>
                                           <div class="col-md-6 ">
-                                          <select class="form-control" name="type Chamber" required data-parsley-trigger="keyup">
+                                          <select class="form-control" name="Chamber" required data-parsley-trigger="keyup">
                                           <option value="default">type Chamber </option> 
                                           <option value="1">2 </option>
                                            <option value="2">3 </option>
@@ -69,10 +73,14 @@
                                            <option value="2">NON </option>
                                            </select>
                                            </div>
+                                           <div class="col-md-6 ">
+                                           <input type="file" class="form-control" name="image"  required>
+
+                                           </div>
                                          
                                        
                                           <div class="col-md-12 text-center">
-                                            <button type="submit" class="btn  w-25 mb-3" style="background:#90f5d7 ; color: #012970; ">Modifier
+                                            <button type="submit" class="btn  w-25 mb-3"name="add" style="background:#90f5d7 ; color: #012970; ">Ajouter
                                             </button>
                                           </div>
                   

@@ -25,19 +25,20 @@
 							<a class="nav-link active" aria-current="page" href="#">Accueil</a>
 						</li>
 						<li class="nav-item pe-4">
-							<a class="nav-link" href="#">Destination</a>
+							<a class="nav-link" href="#Destination" >Destination</a>
 						</li>
 						<li class="nav-item pe-4">
-							<a class="nav-link" href="#">Voyage</a>
+							<a class="nav-link" href="#Voyage">Voyage</a>
+						</li>
+						
+						<li class="nav-item pe-4">
+							<a class="nav-link" href="#Contact-nous">Contact-nous</a>
 						</li>
 						<li class="nav-item pe-4">
-							<a class="nav-link" href="#">offres</a>
+							<a class="nav-link" href="#review">Commantaire</a>
 						</li>
 						<li class="nav-item pe-4">
-							<a class="nav-link" href="#">Contact-nous</a>
-						</li>
-						<li class="nav-item pe-4">
-							<a class="nav-link" href="#">À propos</a>
+							<a class="nav-link" href="#propos">À propos</a>
 						</li>
 						<li class="nav-item pe-4">
 							<a class="btn btn-order rounded-0" href="#">Login</a>

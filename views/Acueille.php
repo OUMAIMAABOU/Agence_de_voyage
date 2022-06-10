@@ -83,7 +83,7 @@
 		</section>
 
 
-		<section class="mt-5" >
+		<section class="mt-5" id="Voyage">
 			<div class="container mt-5 " >
 				<div class="text-center">
 					<h2>Voyage organise	</h2>
@@ -123,29 +123,8 @@
 				</div>
      			</div>	
     	</section>
-		<section class="container  "  id="review" >
-		<h1 class="text-center mt-5">Client's Review</h1>
-			<div class="overflow-auto d-flex" data-aos="zoom-in">
-				<?php  $hotel=$controller->getallcommentair(); foreach($hotel as $x => $rows){?>
-				<div class="col-3 d-flex flex-column vogare-item p-3">
-					<div>
-					<img src="views\assets\images\client\<?= $rows[3]?>" alt=""  class="rounded-circle mx-auto d-block" style="width: 73px;  height: 73px;">
-					</div>
-					<h3 class="text-center" style="color:#40c29b"><?= $rows[1]?></h3>
-					<p class="text-center"><?= $rows[2]?></p>
-				</div>
-				<?php }?>
-			</div>
-		</section>
-	
-
-
-
-	
-
-		
-
-		<section class="cc-menu merriweather py-5">
+			
+		<section class="cc-menu merriweather py-5" id="Destination">
 			<div class="container">
 
 				<div class="row">
@@ -201,19 +180,28 @@
 		
 		
 
-		<section   class="my-5">
-			<div class="container my-5">
-				<div class="text-center mt-5"><h2>À Propos De Nous</h2>
-					<p class="text-center my-5 ">Vous avez prévu de partir en vacances et vous cherchez les meilleures offres de vols et d'hôtels pour partir pas cher ? Réserver votre voyage à travers d'une agence de voyage en ligne vous permettra de bénéficier des meilleurs tarifs sans avoir à vous déplacer.</p>
+	
+
+
+		<section class="container  "  id="review" >
+		<h1 class="text-center mt-5">Client's Review</h1>
+			<div class="overflow-auto d-flex" data-aos="zoom-in">
+				<?php  $hotel=$controller->getallcommentair(); foreach($hotel as $x => $rows){?>
+				<div class="col-3 d-flex flex-column vogare-item p-3">
+					<div>
+					<img src="views\assets\images\client\<?= $rows[3]?>" alt=""  class="rounded-circle mx-auto d-block" style="width: 73px;  height: 73px;">
+					</div>
+					<h3 class="text-center" style="color:#40c29b"><?= $rows[1]?></h3>
+					<p class="text-center"><?= $rows[2]?></p>
 				</div>
-				
-				</div>
+				<?php }?>
+			</div>
 		</section>
 
 
 
 
-		<section class="order-form py-5">
+		<section class="order-form py-5" id="Contact-nous">
 			<div class="container">
 				<h2 class="merriweather text-center text-light mb-4">Contactez-Nous</h2>
 				<h4 class="merriweather text-center text-light mb-4">Avez-vous des questions? N'hésitez pas à nous contacter directement. Notre équipe reviendra vers vous dans une question d'heures pour vous aider</h4>
@@ -252,6 +240,15 @@
 			</div>
 		</section>
 
+
+		<section   class="my-5" id="propos">
+			<div class="container my-5">
+				<div class="text-center mt-5"><h2>À Propos De Nous</h2>
+					<p class="text-center my-5 ">Vous avez prévu de partir en vacances et vous cherchez les meilleures offres de vols et d'hôtels pour partir pas cher ? Réserver votre voyage à travers d'une agence de voyage en ligne vous permettra de bénéficier des meilleurs tarifs sans avoir à vous déplacer.</p>
+				</div>
+				
+				</div>
+		</section>
 	
 	
 
