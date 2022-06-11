@@ -22,7 +22,7 @@
                      </form>
                       <a href="formreservation" class="btn btn-order  btn-lg fs-3 mb-1 mx-4 rounded-3 merriweather" > + </a></div>
                     <div class="table-responsive">
-                    <table class="table table-striped table align-middle" id="myTable">
+                    <table class="table table-striped table align-middle" id="agenttable">
                     <thead>
                      
                         <tr class="bg-green merriweather " style=" height: 53px;">
@@ -52,7 +52,7 @@
                                 <td data-target="password"><?= $hotel[6] ?></td>
                                 <td data-target="Phone"><?= $hotel[7] ?></td>
                                 <td class="d-flex  align-items-start">
-                                <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
+                                <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#agentModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
                                 <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?" >
                                     <button type="submit" name ="delete" class="btn btn-outline-danger" 
                                     
@@ -69,8 +69,8 @@
      
      
         <div class="col-sm6 mt-3 " style="float: right;">
-            <div class="modal fade" id="myModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+            <div class="modal fade" id="agentModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" style="max-width:769px;">
                     <div class="modal-content">
                         <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Update  </h5>
@@ -78,61 +78,65 @@
                         </div>
                         <div class="modal-body">
                          <form class="form-container" action="operation" method="POST" data-parsley-validate>   
-                                  <div class="mb-3 fw-bold" >
-                                       <input type="text" hidden class="form-control" id="id" name="id"  >
-                                       
-                                   </div>
-                                   <div class="mb-3 fw-bold" >
-                                            <label for="exampleFormControlInput1" class="form-label">Image</label>
-                                            <input type="file" class="form-control"  id ="image"  name="image"  placeholder="Enter name complet" >
-                                        </div>
-                                      <div class="mb-3 fw-bold" >
-                                            <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
-                                            <input type="text" class="form-control"  id ="name"  name="nom"  placeholder="Enter name complet" >
-                                        </div>
-                               
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                            <select class="form-control" name="genre" id="genre" >
-                                             <option value="Femme">Femme </option>
-                                             <option value="Homme" selected>Homme </option>
-                                         </select>
-                                        </div>
-                                       
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter votre email">
-                                        </div>
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Type</label>
-                                            <select class="form-control" name="type" id="type">
-                                           
-                                         <option value="1">admin general </option>
-                                         <option value="2">admin secondaire </option>
-                                         <option value="5">Agent </option>
+                         <div class="row gy-4 mt-4">
+                  
+                  <div class="col-md-6">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Nom de Hotel" required>
+                  </div>
 
-                                         </select>
-                                        </div>
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">password</label>
-                                            <input type="text" class="form-control" name="password" id ="password" placeholder="Enter votre password">
-                                          
-                                        </div>
-                                        <div class="mb-3  fw-bold" >
-                                            <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                                            <textarea class="form-control"  name="adres" id="adress" rows="3"></textarea>
-                                        </div>
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                                            <input type="text" class="form-control" id="phone"  name="Phone" placeholder="Enter phone">
-                                         
-                                        </div>
-             
-                                    <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="submit" name="update" class="btn btn-warning mT-3">Update</button>
-                                    </div>
-                                </form>              
+                  <div class="col-md-6 ">
+                    <input type="text" class="form-control" name="ville"  id="ville" placeholder="Ville" required>
+                  </div>
+
+                  <div class="col-md-6 ">
+                    <input type="text" class="form-control" name="Adresse"  id="Adresse" placeholder="Adresse" required>
+
+                  </div>
+                  <div class="col-md-6 ">
+                    <input type="text" class="form-control" name="Telephone"  id="Telephone" placeholder="Telephone" required>
+                  </div>
+                  <div class="col-md-6 ">
+                    <input type="text" class="form-control" name="Prix" id="Prix" placeholder="Prix" required>
+                  </div>
+                  <div class="col-md-6 ">
+                    <input type="email" class="form-control" name="email"  id="email" placeholder="email" required>
+                  </div>
+                  <div class="col-md-6 ">
+                  <select class="form-control" name="Etoile" id="Etoile"  required data-parsley-trigger="keyup">
+                  <option value="default">Etoile </option> 
+
+                   <option value="2">2 </option>
+                   <option value="3">3 </option>
+                   <option value="4">4 </option>
+
+                   </select>                                          
+                  </div>
+                  <div class="col-md-6 ">
+                  <select class="form-control" name="Chamber"  id="Chamber" required data-parsley-trigger="keyup">
+                  <option value="default">type Chamber </option> 
+                  <option value="2">2 </option>
+                   <option value="3">3 </option>
+                   <option value="4">4 </option>
+                   </select>
+                  </div>
+                   <div class="col-md-6 ">
+
+                   <select class="form-control" name="Restauran"  id="Restauran"  required data-parsley-trigger="keyup">
+                   <option value="default">Restaurant </option> 
+                   <option value="OUI">OUI </option>
+                   <option value="NON">NON </option>
+                   </select>
+                   </div>
+                   <div class="col-md-6 ">
+                   <input type="file" class="form-control" name="image"  required>
+
+                   </div>
+                   <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" name="update" class="btn btn-warning mT-3">Update</button>
+                    </div>
+                </div>
+            </form>              
                         </div>           
                         </div>
                         <div class="modal-footer">
@@ -148,8 +152,6 @@
         </div>
         </main> 
         <script  src="views\js\script.js"></script>
-          
-    
-           
+      
 </body>
 </html>
