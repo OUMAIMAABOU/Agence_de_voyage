@@ -1,5 +1,8 @@
 
-        $(document).ready(function()
+       
+    
+       
+       $(document).ready(function()
         {
             $("#agenttable").on('click','.update',function()
             {

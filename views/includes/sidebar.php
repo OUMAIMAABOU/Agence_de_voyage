@@ -17,7 +17,7 @@
            </div>
             <div class="list-group ">
               <img src="views\assets\images\client\ulzzangs.jpg" alt="profile picture"
-                  class=" profile img-fluid rounded-circle mx-auto my-2 p-4  d-block" style="height: 190px;width: 190px;">
+                  class=" profile img-fluid rounded-circle mx-auto my-2   d-block" style="height: 116px;width: 153px;">
               <div class="text-center ">
                   <h2  class="fs-4 merriweather "style="color : #dcdcdc"> Admin name </h2>
                   <span  class="fs-4 merriweather green ">Admin</span>
@@ -27,22 +27,13 @@
                     <i class="fas fa-home"></i> Home</a>
                 <a href="admin"  class="list-group-item mx-5 border-0 merriweather bg-transparent ">
                     <i class="far fa-bookmark"></i> Admin </a>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                        </a>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>   -->
+                    
                 <a href="agent" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
-                    <i class="fas fa-graduation-cap"></i> part</a>
+                    <i class="fas fa-graduation-cap"></i>Hotel</a>
+                    <a href="transport" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
+                    <i class="fas fa-graduation-cap"></i>transport</a>
+                    <a href="voyage" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
+                    <i class="fas fa-graduation-cap"></i>voyage</a>
                 <a href="tableReservation" class="list-group-item merriweather mx-5 border-0 bg-transparent" >
                     <i class="fas fa-dollar-sign "></i> Reservation </a>
                 <a href="#" class="list-group-item mx-5 border-0  merriweather bg-transparent ">

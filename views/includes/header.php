@@ -14,7 +14,7 @@
                       <div class="nav-item dropdown">
                        
                           <form class="d-flex  justify-content-end mt-3 ">
-                              <input class="form-control me-2 "  type="text" placeholder="Search..." aria-label="Search" style="width: 584px;">
+                              <input class="form-control me-2 " id="myInput" type="text" placeholder="Search..." aria-label="Search" style="width: 584px;">
                               <i class="fas fa-bell  mt-2 ml-2"></i>
                           </form>
                       </div>

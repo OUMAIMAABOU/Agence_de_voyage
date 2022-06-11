@@ -15,9 +15,9 @@ class Dbconnect
     try{return self::connect()->query("select * from $table")->fetchALL();}catch (PDOException $ex) {echo $ex->getMessage();} 
   }
   
- static public  function GetOne($table,$id,$getid)
+ static public  function GetOne($table,$Condition,$getid)
   {
-    try{return self::connect()->prepare("select * from '$table' where '$id'= ?")->execute($getid);
+    try{return self::connect()->prepare("select * from $table where $Condition")->execute($getid);
     }catch (PDOException $ex) {echo $ex->getMessage();}
   }
   

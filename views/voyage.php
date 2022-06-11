@@ -29,13 +29,12 @@
                            
                             <th></th>
                             <th>image</th>
-                            <th>Nom </th>
-                            <th>Etoile </th>
-                            <th>Ville</th>
-                            <th>Adresse</th>
-                            <th>telephone</th>
-                            <th>Restaurant</th>
-                            <th>Agente</th>
+                            <th>Nom complet</th>
+                            <th>Email</th>
+                            <th>Genre</th>
+                            <th>type</th>
+                            <th>password</th>
+                            <th>Phone</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -52,7 +51,6 @@
                                 <td data-target="Type"><?= $hotel[5] ?></td>
                                 <td data-target="password"><?= $hotel[6] ?></td>
                                 <td data-target="Phone"><?= $hotel[7] ?></td>
-                                <td data-target="Phone"><?= $hotel[8] ?></td>
                                 <td class="d-flex  align-items-start">
                                 <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#agentModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
                                 <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?" >
@@ -78,7 +76,8 @@
                         <h5 class="modal-title" id="exampleModalLabel">Update  </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">       <form class="form-container" action="operation" method="POST" data-parsley-validate>   
+                        <div class="modal-body">
+                         <form class="form-container" action="operation" method="POST" data-parsley-validate>   
                          <div class="row gy-4 mt-4">
                   
                   <div class="col-md-6">
@@ -137,8 +136,7 @@
                       <button type="submit" name="update" class="btn btn-warning mT-3">Update</button>
                     </div>
                 </div>
-            </form> 
-                               
+            </form>              
                         </div>           
                         </div>
                         <div class="modal-footer">

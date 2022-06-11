@@ -14,7 +14,7 @@ class HotelController
         Hotel::SetTelephone($_POST['Telephone']);
         Hotel::SetRestauran($_POST['Restauran']);
         Hotel::SetEtoile($_POST['Etoile']);
-        Hotel::Setimage($_POST['image']);
+        Hotel::Setimage($_FILES['image']['name']);
         Hotel::Setville($_POST['ville']);
         Hotel::SetPrix($_POST['Prix']);
       if (Hotel::insert())header('location:agent'); 

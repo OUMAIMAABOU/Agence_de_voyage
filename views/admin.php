@@ -62,7 +62,7 @@
                     </tbody>
                     </table>
                 </div>
-                <div class="col-sm6 mt-3 " style="float: right;">
+           <div class="col-sm6 mt-3 " style="float: right;">
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
