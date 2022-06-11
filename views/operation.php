@@ -15,6 +15,8 @@ $Controllers->update();
 //     move_uploaded_file($file_tmp,"views/assets/images/avatar".$file_name);}
 $hotel=new HotelController();
 $hotel->insert();
+$hotel->Delete();
+
 
 
 

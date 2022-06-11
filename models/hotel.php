@@ -23,12 +23,27 @@ static public $name;
         $req=$this->connect()->query("SELECT * FROM hotel,chambre WHERE hotel.id=chambre.id_hotel");
         return $req->fetchAll();
 }
-static public function insert(){
-        try{
-            
-            return Dbconnect::add('hotel',"(NULL,?,?,?,?,?,?,?,?,?,?)",[self::$name, self::$Etoile, self::$ville, self::$Adresse, self::$image, self::$Telephone, self::$Chamber,self::$Restauran,self::$Prix,self::$email]);
-           }catch(PDOException $e){ return $e->getMessage();}
+static public function insert()
+{
+   try{ return Dbconnect::add('hotel',"(NULL,?,?,?,?,?,?,?,?,?,?)",[self::$name, self::$Etoile, self::$ville, self::$Adresse, self::$image, self::$Telephone, self::$Chamber,self::$Restauran,self::$Prix,self::$email]); }catch(PDOException $e){ return $e->getMessage();}
+ }
+ static  public  function Afficher(){return static :: GetALL('hotel');}
+ static public  function DeleteModele(){
+        return Dbconnect :: delete('hotel',"id",[self::$id]); 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         static public function SetId($id){self::$id=$id;}

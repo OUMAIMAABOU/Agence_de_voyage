@@ -1,10 +1,10 @@
 <!-- <link href="../assets/css/bootstrap.min.css" rel="stylesheet" > -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="./views/assets/css/style.css" />
-    <link  href="./views/assets/css/dashboord.css" rel="stylesheet">
-    <link  href="./views/assets/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<link rel="stylesheet" href="./views/assets/css/style.css" />
+<link  href="./views/assets/css/dashboord.css" rel="stylesheet">
+<link  href="./views/assets/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
     
 
 <div class="d-flex m-3" id="dashboard">
@@ -27,8 +27,22 @@
                     <i class="fas fa-home"></i> Home</a>
                 <a href="admin"  class="list-group-item mx-5 border-0 merriweather bg-transparent ">
                     <i class="far fa-bookmark"></i> Admin </a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                        </a>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>   -->
                 <a href="agent" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
-                    <i class="fas fa-graduation-cap"></i> agent</a>
+                    <i class="fas fa-graduation-cap"></i> part</a>
                 <a href="tableReservation" class="list-group-item merriweather mx-5 border-0 bg-transparent" >
                     <i class="fas fa-dollar-sign "></i> Reservation </a>
                 <a href="#" class="list-group-item mx-5 border-0  merriweather bg-transparent ">

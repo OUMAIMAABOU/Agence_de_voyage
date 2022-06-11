@@ -20,7 +20,7 @@
                  <div class="d-flex align-items-baseline  justify-content-between">
                     <form class="col-sm-6 input-group mb-3 mt-5" method="POST" style="max-width:500px;">            
                      </form>
-                      <a href="#addetud" class="btn btn-order  btn-lg fs-3 mb-1 mx-4 rounded-3 merriweather" data-bs-toggle="modal" data-bs-target="#exampleModal" > + </a></div>
+                      <a href="formreservation" class="btn btn-order  btn-lg fs-3 mb-1 mx-4 rounded-3 merriweather" > + </a></div>
                     <div class="table-responsive">
                     <table class="table table-striped table align-middle" id="myTable">
                     <thead>
@@ -39,98 +39,31 @@
                         </tr>
                     </thead>
                     <tbody  class="fw-bold" >
-                        <?php  $admine = new AdministrateurController(); $admines=$admine->getAllAdmin();foreach($admines as $x => $admine){?>
+                        <?php  $hotel= new HotelController(); 
+                        $hotel=$hotel->select();foreach($hotel as $x => $hotel){?>
                             <tr>
-                            <td hidden data-target="id"><?= $admine['id'] ?></td>
+                            <td hidden data-target="id"><?= $hotel[0] ?></td>
                                 <td><?= $x+1?></td>
-                                <td data-target="image"><?= $admine['image'] ?></td>
-                                <td data-target="nom complet"> <?= $admine['name'] ?> </td>
-                                <td data-target="Email"><?= $admine['email'] ?></td>
-                                <td data-target="Genre"><?= $admine['genre'] ?></td>
-                                <td data-target="Type"><?= $admine['type'] ?></td>
-                                <td data-target="password"><?= $admine['password'] ?></td>
-                                <td data-target="Phone"><?= $admine['Phone'] ?></td>
+                                <td data-target="image"><?= $hotel[1] ?></td>
+                                <td data-target="nom complet"> <?= $hotel[2] ?> </td>
+                                <td data-target="Email"><?= $hotel[3] ?></td>
+                                <td data-target="Genre"><?= $hotel[4] ?></td>
+                                <td data-target="Type"><?= $hotel[5] ?></td>
+                                <td data-target="password"><?= $hotel[6] ?></td>
+                                <td data-target="Phone"><?= $hotel[7] ?></td>
                                 <td class="d-flex  align-items-start">
                                 <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
                                 <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?" >
-                                    <button type="submit" name ="deletparent" class="btn btn-outline-danger" 
+                                    <button type="submit" name ="delete" class="btn btn-outline-danger" 
                                     
-                                style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $admine['id']?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
+                                style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $hotel[0]?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
                                 </td>
                             </tr>
                              <?php }?>
                     </tbody>
                     </table>
                 </div>
-                <div class="col-sm6 mt-3 " style="float: right;">
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ajouter Amdin </h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                        <form class="form-container" action="operation" method="POST" data-parsley-validate> 
-                                      <div class="mb-3 fw-bold" >
-                                            <label for="exampleFormControlInput1" class="form-label">Image</label>
-                                            <input type="file" class="form-control"  id ="image"  name="image"  placeholder="Enter name complet" >
-                                        </div> 
-                                        <div class="mb-3 fw-bold" >
-                                            <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
-                                            <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" data-parsley-length="[4, 20]" parsley-error data-parsley-trigger="keyup" required>
-                                        </div>
-                               
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                            <select class="form-control" name="genre" >
-                                             <option value="Femme">Femme </option>
-                                             <option value="Homme" selected>Homme </option>
-                                         </select>
-                                        </div>
-                                       
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                            <input type="email" class="form-control" name="email" placeholder="Enter votre email"  required data-parsley-trigger="keyup">
-                                        </div>
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Type</label>
-                                            <select class="form-control" name="type"  required data-parsley-trigger="keyup">
-                                           
-                                         <option value="1">admin general </option>
-                                         <option value="2">admin secondaire </option>
-                                         <option value="5">Agent </option>
-
-                                         </select>
-                                        </div>
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">password</label>
-                                            <input type="text" class="form-control" name="password" placeholder="Enter le Job"  required data-parsley-trigger="keyup">
-                                   
-                                        </div>
-                                        <div class="mb-3  fw-bold" >
-                                            <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                                            <textarea class="form-control"  name="adres" rows="3"  required data-parsley-trigger="keyup"></textarea>
-                                        </div>
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                                            <input type="text" class="form-control"  name="Phone" id="Tele" placeholder="Enter phone"  required data-parsley-trigger="keyup">
-                                           
-                                        </div>
              
-                                    <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary btn-lg rounded-3 merriweather" data-dismiss="modal">Close</button>
-                                            <button type="submit" name="saveadmin" class="btn btn-order btn-lg rounded-3 merriweather ">Save</button>
-                                    </div>
-                                </form>              
-                        </div>
-                        <div class="modal-footer">
-                      
-                    </div>
-                </div>
-            </div>
-           
-                </div>
         </div>
      
      
