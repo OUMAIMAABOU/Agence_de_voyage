@@ -7,7 +7,7 @@ static public $Chamber;
 static public $Restauran;
 static public $ville;
 static public $Etoile;
-static public $Prix;
+static public $Agent;
 static public $Telephone;
 static public $image;
 static public $Adresse;
@@ -18,20 +18,11 @@ static public $name;
 
 
 
- public function getAllData(){
-   
-        $req=$this->connect()->query("SELECT * FROM hotel,chambre WHERE hotel.id=chambre.id_hotel");
-        return $req->fetchAll();
-}
-static public function insert()
-{
-   try{ return Dbconnect::add('hotel',"(NULL,?,?,?,?,?,?,?,?,?,?)",[self::$name, self::$Etoile, self::$ville, self::$Adresse, self::$image, self::$Telephone, self::$Chamber,self::$Restauran,self::$Prix,self::$email]); }catch(PDOException $e){ return $e->getMessage();}
- }
- static  public  function Afficher(){return static :: GetALL('hotel');}
- static public  function DeleteModele(){
-        return Dbconnect :: delete('hotel',"id",[self::$id]); 
-        }
 
+static public function insert(){try{ return Dbconnect::add('hotel',"(NULL,?,?,?,?,?,?,?,?,?)",[self::$name, self::$Etoile, self::$ville, self::$Adresse, self::$image, self::$Telephone,self::$Restauran,self::$Agent,self::$email]); }catch(PDOException $e){ return $e->getMessage();}}
+static  public  function Afficher(){return static :: SELECTJoin('hotel,users','hotel.id,hotel.name,hotel.etoile,hotel.ville,hotel.adresse,hotel.image,hotel.telephone,hotel.restaurant,hotel.email,users.name',"hotel.id_users=users.id");}
+static public  function DeleteModele(){ return Dbconnect :: delete('hotel',"id",[self::$id]);}
+static public function UpdateHotel(){ return Dbconnect::Update('hotel',"name=?,etoile=?,ville=?,adresse=?,telephone=?,restaurant=?,email=?",[self::$name,self::$Etoile,self::$ville, self::$Adresse, self::$Telephone, self::$Restauran,self::$email,self::$id]);}
 
 
 
@@ -55,7 +46,7 @@ static public function insert()
         static public function SetTelephone($Telephone){self::$Telephone=$Telephone;}
         static public function SetEtoile($Etoile){self::$Etoile=$Etoile;}
         static public function SetAdress($adresse){self::$Adresse=$adresse;}
-        static public function SetPrix($Prix){self::$Prix=$Prix;}
+        static public function SetAgent($Agent){self::$Agent=$Agent;}
         static public function SetRestauran($Restauran){self::$Restauran=$Restauran;}
 
 }

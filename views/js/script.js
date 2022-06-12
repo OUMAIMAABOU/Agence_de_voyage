@@ -1,7 +1,7 @@
 
        
     
-
+ 
        
        $(document).ready(function()
         {
@@ -11,11 +11,10 @@
                 $('#id').val(currentRow.find("td:eq(0)").text());
                 $('#name').val(currentRow.find("td:eq(3)").text());
                 $('#ville').val(currentRow.find("td:eq(5)").text());
-                $('#Adresse').val(currentRow.find("td:eq(4)").text());
-                $('#Telephone').val(currentRow.find("td:eq(6)").text());
-                $('#Prix').val(currentRow.find("td:eq(7)").text());
-                $('#Etoile').val(currentRow.find("td:eq(6)").text());
-                $('#email').val(currentRow.find("td:eq(8)").text());
+                $('#Adresse').val(currentRow.find("td:eq(6)").text());
+                $('#Telephone').val(currentRow.find("td:eq(7)").text());
+                $('#Restauran').val(currentRow.find("td:eq(9)").text());
+                $('#email').val(currentRow.find("td:eq(4)").text());
         
         
             })
@@ -65,3 +64,4 @@ var toggleButton = document.getElementById("menu-toggle");
 toggleButton.onclick = function () {
 el.classList.toggle("toggled");
 };
+

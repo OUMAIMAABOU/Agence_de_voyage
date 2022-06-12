@@ -1,9 +1,8 @@
 <?php
 // use model/voyage;
-class voyage{
-    Public function Show(){
-        $voyage=new voyage();
-             return $voyage->getAllData();
+class VoyageController{
+    Public function Afficher(){
+     return voyage:: Afficher();
       }
       Public function ShowVille(){
         $voyage=new voyage();

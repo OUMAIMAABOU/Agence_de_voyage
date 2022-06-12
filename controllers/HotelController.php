@@ -10,14 +10,14 @@ class HotelController
         Hotel::Setemail($_POST['email']);
         Hotel::SetChamber($_POST['Chamber']);
         Hotel::SetAdress($_POST['Adresse']);
-        Hotel::Setimage('$_POST[$_FILES]');
+        // Hotel::Setimage('$_POST[$_FILES]');
         Hotel::SetTelephone($_POST['Telephone']);
         Hotel::SetRestauran($_POST['Restauran']);
         Hotel::SetEtoile($_POST['Etoile']);
-        Hotel::Setimage($_FILES['image']['name']);
+        Hotel::Setimage($_POST['image']);
         Hotel::Setville($_POST['ville']);
-        Hotel::SetPrix($_POST['Prix']);
-      if (Hotel::insert())header('location:agent'); 
+        Hotel::SetAgent(30);
+      if (Hotel::insert())header('location:Hotel'); 
     }  
   }
 
@@ -26,9 +26,25 @@ class HotelController
    }
 
    public function Delete(){
-    if(isset($_POST['delete'])){
+    if(isset($_POST['deleteHotel'])){
        Hotel::SetId($_POST['id']);
-       if(Hotel::DeleteModele()) header('location:agent');
+       if(Hotel::DeleteModele()) header('location:Hotel');
       } 
   }
+  public function update()
+  {
+    if(isset($_POST['updateHotel']))
+    {   
+       Hotel::SetId($_POST['id']);
+        Hotel::Setname($_POST['name']);
+        Hotel::Setemail($_POST['email']);
+        Hotel::SetAdress($_POST['Adresse']);
+        Hotel::SetTelephone($_POST['Telephone']);
+        Hotel::SetRestauran($_POST['Restauran']);
+        Hotel::SetEtoile($_POST['Etoile']);
+        Hotel::Setville($_POST['ville']);
+      if (Hotel::UpdateHotel())header('location:Hotel'); 
+    }  
+}
+
 } 

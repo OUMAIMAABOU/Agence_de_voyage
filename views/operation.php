@@ -12,10 +12,12 @@ $Controllers->login();
 $hotel=new HotelController();
 $hotel->insert();
 $hotel->Delete();
+$hotel-> update();
 
 $Transport=new TransportController();
 $Transport->insert();
 $Transport->Delete();
+$Transport->Update();
 
 
 

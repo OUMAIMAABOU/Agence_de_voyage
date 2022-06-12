@@ -29,9 +29,10 @@ class TransportController
   }
   Public function Update()
   {
-    if(isset($_POST['UpdateTrasport']))
+    if(isset($_POST['updateTransport']))
     {
       // if(!empty($_POST['name'])|| !empty($_POST[Setemail])|| !empty($_POST['Phone']))
+        Transport::SetId($_POST['id']);
         Transport::Setname($_POST['name']);
         Transport::Setemail($_POST['Email']);
         Transport::SetAdress($_POST['Adresse']);
@@ -39,7 +40,7 @@ class TransportController
         Transport::Setville($_POST['ville']);
         Transport::SetType($_POST['Type']);
         Transport::SetIdUser(1);
-      if (Transport::Update())header('location:transport'); 
+      if (Transport::UpdateTransport())header('location:transport'); 
     }  
   }
 

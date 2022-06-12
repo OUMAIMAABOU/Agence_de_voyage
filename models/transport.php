@@ -17,16 +17,12 @@ static public $idUSER;
 
 
 static public function insert()
-{ try{ return Dbconnect::add('transport',"(NULL,?,?,?,?,?,?,?)",[self::$name,self::$Adresse, self::$Telephone, self::$ville, self::$Type,self::$Email,self::$idUSER]);
-     }catch(PDOException $e){ return $e->getMessage();}}
+{ try{ return Dbconnect::add('transport',"(NULL,?,?,?,?,?,?,?)",[self::$name,self::$Adresse, self::$Telephone, self::$ville, self::$Type,self::$Email,self::$idUSER]);}catch(PDOException $e){ return $e->getMessage();}}
  static public function Afficher(){return static :: GetALL('transport');}
+// static public function Afficher(){return static :: SELECTJoin('transport,users',"transport.id,transport.name ,transport.adresse,transport.tele,transport.type,transport.email,users.name","users.id = transport.id_users");}
  static public function DeleteModele(){ return Dbconnect :: delete('transport',"id",[self::$id]);}
- static public function Update(){
-            try{
-              $sql=Dbconnect::getdata("UPDATE transport SET name =?,adresse=?,tele=?,Ville=?,type=?,email=?,id_users=? WHERE id = ?");
-              return $sql->execute([self::$name,self::$Adresse, self::$Telephone, self::$ville, self::$Type,self::$Email,self::$idUSER,self::$id]);
-            }catch(PDOException $e){ return $e->getMessage();} 
-            }
+ static public function UpdateTransport(){
+ return Dbconnect::Update('transport',"name =?,adresse=?,tele=?,Ville=?,type=?,email=?,id_users=? ",[self::$name,self::$Adresse, self::$Telephone, self::$ville, self::$Type,self::$Email,self::$idUSER,self::$id]); }
 
 
 

@@ -28,7 +28,7 @@
                 <a href="admin"  class="list-group-item mx-5 border-0 merriweather bg-transparent ">
                     <i class="far fa-bookmark"></i> Admin </a>
                     
-                <a href="agent" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
+                <a href="Hotel" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
                     <i class="fas fa-graduation-cap"></i>Hotel</a>
                     <a href="transport" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
                     <i class="fas fa-graduation-cap"></i>transport</a>

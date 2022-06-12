@@ -62,7 +62,7 @@ public function update(){
         $admin->Setimage($_POST['image']);
         $admin->SetGenre($_POST['genre']);
        
-      if($admin->Update())header('location:admin');
+      if($admin->Updateadmin())header('location:admin');
       print_r($_POST);
     }
  }

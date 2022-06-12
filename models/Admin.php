@@ -13,8 +13,6 @@ class Administrateur extends Dbconnect {
    
       public  function DeleteAdmin(){return Dbconnect :: delete('users',"id",[$this->id]); }
       static  public  function Afficher(){return static :: GetALL('users');}
-      static public  function Affichertype(){return static ::GetALL('types');}
-
       public function insert(){
         try{
             return Dbconnect::add('users',"(NULL,?,?,?,?,?,?,?,?)",[$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone,$this->adresse]);
@@ -35,12 +33,9 @@ class Administrateur extends Dbconnect {
             return $res;
     }  
 
-         public function Update(){
-          try{
-            $sql=Dbconnect::getdata("UPDATE users SET name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=? WHERE id = ? ");
-            return $sql->execute([$this->name,$this->email,$this->genre,$this->type,$this->password,$this->image,$this->phone,$this->adresse,$this->id]);
-          }catch(PDOException $e){ return $e->getMessage();} 
-          }
+      public function Updateadmin(){
+      return Dbconnect::Update('users',"name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=?",[$this->name,$this->email,$this->genre,$this->type,$this->password,$this->image,$this->phone,$this->adresse,$this->id]);
+      }
 
 
 
