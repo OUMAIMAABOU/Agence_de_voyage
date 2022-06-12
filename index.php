@@ -4,9 +4,12 @@ require_once('./autoload.php');
 require_once('./controllers/HomeController.php');
 require_once('./views/includes/alerts.php');
 
-if( basename($_SERVER['REQUEST_URI'])=="Acueille"||basename($_SERVER['REQUEST_URI'])=="reservation"||basename($_SERVER['REQUEST_URI'])=="login"){
+if( basename($_SERVER['REQUEST_URI'])=="Acueille"||basename($_SERVER['REQUEST_URI'])=="Agence_de_voyage"||basename($_SERVER['REQUEST_URI'])=="reservation"||basename($_SERVER['REQUEST_URI'])=="login"){
 include ('./views/includes/navbar.php');
 }
+
+
+
 
 
 $home =new HomeController();

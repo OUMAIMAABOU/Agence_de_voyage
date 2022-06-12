@@ -18,6 +18,10 @@ $Transport=new TransportController();
 $Transport->insert();
 $Transport->Delete();
 $Transport->Update();
+$Voyage=new VoyageController();
+$Voyage->insert();
+$Voyage->Delete();
+$Voyage->Update();
 
 
 
