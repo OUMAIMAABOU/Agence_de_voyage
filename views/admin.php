@@ -52,7 +52,7 @@
                                 <td data-target="Type"><?= $admine['type'] ?></td>
                                 <td data-target="password"><?= $admine['password'] ?></td>
                                 <td data-target="Phone"><?= $admine['Phone'] ?></td>
-                                <td class="d-flex  align-items-start">
+                                <td class="d-flex  align-items-start"  >
                                 <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
                                 <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?" >
                                     <button type="submit" name ="deletparent" class="btn btn-outline-danger" 
@@ -174,7 +174,7 @@
                                         </div>
                                         <div class="mb-3  fw-bold"  >
                                             <label for="exampleFormControlInput1" class="form-label">Type</label>
-                                            <select class="form-control" name="type" id="type">
+                                            <select class="form-select" name="type" id="type">
                                            
                                          <option value="1">admin general </option>
                                          <option value="2">admin secondaire </option>

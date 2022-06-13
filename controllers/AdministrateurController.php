@@ -21,30 +21,26 @@ class AdministrateurController{
         if ($admin->insert())header('location:admin');  
      }  
   } 
-  public function login(){
+  public function login()
+  {
     $admin=new Administrateur();
-  if(isset($_POST['loginconnect'])){
-  $admin->Setpassword($_POST['password']);
-  $admin->Setemail($_POST['email']);
- 
-  var_dump($admin->login());
-$admin=$admin->login();
-var_dump($admin);
-  if ($admin){
-    $_SESSION['NOM']="ouma";
-    // $_SESSION["name"] = $admin['name'];
-    // $_SESSION["name1"] = $admin[1];
-    // $_SESSION["name3"] = $admin->name; 
-    var_dump($_SESSION['admin']);    
-     
-  //   $_SESSION['email']= $admin['email'];
-  //  $_SESSION['role']=$admin['type'];
-  //  if($_SESSION['role']='Admin'){
-  //   header('location:admin'); 
-  //  }   
+    if(isset($_POST['loginconnect']))
+    {
+       $admin->Setemail($_POST['email']);
+       $admin=$admin->login();
+      if($admin && password_verify($_POST['password'],$admin['password']))
+      {
+          $_SESSION['id']= $admin['id'];
+          $_SESSION['name']= $admin['name'];
+          $_SESSION['image']= $admin[2];
+          $_SESSION['role']= $admin[3];
+           if($admin[3]=="Agent"||$admin[3]=="admin_general"||$admin[3]=="admin_secondaire")header('location:admin'); 
+           else if($admin[3]=="client")header('location:Acueille'); 
+           else echo "error user type not allowed!";
+     } else header('location:login'); 
+   }
   }
-}
-  }
+  
   public function Delete(){
     if(isset($_POST['deletparent'])){
        $p = new Administrateur();

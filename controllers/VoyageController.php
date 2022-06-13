@@ -9,7 +9,7 @@ class VoyageController{
              return $voyage->getAllville();
 }
 Public function select(){
-       return  voyage::selectOne(3);
+    return  voyage::selectOne($_POST['id']);
 }
 Public function insert()
 {
