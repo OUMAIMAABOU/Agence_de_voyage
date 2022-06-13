@@ -11,11 +11,7 @@
 
 
 	<section class=" d-flex justify-content-center align-items-center pt-5">
-		
 			</div>
-
-
-
       <section class="mt-5" id="Voyage">
       <div class="container mt-5 ">
         <div class="text-center mt-5">
@@ -68,7 +64,7 @@
                   </select>
                 </div>
                 <div class="col-md-6">
-                  <select class="form-control ">
+                  <select class="form-control"  name="Local">
                     <option value="default">Local</option>
                     <option value="Non">Hotel</option>
                     <option value="train">villa</option>
@@ -76,10 +72,10 @@
                   </select>
                 </div>
                 <div class="col-md-6">
-                  <input type="date" placeholder="date depart" class="form-control">
+                  <input type="date"  name="date_depart"  class="form-control">
                 </div>
                 <div class="col-md-6">
-                  <input type="date" placeholder="date arrive" class="form-control">
+                  <input type="date"  name="date_retour" class="form-control">
                 </div>
                 <div class="col-md-12 text-center">
                   <button type="submit" class="btn  w-25 mb-3" name="addreservation" style="background:#90f5d7 ; color: #012970; ">Ajouter

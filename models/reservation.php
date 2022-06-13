@@ -1,27 +1,30 @@
 <?php
 class Reservation extends Dbconnect {
-    public $id;
-    public $name;
-    public $email;
-    public $type;
-    public $password;
-    public $image;
-    public $phone;
-    public $genre;
-    public $adresse;
+    static public $id;
+    static public $id_yoyage;
+    static public $id_client;
+    static public $nomber_adulet;
+    static public $nomber_enfant;
+    static public $nomber_femme;
+    static public $nomber_homme;
+    static public $transport;
+    static public $local;
+    static public $date_depart;
+    static public $date_retour;
+
     
    
-       public  function DeleteAdmin(){
+       public  function Deletereservation(){
         return Dbconnect :: delete('users',"id",[$this->id]); 
         }
 
-      static  public  function Afficher(){return static :: GetALL('users');}
-      static public  function Affichertype(){return static ::GetALL('types');}
+      static  public  function Afficher(){return static :: GetALL('reservation');}
 
       public function insert(){
         try{
             
-            return Dbconnect::add('users',"(NULL,?,?,?,?,?,?,?,?)",[$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone,$this->adresse]);
+            return Dbconnect::add('reservation',"(NULL,?,?,?,?,?,?,?,?,?,?)",[self::$nomber_adulet, self::$nomber_enfant,
+            self::$nomber_femme,self::$nomber_homme,self::$transport,self::$local,self::$date_depart,self::$date_retour,self::$id_client,self::$id_yoyage]);
            }catch(PDOException $e){ return $e->getMessage();}
         }
 
