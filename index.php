@@ -4,7 +4,7 @@ require_once('./autoload.php');
 require_once('./controllers/HomeController.php');
 require_once('./views/includes/alerts.php');
 
-if( basename($_SERVER['REQUEST_URI'])=="Acueille"||basename($_SERVER['REQUEST_URI'])=="Agence_de_voyage"||basename($_SERVER['REQUEST_URI'])=="formreservation"||basename($_SERVER['REQUEST_URI'])=="login"){
+if( basename($_SERVER['REQUEST_URI'])=="Acueille"||basename($_SERVER['REQUEST_URI'])=="inscription"||basename($_SERVER['REQUEST_URI'])=="Agence_de_voyage"||basename($_SERVER['REQUEST_URI'])=="formreservation"||basename($_SERVER['REQUEST_URI'])=="login"){
 include ('./views/includes/navbar.php');
 }
 
@@ -13,7 +13,7 @@ include ('./views/includes/navbar.php');
 
 
 $home =new HomeController();
-$page=['login','voyage','transport','Hotel','Acueille','test','reservation','operation','index1','admin','chart','tableReservation','setting','formreservation'];
+$page=['login','voyage','inscription','transport','Hotel','Acueille','test','reservation','operation','index1','admin','chart','tableReservation','setting','formreservation'];
 
 if(isset($_GET['page'])){
     if(in_array($_GET['page'],$page)){

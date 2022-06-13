@@ -8,6 +8,9 @@ class VoyageController{
         $voyage=new voyage();
              return $voyage->getAllville();
 }
+Public function select(){
+       return  voyage::selectOne(3);
+}
 Public function insert()
 {
   if(isset($_POST['addVoyage']))

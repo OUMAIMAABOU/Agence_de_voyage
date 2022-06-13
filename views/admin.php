@@ -16,6 +16,8 @@
             <div class="container-fluid px-2 pt-2 pe-4">
               <?php include ('./views/includes/header.php');?>
               <div class="row">
+             <?=  $_SESSION['NOM']?>
+
                 <div class="table-wrapper">
                  <div class="d-flex align-items-baseline  justify-content-between">
                     <form class="col-sm-6 input-group mb-3 mt-5" method="POST" style="max-width:500px;">            

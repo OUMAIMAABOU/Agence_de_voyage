@@ -7,6 +7,7 @@ $Controllers->insert();
 $Controllers->Delete();
 $Controllers->update();
 $Controllers->login();
+$Controllers->inscription();
 
 
 $hotel=new HotelController();

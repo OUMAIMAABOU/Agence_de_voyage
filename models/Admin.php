@@ -9,29 +9,45 @@ class Administrateur extends Dbconnect {
     public $phone;
     public $genre;
     public $adresse;
+    public $cin;
     
    
       public  function DeleteAdmin(){return Dbconnect :: delete('users',"id",[$this->id]); }
       static  public  function Afficher(){return static :: GetALL('users');}
       public function insert(){
         try{
-            return Dbconnect::add('users',"(NULL,?,?,?,?,?,?,?,?)",[$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone,$this->adresse]);
-           }catch(PDOException $e){ return $e->getMessage();}
+          // $this->password = password_hash( $this->password, PASSWORD_DEFAULT);
+
+            return Dbconnect::add('users',"(NULL,?,?,?,?,?,?,?,?,?)",[$this->name,$this->cin, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone,$this->adresse]);
+ 
+          }catch(PDOException $e){ return $e->getMessage();}
         }
    
       public function login(){
         $result= $this->GetData("select * from users where email= ?");
         $result->execute([$this->email]);
-        $numrows=$result;
-        $res=$numrows->fetch(PDO::FETCH_ASSOC);
+        return $result=$result->fetch();
        
-          //  $_SESSION['name'] = $res['name'];
-            
-          //   $_SESSION['email']= $res['email'];
-          //   $_SESSION['role']=$res['type'];
 
-            return $res;
-    }  
+         
+    } 
+    // public function getuser()
+    // {
+    //    try
+    //    {
+    //      $result= $this->GetData("select * from users where email=?");
+    //      $result->execute([$this->email]);
+    //      return $result;
+    //    }catch (PDOException $ex) { echo $ex->getMessage();}  
+    // }
+  //   public function login()
+  //   {
+  //    try{
+  //    $numrows=$this->getuser();
+  //    $res=$numrows->fetch(PDO::FETCH_ASSOC);
+    
+  //    }catch (PDOException $ex) { echo $ex->getMessage();}    
+  //  }
 
       public function Updateadmin(){
       return Dbconnect::Update('users',"name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=?",[$this->name,$this->email,$this->genre,$this->type,$this->password,$this->image,$this->phone,$this->adresse,$this->id]);
@@ -66,6 +82,9 @@ class Administrateur extends Dbconnect {
         public function Setphone($phone){$this->phone=$phone;}
         public function SetGenre($genre){$this->genre=$genre;}
         public function SetAdress($adresse){$this->adresse=$adresse;}
+        public function Setcin($cin){$this->cin=$cin;}
+        public function Getpassword(){return $this->adresse;}
+
 
 
 
