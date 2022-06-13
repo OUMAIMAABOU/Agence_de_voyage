@@ -20,6 +20,7 @@ Public function insert()
       Voyage::Setimage($_POST['image']);
       Voyage::Setetat($_POST['etat']);
       Voyage::Sethotel($_POST['Hotel']);
+      Voyage::Setville($_POST['ville']);
     if (Voyage::insert())header('location:voyage'); 
   }  
 }
@@ -43,6 +44,7 @@ Public function update()
       // Voyage::Setimage($_POST['image']);
       Voyage::Setetat($_POST['etat']);
       Voyage::Sethotel($_POST['Hotel']);
+      Voyage::Setville($_POST['ville']);
     if (Voyage::UpdateVoyage())header('location:voyage'); 
   }  
 }

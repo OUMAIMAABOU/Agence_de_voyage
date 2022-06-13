@@ -31,7 +31,7 @@
 							<h2>destination</h2>
 							<div class="travel-select-icon">
 								<select class="form-control ">
-									<option value="default">entrez votre pays de destination</option><?php $controller = new ClientController();$ville=$controller->getallville();foreach($ville as $x => $rows){?>
+									<option value="default">entrez votre pays de destination</option><?php $controller = new VoyageController();$ville=$controller->ShowVille();foreach($ville as $x => $rows){?>
 									<option value="<?= $rows[0];?>"><?= $rows[1]; }?></option>
 								</select>
 							</div>
@@ -91,18 +91,18 @@
 				</div>
 				<div class="mt-5">
 					<div class="row "   >
-				    	<?php $hotel=$controller->getallhotel(); foreach($hotel as $x => $rows){?>
+				    	<?php $hotel=$controller->Afficher(); foreach($hotel as $x => $rows){?>
 						<div class="col-md-3 col-sm-6 bg-light vogare-item " data-aos="fade-up">
 						        <div class="">	
-								<img src="views/assets/images/packages/<?=  $rows[5]?>" alt="package-place" style=" BORDER-RADIUS: 40px; width: 100%;height: 200px; max-width: 100%; box-sizing: border-box;">
+								<img src="views/assets/images/packages/<?=  $rows[6]?>" alt="package-place" style=" BORDER-RADIUS: 40px; width: 100%;height: 200px; max-width: 100%; box-sizing: border-box;">
 								<div class="">
 								
-									<h3> <?=  $rows[3]?> <span class=""><?=  $rows[11]?> Dh</span></h3>
+									<h3> <?=  $rows[8]?> <span class=""><?=  $rows[3]?> Dh</span></h3>
 									<div class="">
-									<p><span><i class="fa fa-angle-right"></i> 5 daays 6 nights</span>
-									<i class="fa fa-angle-right"></i> <?= $rows[2]?> star accomodation</p>
-									<p><span><i class="fa fa-angle-right"></i>  transportation</span>
-										<i class="fa fa-angle-right"></i>  food facilities</p>	
+									<p><span><i class="fa fa-angle-right"></i> <?=  $rows[2]?> daays 6 nights</span>
+									<i class="fa fa-angle-right"></i> <?= $rows[7]?> star accomodation</p>
+									<p><i class="fa fa-angle-right"></i>transportation </p>
+									<p><i class="fa fa-angle-right"></i>  food :<?= $rows[5]?> </p>	
 								</div>
 								<div class="">
 									<p>
@@ -111,11 +111,10 @@
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
-										<span>2544 review</span>
 									</p>
 								</div>
 								<div class="about-btn">
-									<a href="reservation"><button type="submit"  class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-bottom: 24px;">Reserve</button></a>
+									<a href="formreservation?id= <?= $rows[0]?>"><button type="submit"  class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-bottom: 24px;">Reserve</button></a>
 								</div>		
 							</div>
  		          	 </div>
@@ -155,7 +154,7 @@
 				<div class="container">
 			
 					<div class="row">
-					<?php $voyage=$controller->getallvoyage();foreach($voyage as $x => $rows){?>
+					<?php $voyage=$controller->Afficher();foreach($voyage as $x => $rows){?>
 
 						<div class="col-3">
 							<div class="card">
@@ -186,7 +185,7 @@
 		<section class="container  "  id="review" >
 		<h1 class="text-center mt-5">Client's Review</h1>
 			<div class="overflow-auto d-flex" data-aos="zoom-in">
-				<?php  $hotel=$controller->getallcommentair(); foreach($hotel as $x => $rows){?>
+				<?php $client =new ClientController(); $client=$client->getallcommentair(); foreach($client as $x => $rows){?>
 				<div class="col-3 d-flex flex-column vogare-item p-3">
 					<div>
 					<img src="views\assets\images\client\<?= $rows[3]?>" alt=""  class="rounded-circle mx-auto d-block" style="width: 73px;  height: 73px;">

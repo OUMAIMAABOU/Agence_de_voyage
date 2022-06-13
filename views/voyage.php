@@ -51,7 +51,8 @@
                                 <td data-target="prix"><?= $voyage[3] ?></td>
                                 <td data-target="food"><?= $voyage[5] ?></td>
                                 <td data-target="etat"><?= $voyage[7] ?></td>
-                                <td data-target="hotel"><?= $voyage[9] ?></td>
+                                <td data-target="hotel"><?= $voyage[11] ?></td>
+                                
                                 <td data-target="discription" hidden ><?= $voyage[4] ?></td>
 
                                 <td class="d-flex  align-items-start">

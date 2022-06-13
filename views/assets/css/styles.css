@@ -18,11 +18,6 @@
     margin: 13px;
     padding: 0;
     box-shadow: 0 0 20px rgb(0 0 0 / 10%);
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
     BORDER-RADIUS: 40px;
 }
 

@@ -25,7 +25,7 @@ class Reservation extends Dbconnect {
            }catch(PDOException $e){ return $e->getMessage();}
         }
 
-         public function Update(){
+         public function Updatereservation(){
           try{
     
             $sql=Dbconnect::getdata("UPDATE users SET name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=? WHERE id = ? ");

@@ -1,6 +1,7 @@
 
 		<link rel="stylesheet" href="./views/assets/css/style.css">
 		<link rel="stylesheet" href="./views/assets/css/bootstrap.min.css">
+		<script src="views/assets/bootstrap.bundle.min.js" ></script>
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 

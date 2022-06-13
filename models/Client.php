@@ -4,8 +4,8 @@ class Client extends Dbconnect{
 
 
 
-    public function getcommentair(){
-        $req=$this->connect()->query("SELECT * from clients");
-        return $req->fetchAll();
+    static  public  function SelectCommantaire(){
+    return static :: GetALL('clients');
+
     }
 }
