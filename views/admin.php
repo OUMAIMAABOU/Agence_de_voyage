@@ -16,7 +16,7 @@
             <div class="container-fluid px-2 pt-2 pe-4">
               <?php include ('./views/includes/header.php');?>
               <div class="row">
-             <?=  $_SESSION['NOM']?>
+             <?php  echo  $_SESSION['role']?>
 
                 <div class="table-wrapper">
                  <div class="d-flex align-items-baseline  justify-content-between">

@@ -24,7 +24,8 @@ class Administrateur extends Dbconnect {
         }
    
       public function login(){
-        $result= $this->GetData("select * from users where email= ?");
+        $result= $this->GetData("SELECT users.id, users.name ,users.image,types.type from users ,types WHERE users.type=types.id and email=?");
+       
         $result->execute([$this->email]);
         return $result=$result->fetch();
        

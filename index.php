@@ -3,9 +3,10 @@
 require_once('./autoload.php');
 require_once('./controllers/HomeController.php');
 require_once('./views/includes/alerts.php');
-
+include_once(session_start());
 if( basename($_SERVER['REQUEST_URI'])=="Acueille"||basename($_SERVER['REQUEST_URI'])=="inscription"||basename($_SERVER['REQUEST_URI'])=="Agence_de_voyage"||basename($_SERVER['REQUEST_URI'])=="formreservation"||basename($_SERVER['REQUEST_URI'])=="login"){
 include ('./views/includes/navbar.php');
+
 }
 
 

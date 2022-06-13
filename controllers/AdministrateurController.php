@@ -31,16 +31,17 @@ class AdministrateurController{
 $admin=$admin->login();
 var_dump($admin);
   if ($admin){
-    session_start();
     $_SESSION['NOM']="ouma";
     // $_SESSION["name"] = $admin['name'];
     // $_SESSION["name1"] = $admin[1];
     // $_SESSION["name3"] = $admin->name; 
-    var_dump(  $_SESSION['admin']);    
+    var_dump($_SESSION['admin']);    
      
   //   $_SESSION['email']= $admin['email'];
   //  $_SESSION['role']=$admin['type'];
-    header('location:admin');  
+  //  if($_SESSION['role']='Admin'){
+  //   header('location:admin'); 
+  //  }   
   }
 }
   }
