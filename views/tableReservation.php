@@ -17,23 +17,19 @@
                 </div>
                 <div class="container-fluid px-2 pt-2 pe-4">
                     <?php include('./views/includes/header.php'); ?>
-                    <div class="row">
-                        <div class="table-wrapper">
-                            <div class="d-flex align-items-baseline  justify-content-between">
-                                <form class="col-sm-6 input-group mb-3 mt-5" method="POST" style="max-width:500px;">
-                                </form>
-                                <a href="#addetud" class="btn btn-order  btn-lg fs-3 mb-1 mx-4 rounded-3 merriweather" data-bs-toggle="modal" data-bs-target="#exampleModal"> + </a>
-                            </div>
+                    <div class="row mt-5">
+                        <div class="table-wrapper mt-5">
+                           
                             <div class="table-responsive">
                                 <table class="table table-striped table align-middle">
                                     <thead>
 
                                         <tr class="bg-green merriweather " style=" height: 53px;">
-
+                                           <th>#</th>
                                             <th>nom Client</th>
+                                            <th>Adresse</th>
                                             <th>Destination</th>
                                             <th>Email</th>
-                                            <th>Telephone</th>
                                             <th>Nomber Adulte</th>
                                             <th>Nomber Enfant</th>
                                             <th>Transport</th>
@@ -41,9 +37,6 @@
                                             <th>Date de depart</th>
                                             <th>Date de retour</th>
                                             <th>Date de reservation</th>
-
-
-
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -52,15 +45,21 @@
                                         $reservation = $reservation->select();
                                         foreach ($reservation as $x => $reservation) { ?>
                                             <tr>
-                                                <td hidden data-target="id"><?= $reservation[0] ?></td>
+                                                <td hidden class="id"><?= $reservation[0] ?></td>
                                                 <td><?= $x + 1 ?></td>
-                                                <td data-target="image"><?= $reservation[1] ?></td>
-                                                <td data-target="nom complet"> <?= $reservation[2] ?> </td>
-                                                <td data-target="Email"><?= $reservation[3] ?></td>
-                                                <td data-target="Genre"><?= $reservation[4] ?></td>
-                                                <td data-target="Type"><?= $reservation[5] ?></td>
-                                                <td data-target="password"><?= $reservation[6] ?></td>
-                                                <td data-target="Phone"><?= $reservation[7] ?></td>
+                                                <td > <?= $reservation[10] ?> </td>
+                                                <td > <?= $reservation[11] ?> </td>
+                                                <td ><?= $reservation[14] ?></td>
+                                                <td><?= $reservation[12] ?></td>
+                                                <td ><?= $reservation[1] ?></td>
+                                                <td><?= $reservation[2] ?></td>
+                                                <td ><?= $reservation[4] ?></td>
+                                                <td > <?= $reservation[5] ?> </td>
+                                                <td ><?= $reservation[6] ?></td>
+                                                <td><?= $reservation[7] ?></td>
+                                                <td ><?= $reservation[9] ?></td>
+                                         
+                                                
                                                 <td class="d-flex  align-items-start">
                                                     <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel">Accepte </a>
                                                     <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?">

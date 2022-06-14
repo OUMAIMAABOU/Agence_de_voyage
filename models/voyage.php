@@ -12,6 +12,7 @@ class  Voyage extends Dbconnect
     static public $etat;
     static public $id_hotel;
     static public $ville;
+    static public $distination;
 
 
 
@@ -25,14 +26,15 @@ class  Voyage extends Dbconnect
     static public function insert()
     {
         try {
-            return Dbconnect::add('voyage_organises', "(NULL,?,?,?,?,?,?,?,?,?)", [self::$duree, self::$date_de_depart, self::$Prix, self::$discription, self::$food, self::$image, self::$etat, self::$ville, self::$id_hotel]);
+            return Dbconnect::add('voyage_organises', "(NULL,?,?,?,?,?,?,?,?,?)", 
+            [self::$duree, self::$date_de_depart, self::$Prix, self::$discription,self::$food, self::$image, self::$etat,self::$id_hotel,self::$distination]);
         } catch (PDOException $e) {
             return $e->getMessage();
         }
     }
     static  public  function Afficher()
     {
-        return static::SELECTJoin('voyage_organises,hotel', 'voyage_organises.id,voyage_organises.Dure,voyage_organises.date_de_depart,voyage_organises.Prix,voyage_organises.Discription,voyage_organises.Food,voyage_organises.image ,voyage_organises.etat,hotel.ville,hotel.etoile,hotel.id,hotel.name ', " hotel.id = voyage_organises.id_Hotel");
+        return static::SELECTJoin('voyage_organises,hotel', 'voyage_organises.id,voyage_organises.Dure,voyage_organises.date_de_depart,voyage_organises.Prix, voyage_organises.Discription,voyage_organises.Food,voyage_organises.image ,voyage_organises.destination,voyage_organises.etat, hotel.ville,hotel.etoile,hotel.id,hotel.name ', " hotel.id = voyage_organises.id_Hotel");
     }
     static  public  function selectOne($id)
     {
@@ -89,5 +91,9 @@ class  Voyage extends Dbconnect
     static public function Setville($ville)
     {
         self::$ville = $ville;
+    }
+    static public function Setdistination($distination)
+    {
+        self::$distination = $distination;
     }
 }

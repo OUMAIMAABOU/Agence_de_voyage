@@ -28,15 +28,14 @@ $(document).ready(function()
     {
         var currentRow=$(this).closest("tr"); 
         $('#id').val(currentRow.find("td:eq(0)").text());
-        $('#name').val(currentRow.find("td:eq(3)").text());
-        $('#genre').val(currentRow.find("td:eq(5)").text());
-        $('#email').val(currentRow.find("td:eq(4)").text());
-        $('#type').val(currentRow.find("td:eq(6)").text());
-        $('#password').val(currentRow.find("td:eq(7)").text());
-        // $('#adress').val(currentRow.find("td:eq(6)").text());
-        $('#phone').val(currentRow.find("td:eq(8)").text());
-
-
+        $('#name').val(currentRow.find(".nom").text());
+        $('#cin').val(currentRow.find(".CIN").text());
+        $('#email').val(currentRow.find(".Email").text());
+        $('#genre').val(currentRow.find(".Genre").text());
+        $('#type').val(currentRow.find(".Type").text());
+        $('#password').val(currentRow.find(".password").text());
+        $('#phone').val(currentRow.find(".Phone").text());
+        $('#adress').val(currentRow.find(".adres").text());
     })
 })
 

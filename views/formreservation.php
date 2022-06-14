@@ -41,12 +41,7 @@
                 <div class="col-md-6">
                   <input type="number" name="Enfant" class="form-control" placeholder="Nomber Enfant" required>
                 </div>
-                <div class="col-md-6">
-                  <input type="number" name="Man" class="form-control" placeholder="Nomber Homme" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="number" name="women" class="form-control" placeholder="Nomber Femme" required>
-                </div>
+              
                 <div class="col-md-6">
                   <select class="form-control " name="transport">
                     <option value="default">Transport</option>

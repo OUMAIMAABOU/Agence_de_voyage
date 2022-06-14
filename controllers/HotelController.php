@@ -16,6 +16,7 @@ class HotelController
         Hotel::SetEtoile($_POST['Etoile']);
         Hotel::Setimage($_POST['image']);
         Hotel::Setville($_POST['ville']);
+        Hotel::SetType($_POST['type']);
         Hotel::SetAgent(30);
       if (Hotel::insert())header('location:Hotel'); 
     }  
@@ -43,6 +44,8 @@ class HotelController
         Hotel::SetRestauran($_POST['Restauran']);
         Hotel::SetEtoile($_POST['Etoile']);
         Hotel::Setville($_POST['ville']);
+        Hotel::SetType($_POST['type']);
+
       if (Hotel::UpdateHotel())header('location:Hotel'); 
     }  
 }

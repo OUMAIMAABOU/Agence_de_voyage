@@ -31,26 +31,30 @@
                             <th></th>
                             <th>image</th>
                             <th>Nom complet</th>
+                            <th>CIN</th>
                             <th>Email</th>
                             <th>Genre</th>
                             <th>type</th>
                             <th>password</th>
                             <th>Phone</th>
+                            <th>Adresse</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody  class="fw-bold" >
                         <?php  $admine = new AdministrateurController(); $admines=$admine->getAllAdmin();foreach($admines as $x => $admine){?>
                             <tr>
-                            <td hidden data-target="id"><?= $admine['id'] ?></td>
+                            <td hidden class="id"><?= $admine['id'] ?></td>
                                 <td><?= $x+1?></td>
-                                <td data-target="image"><?= $admine['image'] ?></td>
-                                <td data-target="nom complet"> <?= $admine['name'] ?> </td>
-                                <td data-target="Email"><?= $admine['email'] ?></td>
-                                <td data-target="Genre"><?= $admine['genre'] ?></td>
-                                <td data-target="Type"><?= $admine['type'] ?></td>
-                                <td data-target="password"><?= $admine['password'] ?></td>
-                                <td data-target="Phone"><?= $admine['Phone'] ?></td>
+                                <td class="image"><?= $admine['image'] ?></td>
+                                <td class="nom"> <?= $admine['name'] ?> </td>
+                                <td class="CIN"> <?= $admine['CIN'] ?> </td>
+                                <td class="Email"><?= $admine['email'] ?></td>
+                                <td class="Genre"><?= $admine['genre'] ?></td>
+                                <td class="Type"><?= $admine['type'] ?></td>
+                                <td class="password"><?= $admine['password'] ?></td>
+                                <td class="Phone"><?= $admine['Phone'] ?></td>
+                                <td class="adres"><?= $admine['adresse'] ?></td>
                                 <td class="d-flex  align-items-start">
                                 <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
                                 <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?" >
@@ -80,6 +84,10 @@
                                         <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                             <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" data-parsley-length="[4, 20]" parsley-error data-parsley-trigger="keyup" required>
+                                        </div>
+                                        <div class="mb-3 fw-bold" >
+                                            <label for="exampleFormControlInput1" class="form-label">CIN</label>
+                                            <input type="text" class="form-control"  name="cin" placeholder="Enter name complet" data-parsley-length="[4, 20]" parsley-error data-parsley-trigger="keyup" required>
                                         </div>
                                
                                         <div class="mb-3  fw-bold"  >
@@ -152,13 +160,18 @@
                                    </div>
                                    <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Image</label>
-                                            <input type="file" class="form-control"  id ="image"  name="image"  placeholder="Enter name complet" >
+                                            <!-- <input type="file" class="form-control"  id ="image"  name="image"  placeholder="Enter name complet" > -->
+                                            <!-- <input type="file" name="fileToUpload" id="fileToUpload">
+                                             <input type="submit" value="Upload Image" name="submit"> -->
                                         </div>
                                       <div class="mb-3 fw-bold" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                             <input type="text" class="form-control"  id ="name"  name="nom"  placeholder="Enter name complet" >
                                         </div>
-                               
+                                        <div class="mb-3 fw-bold" >
+                                            <label for="exampleFormControlInput1" class="form-label">cin</label>
+                                            <input type="text" class="form-control"  id ="cin"  name="cin"  placeholder="Enter name complet" >
+                                        </div>
                                         <div class="mb-3  fw-bold"  >
                                             <label for="exampleFormControlInput1" class="form-label">Genre</label>
                                             <select class="form-control" name="genre" id="genre" >
@@ -221,3 +234,4 @@
            
 </body>
 </html>
+

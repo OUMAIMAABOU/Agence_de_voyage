@@ -10,8 +10,7 @@ class ResrvationController{
           Reservation::Setid_client($_SESSION['id']);
           Reservation::Setnomber_adulet($_POST['adulte']);
           Reservation::Setnomber_enfant($_POST['Enfant']);
-          Reservation::Setnomber_femme($_POST['women']);
-          Reservation::Setnomber_homme($_POST['Man']);
+        
           Reservation::Settransportr($_POST['transport']);
           Reservation::Setlocal($_POST['Local']);
           Reservation::Setdate_depart($_POST['date_depart']);

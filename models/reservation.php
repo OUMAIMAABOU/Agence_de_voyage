@@ -5,8 +5,7 @@ class Reservation extends Dbconnect {
     static public $id_client;
     static public $nomber_adulet;
     static public $nomber_enfant;
-    static public $nomber_femme;
-    static public $nomber_homme;
+
     static public $transport;
     static public $local;
     static public $date_depart;
@@ -19,11 +18,11 @@ class Reservation extends Dbconnect {
         return Dbconnect :: delete('users',"id",[self::$id]); 
         }
 
-      static  public  function Afficher(){return static :: SELECTJoin('reservation,users,voyage_organises ','reservation.* ,users.name,users.adresse,users.email,voyage_organises.Prix,voyage_organises.ville',"reservation.id_voyage=voyage_organises.id and reservation.id_client=users.id");}
+      static  public  function Afficher(){return static :: SELECTJoin('reservation,users,voyage_organises ','reservation.* ,users.name,users.adresse,users.email,voyage_organises.Prix ,voyage_organises.destination',"reservation.id_voyage=voyage_organises.id and reservation.id_client=users.id");}
     
      static public function insert(){
         try{            
-            return Dbconnect::add('reservation',"(NULL,?,?,?,?,?,?,?,?,?,?,?)",[self::$nomber_adulet, self::$nomber_enfant,self::$nomber_femme,self::$nomber_homme,self::$transport,self::$local,self::$date_depart,self::$date_retour,self::$id_client,self::$id_yoyage,date("Y-m-d H:i:s")]);
+            return Dbconnect::add('reservation',"(NULL,?,?,?,?,?,?,?,?,?)",[self::$nomber_adulet, self::$nomber_enfant,self::$transport,self::$local,self::$date_depart,self::$date_retour,self::$id_client,self::$id_yoyage,date("Y-m-d H:i:s")]);
            }catch(PDOException $e){ return $e->getMessage();}
         }
 
@@ -61,8 +60,6 @@ class Reservation extends Dbconnect {
        static public function Setid_client($id_client){self::$id_client=$id_client;}
        static public function Setnomber_adulet($nomber_adulet){self::$nomber_adulet=$nomber_adulet;}
        static  public function Setnomber_enfant($nomber_enfant){self::$nomber_enfant=$nomber_enfant;}
-       static  public function Setnomber_femme($nomber_femme){self::$nomber_femme=$nomber_femme;}
-       static public function Setnomber_homme($nomber_homme){self::$nomber_homme=$nomber_homme;}
        static public function Settransportr($transport){self::$transport=$transport;}
        static public function Setlocal($local){self::$local=$local;}
        static public function Setdate_depart($date_depart){self::$date_depart=$date_depart;}

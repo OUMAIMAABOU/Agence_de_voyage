@@ -13,7 +13,7 @@ $Controllers->inscription();
 $hotel=new HotelController();
 $hotel->insert();
 $hotel->Delete();
-// $hotel-> update();
+$hotel-> update();
 
 $Transport=new TransportController();
 $Transport->insert();
