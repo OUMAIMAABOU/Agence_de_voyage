@@ -19,5 +19,10 @@ class ClientController{
     cookies::set('error','Ne peut pas envoyer de message');
 
   }
+
+  static public function select(){
+    $admin = Client::Afficher();
+    return  $admin;
+ }
  
  }

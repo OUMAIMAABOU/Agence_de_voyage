@@ -45,8 +45,8 @@
                     </tr>
                   </thead>
                   <tbody class="fw-bold">
-                    <?php $hotel = new HotelController();
-                    $hotel = $hotel->select();
+                    <?php ;
+                    $hotel = HotelController::select();
                     foreach ($hotel as $x => $hotel) { ?>
                       <tr>
                         <td hidden data-target="id"><?= $hotel[0] ?></td>

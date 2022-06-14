@@ -43,7 +43,7 @@
                     <div class="col-lg-3 col-md-5 mb-4 ">
                       <div class="p-1 flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 300px;">
                         <div>
-                          <p class="fs-4 text-center Secondary-text">USERS</p>
+                          <p class="fs-4 text-center Secondary-text">Partenariat</p>
                           <hr>
                           </hr>
                         </div>
@@ -55,7 +55,7 @@
                     <div class="col-lg-3  col-md-5  mb-4 ">
                       <div class="p-1 flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 300px;">
                         <div>
-                          <p class="fs-4 text-center Secondary-text">Course</p>
+                          <p class="fs-4 text-center Secondary-text">Client</p>
                           <hr>
                           </hr>
                           <h3 class="fs-5"><canvas id="Chart" style="width:100%;max-width:700px ;"></canvas> </canvas>
@@ -67,7 +67,7 @@
                     <div class=" col-lg-3  col-md-5  mb-4">
                       <div class="p-1 flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 300px;">
                         <div>
-                          <p class="fs-4 text-center  Secondary-text">Payments</p>
+                          <p class="fs-4 text-center  Secondary-text">Genre</p>
                           <hr>
                           </hr>
                           <h3 class="fs-5"><canvas id="myChart1" style="width:100%;max-width:700px ;"></canvas> </canvas>
@@ -81,7 +81,7 @@
                     <div class="col-lg-3 col-md-5  mb-4">
                       <div class="p-1 text-center flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 300px">
                         <div>
-                          <p class="fs-4">Users</p>
+                          <p class="fs-4">Réservation</p>
                           <hr>
                           </hr>
                           <h3 class="fs-5"><canvas id="Chart1" style="width:100%;max-width:700px ;"></canvas> </canvas>
@@ -96,7 +96,7 @@
                   <div class=" col-12">
                     <div class="p-1 flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 400px;">
                       <div>
-                        <p class="fs-4 text-center  Secondary-text">Payments</p>
+                        <p class="fs-4 text-center  Secondary-text">Voyage</p>
                         <hr>
                         </hr>
 
@@ -143,10 +143,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="views/assets/js/script.js"></script>
 <script>
-  var xValues = ["Etudiant", "Professeur", "Class"];
+  var xValues = ["Hotel", "Transport",];
 
-  var yValues = [3, 1, 4, 0];
-  var barColors = ["red", "green", "blue"];
+  var yValues = [<?= count(HotelController::select());?>, <?= count(TransportController::select());?>, 0];
+  var barColors = ["red", "green", ];
   new Chart("myChart", {
     type: "bar",
     data: {
@@ -221,35 +221,30 @@
   });
 </script>
 <script>
-  var xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
-  var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+var xValues = [];
+var yValues = [];
+generateData("<?= count(ClientController::select());?> * 2 + 7", 0, 10, 0.5);
 
-  new Chart("Chart", {
-    type: "line",
-    data: {
-      labels: xValues,
-      datasets: [{
-        fill: false,
-        lineTension: 0,
-        backgroundColor: "rgba(0,0,255,1.0)",
-        borderColor: "rgba(0,0,255,0.1)",
-        data: yValues
-      }]
-    },
-    options: {
-      legend: {
-        display: false
-      },
-      scales: {
-        yAxes: [{
-          ticks: {
-            min: 6,
-            max: 16
-          }
-        }],
-      }
-    }
-  });
+new Chart("Chart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      pointRadius: 1,
+      borderColor: "rgba(255,0,0,0.5)",
+      data: yValues
+    }]
+  },
+ 
+});
+
+function generateData(value, i1, i2, step = 1) {
+  for (let x = i1; x <= i2; x += step) {
+    yValues.push(eval(value));
+    xValues.push(x);
+  }
+}
 </script>
 <script>
   new Chart("Chart1", {

@@ -25,12 +25,10 @@ class Administrateur extends Dbconnect
   }
   public function insert()
   {
-    try {
+   
       $this->password = password_hash($this->password, PASSWORD_DEFAULT);
       return Dbconnect::add('users', "(NULL,?,?,?,?,?,?,?,?,?)", [$this->name, $this->cin, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone, $this->adresse]);
-    } catch (PDOException $e) {
-      return $e->getMessage();
-    }
+ 
   }
 
   public function login()

@@ -40,8 +40,7 @@
                         </tr>
                     </thead>
                     <tbody  class="fw-bold" >
-                        <?php  $Transport= new TransportController(); 
-                        $Transport=$Transport->select();foreach($Transport as $x => $Transport){?>
+                        <?php  $Transport=TransportController::select();foreach($Transport as $x => $Transport){?>
                             <tr>
                             <td hidden data-target="id"><?= $Transport[0] ?></td>
                                 <td><?= $x+1?></td>

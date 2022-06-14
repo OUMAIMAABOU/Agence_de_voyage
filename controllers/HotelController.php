@@ -22,7 +22,7 @@ class HotelController
     }  
   }
 
-  public function select(){
+  static public function select(){
     return Hotel::Afficher();
    }
 

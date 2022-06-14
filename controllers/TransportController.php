@@ -17,7 +17,7 @@ class TransportController
     }  
   }
 
-  public function select(){
+  static public function select(){
     return Transport::Afficher();
    }
 

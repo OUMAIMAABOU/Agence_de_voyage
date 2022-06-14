@@ -81,20 +81,24 @@ public function update(){
   
     $admin=new Administrateur();
    
-        $admin->Setname($_POST['nom']);
-        $admin->Setemail($_POST['email']);
-        $admin->Setpassword($_POST['configpassword']);
-        $admin->SetAdress($_POST['adresse']);
-        $admin->Setimage($_POST['image']);
-        $admin->SetPhone($_POST['Phone']);
-        $admin->Settype($_POST['type']);
-        $admin->Setimage($_POST['image']);
-        $admin->SetGenre($_POST['genre']);
-        $admin->Setcin($_POST['cin']);
-       
-      if($admin->insert())header('location:login');
-      print_r($_POST);
-      echo "b1 ajouter";
+         // if(!empty([$_POST['nom']])|| !empty([$_POST['genre']])|| !empty($_POST['Phone']))
+         $admin->Setname($_POST['nom']);
+         $admin->Setemail($_POST['email']);
+         $admin->Setpassword($_POST['password']);
+         $admin->SetAdress($_POST['adresse']);
+         $admin->Setimage($_POST['image']);
+         $admin->SetPhone($_POST['Phone']);
+         $admin->Settype(6);
+         $admin->SetGenre($_POST['genre']);
+         $admin->Setcin($_POST['cin']);
+         if ($admin->insert()){
+          print_r($_POST);
+          echo "b1 ajouter";
+         }
+      
+
+    
+     
     }
  }
 
