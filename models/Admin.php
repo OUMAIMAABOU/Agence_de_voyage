@@ -42,6 +42,7 @@ class Administrateur extends Dbconnect
   {
     return Dbconnect::Update('users', "name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone, $this->adresse, $this->id]);
   }
+  
 
 
 

@@ -21,7 +21,7 @@
           <div class="row ">
             <?php $controller = new VoyageController();
             $controller = $controller->select();
-            foreach ($controller as  $rows) { ?>
+            foreach ($controller as  $rows) { $_SESSION['id_voyage']=$rows[0];?>
               <div class="col bg-light vogare-item ">
                 <div class="">
                   <img src="views/assets/images/packages/<?= $rows[4] ?>" alt="package-place" style=" BORDER-RADIUS: 40px; width: 100%;height: 200px; max-width: 100%; box-sizing: border-box;">
@@ -33,16 +33,8 @@
                   </div>
                 </div>
               </div><?php } ?>
-
-            <?= $_SESSION['name']?>
             <form action="operation" method="post" class="php-email-form">
               <div class="row gy-4 mt-4">
-                <div class="col-md-6">
-                  <input type="text" name="id" class="form-control" placeholder="idvoyage" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="text" name="id_client" class="form-control" placeholder="idclient" required>
-                </div>
                 <div class="col-md-6">
                   <input type="number" name="adulte" class="form-control" placeholder="Nomber Adulte" required>
                 </div>
@@ -56,7 +48,7 @@
                   <input type="number" name="women" class="form-control" placeholder="Nomber Femme" required>
                 </div>
                 <div class="col-md-6">
-                  <select class="form-control ">
+                  <select class="form-control " name="transport">
                     <option value="default">Transport</option>
                     <option value="Non">Non</option>
                     <option value="train">train</option>
@@ -78,7 +70,7 @@
                   <input type="date"  name="date_retour" class="form-control">
                 </div>
                 <div class="col-md-12 text-center">
-                  <button type="submit" class="btn  w-25 mb-3" name="addreservation" style="background:#90f5d7 ; color: #012970; ">Ajouter
+                  <button type="submit" class="btn  w-25 mb-3" name="addreservation" style="background:#90f5d7 ; color: #012970; ">Add reservation
                   </button>
                 </div>
 
