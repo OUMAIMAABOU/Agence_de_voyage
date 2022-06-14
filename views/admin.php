@@ -35,7 +35,6 @@
                             <th>Email</th>
                             <th>Genre</th>
                             <th>type</th>
-                            <th>password</th>
                             <th>Phone</th>
                             <th>Adresse</th>
                             <th></th>
@@ -52,7 +51,6 @@
                                 <td class="Email"><?= $admine['email'] ?></td>
                                 <td class="Genre"><?= $admine['genre'] ?></td>
                                 <td class="Type"><?= $admine['type'] ?></td>
-                                <td class="password"><?= $admine['password'] ?></td>
                                 <td class="Phone"><?= $admine['Phone'] ?></td>
                                 <td class="adres"><?= $admine['adresse'] ?></td>
                                 <td class="d-flex  align-items-start">
@@ -69,28 +67,28 @@
                 </div>
            <div class="col-sm6 mt-3 " style="float: right;">
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog" style="max-width: 800px;">
                     <div class="modal-content">
                         <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Ajouter Amdin </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                        <form class="form-container" action="operation" method="POST" data-parsley-validate> 
-                                      <div class="mb-3 fw-bold" >
+                        <div class="modal-body container" >
+                        <form class="form-container row" action="operation" method="POST" data-parsley-validate> 
+                                      <div class="mb-3 fw-bold col-6" >
                                             <label for="exampleFormControlInput1" class="form-label">Image</label>
                                             <input type="file" name="image"  class="form-control"  placeholder="Enter name complet" >
                                         </div> 
-                                        <div class="mb-3 fw-bold" >
+                                        <div class="mb-3 fw-bold col-6" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                             <input type="text" class="form-control"  name="nom" placeholder="Enter name complet" data-parsley-length="[4, 20]" parsley-error data-parsley-trigger="keyup" required>
                                         </div>
-                                        <div class="mb-3 fw-bold" >
+                                        <div class="mb-3 fw-bold col-6" >
                                             <label for="exampleFormControlInput1" class="form-label">CIN</label>
                                             <input type="text" class="form-control"  name="cin" placeholder="Enter name complet" data-parsley-length="[4, 20]" parsley-error data-parsley-trigger="keyup" required>
                                         </div>
                                
-                                        <div class="mb-3  fw-bold"  >
+                                        <div class="mb-3  fw-bold col-6"  >
                                             <label for="exampleFormControlInput1" class="form-label">Genre</label>
                                             <select class="form-control" name="genre" >
                                              <option value="Femme">Femme </option>
@@ -98,11 +96,11 @@
                                          </select>
                                         </div>
                                        
-                                        <div class="mb-3  fw-bold"  >
+                                        <div class="mb-3  fw-bold col-6">
                                             <label for="exampleFormControlInput1" class="form-label">Email</label>
                                             <input type="email" class="form-control" name="email" placeholder="Enter votre email"  required data-parsley-trigger="keyup">
                                         </div>
-                                        <div class="mb-3  fw-bold"  >
+                                        <div class="mb-3  fw-bold col-6">
                                             <label for="exampleFormControlInput1" class="form-label">Type</label>
                                             <select class="form-control" name="type"  required data-parsley-trigger="keyup">
                                            
@@ -112,19 +110,19 @@
 
                                          </select>
                                         </div>
-                                        <div class="mb-3  fw-bold"  >
+                                        <div class="mb-3  fw-bold col-6"  >
                                             <label for="exampleFormControlInput1" class="form-label">password</label>
                                             <input type="text" class="form-control" name="password" placeholder="Enter le Job"  required data-parsley-trigger="keyup">
                                    
                                         </div>
-                                        <div class="mb-3  fw-bold" >
-                                            <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                                            <textarea class="form-control"  name="adres" rows="3"  required data-parsley-trigger="keyup"></textarea>
-                                        </div>
-                                        <div class="mb-3  fw-bold"  >
+                                       
+                                        <div class="mb-3  fw-bold col-6"  >
                                             <label for="exampleFormControlInput1" class="form-label">Phone</label>
                                             <input type="text" class="form-control"  name="Phone" id="Tele" placeholder="Enter phone"  required data-parsley-trigger="keyup">
-                                           
+                                        </div>
+                                        <div class="mb-3  fw-bold col-12 " >
+                                            <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+                                            <textarea class="form-control"  name="adres" rows="3"  required data-parsley-trigger="keyup"></textarea>
                                         </div>
              
                                     <div class="modal-footer">
@@ -146,33 +144,33 @@
      
         <div class="col-sm6 mt-3 " style="float: right;">
             <div class="modal fade" id="myModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog" style="max-width: 800px;">
                     <div class="modal-content">
                         <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Update  </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                         <form class="form-container" action="operation" method="POST" data-parsley-validate>   
+                        <div class="modal-body container">
+                         <form class="form-container row" action="operation" method="POST" data-parsley-validate>   
                                   <div class="mb-3 fw-bold" >
                                        <input type="text" hidden class="form-control" id="id" name="id"  >
                                        
                                    </div>
-                                   <div class="mb-3 fw-bold" >
-                                            <label for="exampleFormControlInput1" class="form-label">Image</label>
+                                   <!-- <div class="mb-3 fw-bold col-6" > -->
+                                            <!-- <label for="exampleFormControlInput1" class="form-label">Image</label> -->
                                             <!-- <input type="file" class="form-control"  id ="image"  name="image"  placeholder="Enter name complet" > -->
                                             <!-- <input type="file" name="fileToUpload" id="fileToUpload">
                                              <input type="submit" value="Upload Image" name="submit"> -->
-                                        </div>
-                                      <div class="mb-3 fw-bold" >
+                                        <!-- </div> -->
+                                      <div class="mb-3 fw-bold col-6" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                             <input type="text" class="form-control"  id ="name"  name="nom"  placeholder="Enter name complet" >
                                         </div>
-                                        <div class="mb-3 fw-bold" >
+                                        <div class="mb-3 fw-bold col-6" >
                                             <label for="exampleFormControlInput1" class="form-label">cin</label>
                                             <input type="text" class="form-control"  id ="cin"  name="cin"  placeholder="Enter name complet" >
                                         </div>
-                                        <div class="mb-3  fw-bold"  >
+                                        <div class="mb-3  fw-bold col-6"  >
                                             <label for="exampleFormControlInput1" class="form-label">Genre</label>
                                             <select class="form-control" name="genre" id="genre" >
                                              <option value="Femme">Femme </option>
@@ -180,13 +178,13 @@
                                          </select>
                                         </div>
                                        
-                                        <div class="mb-3  fw-bold"  >
+                                        <div class="mb-3  fw-bold col-6"  >
                                             <label for="exampleFormControlInput1" class="form-label">Email</label>
                                             <input type="email" class="form-control" name="email" id="email" placeholder="Enter votre email">
                                         </div>
-                                        <div class="mb-3  fw-bold"  >
+                                        <div class="mb-3  fw-bold col-6"  >
                                             <label for="exampleFormControlInput1" class="form-label">Type</label>
-                                            <select class="form-Select" name="type" id="type">
+                                            <select class="form-select" name="type" id="type">
                                            
                                          <option value="1">admin general </option>
                                          <option value="2">admin secondaire </option>
@@ -194,19 +192,18 @@
 
                                          </select>
                                         </div>
-                                        <div class="mb-3  fw-bold"  >
+                                        <div class="mb-3  fw-bold col-6"  >
                                             <label for="exampleFormControlInput1" class="form-label">password</label>
                                             <input type="text" class="form-control" name="password" id ="password" placeholder="Enter votre password">
                                           
                                         </div>
-                                        <div class="mb-3  fw-bold" >
+                                        <div class="mb-3  fw-bold col-6"  >
+                                            <label for="exampleFormControlInput1" class="form-label">Phone</label>
+                                            <input type="text" class="form-control" id="phone"  name="Phone" placeholder="Enter phone">                                      
+                                        </div>
+                                        <div class="mb-3  fw-bold col-6" >
                                             <label for="exampleFormControlTextarea1" class="form-label">Address</label>
                                             <textarea class="form-control"  name="adres" id="adress" rows="3"></textarea>
-                                        </div>
-                                        <div class="mb-3  fw-bold"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                                            <input type="text" class="form-control" id="phone"  name="Phone" placeholder="Enter phone">
-                                         
                                         </div>
              
                                     <div class="modal-footer">

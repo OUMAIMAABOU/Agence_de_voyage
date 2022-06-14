@@ -2,10 +2,11 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin</title>
+  
 </head>
 
 <body class="row">
@@ -96,13 +97,14 @@
                             </select>
                           </div>
                           <div class="col-md-6 ">
-                            <select class="form-control" id="ville" name="ville" required data-parsley-trigger="keyup">
-                              <option value="default">Ville </option>
+                          <select class="form-control" id="ville" name="ville" required data-parsley-trigger="keyup">
+                          <option value="default">Choisir une ville </option>
+
                               <?php $ville = new ClientController();
                               $ville = $ville->getallville();
                               foreach ($ville as $ville) { ?>
-                                <option value="<?= $ville[1] ?>"><?= $ville[1];
-                                                              } ?></option>
+                                <option value="<?= $ville['id'] ?>"><?= $ville["ville"]?></option>
+                                                            <?php  } ?>
                             </select>
                           </div>
 

@@ -25,8 +25,8 @@ $Voyage->Delete();
 $Voyage->Update();
 $Resrvation=new ResrvationController();
 $Resrvation->insert();
-// $Resrvation->Delete();
-// $Resrvation->Update();
+$Resrvation->Updaterefuse();
+$Resrvation->Update();
 
 
 

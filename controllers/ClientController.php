@@ -1,7 +1,5 @@
 <?php
 class ClientController{
-    
- 
   Public function getallville(){
     $voyage=new voyage();
          return $voyage->getAllville();

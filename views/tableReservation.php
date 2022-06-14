@@ -37,6 +37,7 @@
                                             <th>Date de depart</th>
                                             <th>Date de retour</th>
                                             <th>Date de reservation</th>
+                                            <th>Etat</th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -47,10 +48,10 @@
                                             <tr>
                                                 <td hidden class="id"><?= $reservation[0] ?></td>
                                                 <td><?= $x + 1 ?></td>
-                                                <td > <?= $reservation[10] ?> </td>
                                                 <td > <?= $reservation[11] ?> </td>
-                                                <td ><?= $reservation[14] ?></td>
-                                                <td><?= $reservation[12] ?></td>
+                                                <td > <?= $reservation[12] ?> </td>
+                                                <td ><?= $reservation[15] ?></td>
+                                                <td><?= $reservation[13] ?></td>
                                                 <td ><?= $reservation[1] ?></td>
                                                 <td><?= $reservation[2] ?></td>
                                                 <td ><?= $reservation[4] ?></td>
@@ -58,12 +59,12 @@
                                                 <td ><?= $reservation[6] ?></td>
                                                 <td><?= $reservation[7] ?></td>
                                                 <td ><?= $reservation[9] ?></td>
-                                         
-                                                
+                                                <td ><?= $reservation[10] ?></td>
+                                                                                        
                                                 <td class="d-flex  align-items-start">
-                                                    <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel">Accepte </a>
                                                     <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?">
-                                                        <button type="submit" name="deletparent" class="btn btn-outline-danger" style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $reservation['id'] ?>">refuse</button>
+                                                    <button type="submit" name="Refuse" class="btn btn-outline-danger" ><input type="text" hidden name="id" value="<?= $reservation['id'] ?>">Refuse</button>
+                                                    <button type="submit" name="Accepte" class="btn btn-outline-primary" ><input type="text" hidden name="id" value="<?= $reservation['id'] ?>">Accepte</button>
                                                     </form>
                                                 </td>
                                             </tr>

@@ -135,22 +135,7 @@
 			<div class="row">
 				<h3 class="text-center text-light  merriweather">Top Destination</h3>
 				<div class="card bg-transparent text-center mb-4">
-					<div class="card-header redressed fs-4">
-						<ul class="nav nav-tabs justify-content-center card-header-tabs">
-							<li class="nav-item">
-								<a class="nav-link active " onclick="filterSelection('all')" href="#">Tous Les Destination</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" onclick="filterSelection('campagne')" href="#">campagne</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" onclick="filterSelection('montagne')" href="#">montagne</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" onclick="filterSelection('plage')" href="#">plage</a>
-							</li>
-						</ul>
-					</div>
+				
 					<div class="card-body">
 						<p class="text-center text-light  merriweather">Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla.</p>
 					</div>

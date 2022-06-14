@@ -6,6 +6,7 @@ class Administrateur extends Dbconnect
   public $email;
   public $type;
   public $password;
+  public $password2;
   public $image;
   public $phone;
   public $genre;
@@ -26,7 +27,6 @@ class Administrateur extends Dbconnect
   {
     try {
       $this->password = password_hash($this->password, PASSWORD_DEFAULT);
-
       return Dbconnect::add('users', "(NULL,?,?,?,?,?,?,?,?,?)", [$this->name, $this->cin, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone, $this->adresse]);
     } catch (PDOException $e) {
       return $e->getMessage();
@@ -41,6 +41,8 @@ class Administrateur extends Dbconnect
   }
   public function Updateadmin()
   {
+    $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+
     return Dbconnect::Update('users', "name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone, $this->adresse, $this->id]);
   }
   
