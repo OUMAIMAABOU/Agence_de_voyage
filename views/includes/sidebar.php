@@ -24,12 +24,12 @@
 
             <a href="chart" class="list-group-item mx-5 border-0  merriweather bg-transparent mt-3" style="color:#90f5d7;">
                 <i class="fas fa-home"></i> Home</a>
-                <?php if($_SESSION['role']=='Admin' ||basename($_SERVER['REQUEST_URI'])=="Admin"){
+                <?php if($_SESSION['role']=='Client'){
            echo' <a href="admin" class="list-group-item  mx-5 border-0 merriweather bg-transparent ">
            <i class="far fa-bookmark"></i> Admin </a>';
          }?>
-           
-
+         <a href="admin" class="list-group-item  mx-5 border-0 merriweather bg-transparent ">
+           <i class="far fa-bookmark"></i> Admin </a>
             <a href="Hotel" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
                 <i class="fas fa-graduation-cap"></i>Hotel</a>
             <a href="transport" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
