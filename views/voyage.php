@@ -51,7 +51,7 @@
                       <tr>
                         <td hidden class="id"><?= $voyage[0] ?></td>
                         <td><?= $x + 1 ?></td>
-                        <td class="image"><?= $voyage['image'] ?></td>
+                        <td class="image" style="width: 40px;"><img src="views/assets/img/voyage/<?= $voyage['image'] ?>" alt="voyage" class="rounded-circle w-100"> </td>
                         <td class="Destination"><?= $voyage['destination'] ?></td>
                         <td class="Duree"> <?= $voyage['Dure'] ?> </td>
                         <td class="depart"><?= $voyage['date_de_depart'] ?></td>
@@ -87,7 +87,7 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      <form action="operation" method="post" class="php-email-form">
+                      <form action="operation" method="post" class="php-email-form" enctype="multipart/form-data">
                         <div class="row gy-4 mt-4">
                           <div class="col-md-6">
                             <input type="text" name="distination" class="form-control" placeholder="Distination" required>

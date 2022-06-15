@@ -11,7 +11,7 @@ class AdministrateurController{
       
       $file_name = $_FILES['image']['name'];
       $file_tmp =$_FILES['image']['tmp_name'];
-      move_uploaded_file($file_tmp,"views/assets/img/avatar/".$file_name);   
+      move_uploaded_file($file_tmp,"views/assets/img/client/".$file_name);   
       
      
       // if(!empty([$_POST['nom']])|| !empty([$_POST['genre']])|| !empty($_POST['Phone']))
@@ -20,15 +20,13 @@ class AdministrateurController{
         $admin->Setpassword($_POST['password']);
         $admin->SetAdress($_POST['adres']);
         // $admin->Setimage($_POST['image']['name']);
-        $admin->Setimage($_FILES['image']);
+        $admin->Setimage($_FILES['image']['name']);
         $admin->SetPhone($_POST['Phone']);
         $admin->Settype($_POST['type']);
         // $admin->Setimage($_POST['image']);
         $admin->SetGenre($_POST['genre']);
         $admin->Setcin($_POST['cin']);
-        if ($admin->insert()){
-          header('location:admin');
-        }  
+        if ($admin->insert())header('location:admin');  
      }  
   } 
 

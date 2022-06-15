@@ -51,7 +51,7 @@
                                             <tr>
                                                 <td hidden class="id"><?= $admine['id'] ?></td>
                                                 <td><?= $x + 1 ?></td>
-                                                <td class="image" style="width: 40px;"><img src="views/assets/img/avatar/<?= $admine['image'] ?>" class="rounded-circle w-100" alt=""></td>
+                                                <td class="image" style="width: 40px;"><img src="views/assets/img/client/<?= $admine['image'] ?>" class="rounded-circle w-100" alt=""></td>
                                                 <td class="nom"> <?= $admine['name'] ?> </td>
                                                 <td class="CIN"> <?= $admine['CIN'] ?> </td>
                                                 <td class="Email"><?= $admine['email'] ?></td>
@@ -62,7 +62,7 @@
                                                 <td class="d-flex  align-items-start">
                                                     <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
                                                     <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?">
-                                                        <button type="submit" name="deletparent" class="btn btn-outline-danger" style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $admine['id'] ?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png" /></button>
+                                                        <button type="submit" name="deletAsmin" class="btn btn-outline-danger" style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $admine['id'] ?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png" /></button>
                                                     </form>
                                                 </td>
                                             </tr>

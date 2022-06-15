@@ -17,13 +17,18 @@ class VoyageController
   }
   public function insert()
   {
+        
+   
     if (isset($_POST['addVoyage'])) {
+      $file_name = $_FILES['image']['name'];
+      $file_tmp =$_FILES['image']['tmp_name'];
+      move_uploaded_file($file_tmp,"views/assets/img/voyage/".$file_name);   
       Voyage::Setduree($_POST['duree']);
       Voyage::Setdate_de_depart($_POST['date']);
       Voyage::SetPrix($_POST['prix']);
       Voyage::Setdiscription($_POST['Discription']);
       Voyage::Setfood($_POST['food']);
-      Voyage::Setimage($_POST['image']);
+      Voyage::Setimage($_FILES['image']['name']);
       Voyage::Setetat($_POST['etat']);
       Voyage::Sethotel($_POST['Hotel']);
       Voyage::Setdistination($_POST['distination']);
