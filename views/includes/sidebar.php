@@ -6,7 +6,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
-
+<?php if(empty($_SESSION['role'])) header("Location:Acueille");?>
 <div class="d-flex m-3" id="dashboard">
     <div class="bg" id="sidebar-dashboard">
 
@@ -24,8 +24,11 @@
 
             <a href="chart" class="list-group-item mx-5 border-0  merriweather bg-transparent mt-3" style="color:#90f5d7;">
                 <i class="fas fa-home"></i> Home</a>
-            <a href="admin" class="list-group-item mx-5 border-0 merriweather bg-transparent ">
-                <i class="far fa-bookmark"></i> Admin </a>
+                <?php if($_SESSION['role']=='Admin' ||basename($_SERVER['REQUEST_URI'])=="Admin"){
+           echo' <a href="admin" class="list-group-item  mx-5 border-0 merriweather bg-transparent ">
+           <i class="far fa-bookmark"></i> Admin </a>';
+         }?>
+           
 
             <a href="Hotel" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
                 <i class="fas fa-graduation-cap"></i>Hotel</a>
@@ -35,12 +38,12 @@
                 <i class="fas fa-graduation-cap"></i>voyage</a>
             <a href="tableReservation" class="list-group-item merriweather mx-5 border-0 bg-transparent">
                 <i class="fas fa-dollar-sign "></i> Reservation </a>
-            <a href="#" class="list-group-item mx-5 border-0  merriweather bg-transparent ">
+            <a href="client" class="list-group-item mx-5 border-0  merriweather bg-transparent ">
                 <i class="far fa-file-alt"></i> client </a>
             <a href="setting" class="list-group-item mx-5 border-0 merriweather bg-transparent ">
                 <i class="fas fa-sliders-h"></i> Settings</a>
-            <a href="index.html" class="list-group-item mx-5 border-0 merriweather bg-transparent  mt-4 mb-2 ">
-                Logout <i class="fas fa-sign-out-alt"></i> </a>
+          <form method="POST" action="operation"><button type="submit"  name="logout" class="list-group-item mx-5 border-0 merriweather bg-transparent  mt-4 mb-2 ">
+          Logout   <i class="fas fa-sign-out-alt"></i></button></form>   
         </div>
 
 

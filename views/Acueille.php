@@ -200,18 +200,18 @@
 			<h4 class="merriweather text-center text-light mb-4">Avez-vous des questions? N'hésitez pas à nous contacter directement. Notre équipe reviendra vers vous dans une question d'heures pour vous aider</h4>
 
 
-			<form>
+			<form method="POST" action="operation">
 				<div class="row">
 					<div class="col-md-6 col-sm">
 						<div class="input-group mb-3">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
-							<input type="text" class="form-control" placeholder="Votre nom complet" />
+							<input type="text" class="form-control" name="nom" placeholder="Votre nom complet" />
 						</div>
 
 					</div>
 					<div class="col-md-6 col-sm">
 						<div class="input-group mb-3">
-							<input type="email" class="form-control" placeholder="Votre adresse email" />
+							<input type="email" name="email" class="form-control" placeholder="Votre adresse email" />
 							<span class="input-group-text"><i class="fas fa-at"></i></span>
 						</div>
 
@@ -220,11 +220,11 @@
 				<div class="row">
 					<div class="input-group mb-3">
 						<span class="input-group-text">Subject</span>
-						<input type="text" class="form-control" placeholder="Subject" />
+						<input type="text" class="form-control" name="Subject" placeholder="Subject" />
 					</div>
 					<div class="input-group">
 						<span class="input-group-text">Message</span>
-						<textarea class="form-control" aria-label="With textarea" placeholder="Message"></textarea>
+						<textarea class="form-control" name="msg" aria-label="With textarea" placeholder="Message"></textarea>
 					</div>
 				</div>
 				<button type="submit" name="contact" class="btn btn-order2  btn-lg rounded-0 merriweather mt-3">Contacter</button>

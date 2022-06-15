@@ -42,8 +42,7 @@
                                         </tr>
                                     </thead>
                                     <tbody class="fw-bold" id="myTable">
-                                        <?php $reservation = new ResrvationController();
-                                        $reservation = $reservation->select();
+                                        <?php $reservation = ResrvationController::select();
                                         foreach ($reservation as $x => $reservation) { ?>
                                             <tr>
                                                 <td hidden class="id"><?= $reservation[0] ?></td>

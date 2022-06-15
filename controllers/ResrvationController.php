@@ -17,7 +17,7 @@ class ResrvationController{
       }  
     }
 
-  public function select(){
+  static public function select(){
     return Reservation::Afficher();
    }
 

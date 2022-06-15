@@ -33,7 +33,7 @@ class AdministrateurController{
           $_SESSION['id']= $admin['id'];
           $_SESSION['name']= $admin['name'];
           $_SESSION['image']= $admin[2];
-          $_SESSION['role']= $admin[3];
+          $_SESSION['role']= $admin['type'];
            if($admin[3]=="Agent"||$admin[3]=="admin_general"||$admin[3]=="admin_secondaire")header('location:admin'); 
            else if($admin[3]=="client")header('location:Acueille'); 
            else echo "error user type not allowed!";
@@ -44,7 +44,7 @@ class AdministrateurController{
   public function Delete(){
     if(isset($_POST['deletparent'])){
        $p = new Administrateur();
-       $p->Setid($_POST['id']);
+         $p->Setid($_POST['id']);
        if($p->DeleteAdmin()) header('location:admin');
       } 
   }
@@ -65,7 +65,6 @@ public function update(){
         $admin->Setemail($_POST['email']);
         $admin->Setpassword($_POST['password']);
         $admin->SetAdress($_POST['adres']);
-        $admin->Setimage($_FILES['image']['name']);
         $admin->SetPhone($_POST['Phone']);
         $admin->Settype($_POST['type']);
         $admin->Setimage($_POST['image']);

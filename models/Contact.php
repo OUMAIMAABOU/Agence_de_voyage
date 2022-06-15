@@ -1,11 +1,18 @@
 <?php
 class Contact extends Dbconnect{
-public $name;
-public $email;
-public $subjet;
-public $message;
+static public $name;
+static public $email;
+static public $subjet;
+static public $message;
 
-    public function insert(){
-         return $this->getdata("INSERT INTO contact VALUES(NULL,'?','?','?','?')")->execute([$this->name,$this->email,$this->subjet,$this->message]);
-    }
+ 
+    static public function insert(){
+         return Dbconnect::add('contact',"(NULL,?,?,?,?)",[self::$name,self::$email,self::$subjet,self::$message]); 
+         }
+
+         static public function Setmessage($message){self::$message=$message;}
+         static public function Setname($name){self::$name=$name;}
+         static public function Setemail($email){self::$email=$email;}
+         static public function Setsubject($subjet){self::$subjet=$subjet;}
+
 }

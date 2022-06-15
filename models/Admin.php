@@ -33,16 +33,30 @@ class Administrateur extends Dbconnect
 
   public function login()
   {
-    $result = $this->GetData("SELECT users.id, users.name ,users.image,types.type,users.password  from users ,types WHERE users.type=types.id and email=?");
+    $result = $this->GetData("SELECT users.id, users.name ,users.image,types.type as type,users.password  from users ,types WHERE users.type=types.id and email=?");
     $result->execute([$this->email]);
     return $result = $result->fetch();
   }
   public function Updateadmin()
   {
-    $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+    if($this->password =""){
+      return Dbconnect::Update('users', "name =?,email=?,genre=?,type=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->type,  $this->image, $this->phone, $this->adresse, $this->id]);
 
+    }else{
+    $this->password = password_hash($this->password, PASSWORD_DEFAULT);
     return Dbconnect::Update('users', "name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone, $this->adresse, $this->id]);
   }
+}
+
+  public function genreHomme()
+  {
+    return  static :: SELECTJoin('users','*'," genre='Homme'");
+  }
+  public function genrFemme()
+  {
+    return  static :: SELECTJoin('users','*'," genre='Femme'");
+  }
+  
   
 
 

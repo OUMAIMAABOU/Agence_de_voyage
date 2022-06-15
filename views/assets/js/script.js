@@ -18,34 +18,7 @@
 
 
  
-    // <?php $femme = $stati->GenreprofesseursF()+$stati->GenreEtudiantF();
-    //        $Homme = $stati->GenreprofesseursH()+$stati->GenreEtudiantH() ?>
-var xValues = ["Femme","Homme"];
-var yValues = [1,3];
-var colors=['red','orange'];
 
-new Chart("myChart", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: colors,
-      borderColor: colors,
-      data: yValues
-    }]
-  },
-});
-new Chart("myChart1", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: colors,
-      borderColor: colors,
-      data: yValues
-    }]
-  },
-});
 
         var el = document.getElementById("dashboard");
         var toggleButton = document.getElementById("menu-toggle");

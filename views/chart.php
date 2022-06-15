@@ -84,7 +84,7 @@
                           <p class="fs-4">Réservation</p>
                           <hr>
                           </hr>
-                          <h3 class="fs-5"><canvas id="Chart1" style="width:100%;max-width:700px ;"></canvas> </canvas>
+                          <h3 class="fs-5"><canvas id="Reservation" style="width:100%;max-width:700px ;"></canvas> </canvas>
 
                             <hr>
                             </hr>
@@ -160,10 +160,7 @@
       legend: {
         display: false
       },
-      title: {
-        display: true,
-        text: "Ecole"
-      }
+     
     }
   });
 </script>
@@ -219,57 +216,54 @@
       }
     }
   });
-</script>
-<script>
-var xValues = [];
-var yValues = [];
-generateData("<?= count(ClientController::select());?> * 2 + 7", 0, 10, 0.5);
+  </script>
+  <script>
+var xValues = ["Client", "Agent", "Admin"];
+var yValues = [<?=count(ClientController::select())?>, 49, 44];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+
+];
 
 new Chart("Chart", {
-  type: "line",
+  type: "doughnut",
   data: {
     labels: xValues,
     datasets: [{
-      fill: false,
-      pointRadius: 1,
-      borderColor: "rgba(255,0,0,0.5)",
+      backgroundColor: barColors,
       data: yValues
     }]
   },
  
 });
-
-function generateData(value, i1, i2, step = 1) {
-  for (let x = i1; x <= i2; x += step) {
-    yValues.push(eval(value));
-    xValues.push(x);
-  }
-}
 </script>
+<?php $voyage = new VoyageController();?>
+                    
 <script>
-  new Chart("Chart1", {
-    type: "line",
+    var xValues = ["Voyage", "reservation"];
+  var yValues = [<?=  $voyage->Afficher();?>, <?= ResrvationController::select()?>, 0];
+  var barColors = [
+    "#b91d47",
+    "#00aba9",
+    "#2b5797",
+    
+  ];
+  new Chart("Reservation", {
+  
+    type: "doughnut",
     data: {
       labels: xValues,
       datasets: [{
-        fill: false,
-        lineTension: 0,
-        backgroundColor: "rgba(0,0,255,1.0)",
-        borderColor: "rgba(0,0,255,0.1)",
+        backgroundColor: barColors,
         data: yValues
       }]
     },
     options: {
-      legend: {
-        display: false
-      },
-      scales: {
-        yAxes: [{
-          ticks: {
-            min: 6,
-            max: 16
-          }
-        }],
+      title: {
+        display: true,
+        text: "World Wide Wine Production 2018"
       }
     }
   });

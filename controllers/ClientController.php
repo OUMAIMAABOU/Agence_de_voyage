@@ -24,5 +24,15 @@ class ClientController{
     $admin = Client::Afficher();
     return  $admin;
  }
+ static public function Delete(){
+  if(isset($_POST['deleclient'])){
+     $p = new Administrateur();
+       $p->Setid($_POST['id']);
+     if($p->DeleteAdmin()){
+      cookies::set('success','Le message a été envoyé');
+       header('location:client');
+     }
+    } 
+}
  
  }
