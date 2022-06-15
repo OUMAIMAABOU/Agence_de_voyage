@@ -78,12 +78,7 @@
                                        <input type="text" hidden class="form-control" id="id" name="id"  >
                                        
                                    </div>
-                                   <!-- <div class="mb-3 fw-bold col-6" > -->
-                                            <!-- <label for="exampleFormControlInput1" class="form-label">Image</label> -->
-                                            <!-- <input type="file" class="form-control"  id ="image"  name="image"  placeholder="Enter name complet" > -->
-                                            <!-- <input type="file" name="fileToUpload" id="fileToUpload">
-                                             <input type="submit" value="Upload Image" name="submit"> -->
-                                        <!-- </div> -->
+                               
                                       <div class="mb-3 fw-bold col-6" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                             <input type="text" class="form-control"  id ="name"  name="nom"  placeholder="Enter name complet" >
@@ -104,15 +99,7 @@
                                             <label for="exampleFormControlInput1" class="form-label">Email</label>
                                             <input type="email" class="form-control" name="email" id="email" placeholder="Enter votre email">
                                         </div>
-                                        <div class="mb-3  fw-bold col-6"  >
-                                            <label for="exampleFormControlInput1" class="form-label">Type</label>
-                                            <select class="form-select" name="type" id="type">
-                                           
-                                         <option value="1">admin general </option>
-                                         <option value="5">Agent </option>
-
-                                         </select>
-                                        </div>
+                                
                                         <div class="mb-3  fw-bold col-6"  >
                                             <label for="exampleFormControlInput1" class="form-label">password</label>
                                             <input type="text" class="form-control" name="password" id ="password" placeholder="Enter votre password">
