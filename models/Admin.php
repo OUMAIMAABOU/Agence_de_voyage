@@ -33,13 +33,13 @@ class Administrateur extends Dbconnect
 
   public function login()
   {
-    $result = $this->GetData("SELECT users.id, users.name ,users.image,types.type as type,users.password  from users ,types WHERE users.type=types.id and email=?");
+    $result = $this->GetData("SELECT users.id, users.name ,users.image as image,types.type as type,users.password as pass  from users ,types WHERE users.type=types.id and email=?");
     $result->execute([$this->email]);
     return $result = $result->fetch();
   }
   public function Updateadmin()
   {
-    if($this->password =""){
+    if($this->password ==""||$this->type==""){
       return Dbconnect::Update('users', "name =?,email=?,genre=?,type=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->type,  $this->image, $this->phone, $this->adresse, $this->id]);
 
     }else{
@@ -56,6 +56,18 @@ class Administrateur extends Dbconnect
   {
     return  static :: SELECTJoin('users','*'," genre='Femme'");
   }
+
+  // public function search($search){
+  //   try{
+  //      $query="SELECT * FROM parents WHERE Matricule LIKE ? OR Nom_complet LIKE ? OR Genre LIKE ? OR Job LIKE ? OR Adresse LIKE ? OR Phone LIKE ?" ;
+  //      $query=$this->GetData($query);
+  //      $query->execute(['%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%']);
+  //      return $query->fetchAll();
+  //      return  static :: SELECTJoin('users','*'," genre='Homme'");
+  //      $query->close;
+  //     }catch(PDOException $e){ return $e->getMessage();} 
+
+  // }
   
   
 

@@ -26,20 +26,27 @@ class AdministrateurController{
     $admin=new Administrateur();
     if(isset($_POST['loginconnect']))
     {
-       $admin->Setemail($_POST['email']);
-       $admin=$admin->login();
-      if($admin && password_verify($_POST['password'],$admin['password']))
+      $admin->Setemail($_POST['email']);
+            $admin=$admin->login();
+      if($admin && password_verify($_POST['password'],$admin['pass']))
       {
-          $_SESSION['id']= $admin['id'];
-          $_SESSION['name']= $admin['name'];
-          $_SESSION['image']= $admin[2];
-          $_SESSION['role']= $admin['type'];
-           if($admin[3]=="Agent"||$admin[3]=="admin_general"||$admin[3]=="admin_secondaire")header('location:admin'); 
-           else if($admin[3]=="client")header('location:Acueille'); 
-           else echo "error user type not allowed!";
-     } else header('location:login'); 
+        $_SESSION['id']= $admin['id'];
+        $_SESSION['name']= $admin['name'];
+        $_SESSION['image']= $admin['image'];
+        $_SESSION['role']= $admin['type'];
+        if($admin['type'] == "Agent" || $admin['type'] == "admin_general") {
+          header('location:admin'); 
+        }
+        else if($admin['type']=="client") {
+          header('location:Acueille'); 
+        }else{
+          header('location:login');     echo "error user type not allowed!";
+        }
+      }
    }
+  
   }
+  
   
   public function Delete(){
     if(isset($_POST['deletparent'])){

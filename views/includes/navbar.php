@@ -1,12 +1,13 @@
 
 		<link rel="stylesheet" href="./views/assets/css/style.css">
 		<link rel="stylesheet" href="./views/assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./views/assets/css/login.css	">
 		<script src="views/assets/bootstrap.bundle.min.js" ></script>
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
 
-    <nav class="cc-navbar navbar navbar-expand-lg navbar-dark position-fixed w-100">
+    <nav class="cc-navbar navbar navbar-expand-lg navbar-dark w-100">
 			<div class="container-fluid">
 				<a class="navbar-brand text-uppercase mx-4 py-3 fw-bolder redressed fs-3"  href="#"><span style="color:#20c997;">Happy</span>Travel</a>
 				<button

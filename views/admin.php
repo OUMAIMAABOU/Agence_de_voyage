@@ -41,9 +41,10 @@
                     </thead>
                     <tbody  class="fw-bold" >
                         <?php  $admine = new AdministrateurController(); $admines=$admine->getAllAdmin();foreach($admines as $x => $admine){?>
-                            <tr>
+                            
                            <!-- <?php echo $_SESSION['role'];?> -->
-                            <td hidden class="id"><?= $admine['id'] ?></td>
+                           <tr>
+                               <td hidden class="id"><?= $admine['id'] ?></td>
                                 <td><?= $x+1?></td>
                                 <td class="image"><?= $admine['image'] ?></td>
                                 <td class="nom"> <?= $admine['name'] ?> </td>
@@ -159,9 +160,10 @@
                                    <!-- <div class="mb-3 fw-bold col-6" > -->
                                             <!-- <label for="exampleFormControlInput1" class="form-label">Image</label> -->
                                             <!-- <input type="file" class="form-control"  id ="image"  name="image"  placeholder="Enter name complet" > -->
-                                            <!-- <input type="file" name="fileToUpload" id="fileToUpload">
-                                             <input type="submit" value="Upload Image" name="submit"> -->
-                                        <!-- </div> -->
+                                             <input type="file" name="fileToUpload" id="fileToUpload">
+                                             <input type="submit" value="Upload Image" name="submitImage">
+                                           
+                                        </div> 
                                       <div class="mb-3 fw-bold col-6" >
                                             <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
                                             <input type="text" class="form-control"  id ="name"  name="nom"  placeholder="Enter name complet" >
@@ -225,9 +227,25 @@
         </div>
         </main> 
         <script  src="views\js\script.js"></script>
-          
-    
-           
+  <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+ <?php   
+if(isset($_FILES['fileToUpload'])){
+      $errors= array();
+      $file_name = $_FILES['fileToUpload']['name'];
+      $file_tmp =$_FILES['fileToUpload']['tmp_name'];
+      move_uploaded_file($file_tmp,"./views/assets/img/avatar".$file_name);
+     
+   }  
+   ?>   
 </body>
 </html>
 

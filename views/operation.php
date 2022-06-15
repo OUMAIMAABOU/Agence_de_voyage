@@ -8,16 +8,10 @@ if(isset($_POST['logout']) ){
   }
 $Controller= new ClientController();
 // $Controller->InsertContact();
-
 $Controllers= new AdministrateurController();
 $Controllers->insert();
 
-if($_SESSION['role']=='Admin')$Controllers->Delete();  
-
- 
-    
-
-
+// if($_SESSION['role']=='Admin')$Controllers->Delete();  
 $Controllers->update();
 $Controllers->login();
 $Controllers->inscription();

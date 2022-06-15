@@ -17,6 +17,7 @@
                               <input class="form-control me-2 " id="myInput" type="text" placeholder="Search..." aria-label="Search" style="width: 584px;">
                               <i class="fas fa-bell  mt-2 ml-2"></i>
                           </form>
+                          <!-- <input type="text" id="myInput"  placeholder="Search for names.." title="Type in a name"> -->
                       </div>
                   </div>
               </div>
