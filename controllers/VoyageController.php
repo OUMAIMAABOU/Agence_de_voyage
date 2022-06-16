@@ -11,9 +11,11 @@ class VoyageController
     $voyage = new voyage();
     return $voyage->getAllville();
   }
+
   public function select()
   {
-    return  voyage::selectOne($_POST['id']);
+    if(empty($_SESSION['id'])) header('location:login');
+   else  return  voyage::selectOne($_POST['id']);
   }
   public function insert()
   {

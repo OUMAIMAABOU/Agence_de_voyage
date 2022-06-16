@@ -40,7 +40,7 @@ class AdministrateurController
         $_SESSION['id'] = $admin['id'];
         $_SESSION['name'] = $admin['name'];
         $_SESSION['image'] = $admin['image'];
-        // $_SESSION['role'] = $admin['type'];
+        $_SESSION['role'] = $admin['type'];
         if ($admin[3] == "Agent" || $admin[3] == "admin_general") {
           header('location:admin');
           var_dump($admin->login());
@@ -48,7 +48,7 @@ class AdministrateurController
           header('location:Acueille');
         } 
     }
-     
+    var_dump($admin->login());
       cookies::set('error', "Utilisateur n'est exsite pas ");
       header('location:login');
   }
@@ -101,7 +101,7 @@ class AdministrateurController
         header('location:admin');
       } else {
         cookies::set('error', 'Utilisateur ne pas Modifé');
-        // header('location:admin');
+        header('location:admin');
       }
     }
   }
@@ -119,7 +119,7 @@ class AdministrateurController
       $admin->SetAdress($_POST['adresse']);
       $admin->Setimage($_POST['image']);
       $admin->SetPhone($_POST['Phone']);
-      $admin->Settype(6);
+      $admin->Settype(3);
       $admin->SetGenre($_POST['genre']);
       $admin->Setcin($_POST['cin']);
       if ($admin->insert()) {

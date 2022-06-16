@@ -8,7 +8,7 @@ if(isset($_POST['logout']) ){
   }
  
 $CLIENT= new ClientController();
-$CLIENT->InsertContact();
+// $CLIENT->InsertContact();
 $Controllers= new AdministrateurController();
 $Controllers->insert();
 
@@ -29,11 +29,12 @@ $hotel-> update();
 $Transport=new TransportController();
 $Transport->insert();
 $Transport->Delete();
-$Transport->Update();
-$Voyage=new VoyageController();
+$Transport->Update();$Voyage=new VoyageController();
+
 $Voyage->insert();
 $Voyage->Delete();
 $Voyage->Update();
+
 $Resrvation=new ResrvationController();
 $Resrvation->insert();
 $Resrvation->Updaterefuse();
@@ -41,11 +42,4 @@ $Resrvation->Update();
 
 ClientController::Delete();
 ContactController::insert();
-
-
-
-
-
-
-
 ?>

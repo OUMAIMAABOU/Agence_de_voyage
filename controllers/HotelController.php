@@ -18,7 +18,7 @@ class HotelController
         header('location:Hotel');
       }else{
         cookies::set('error',"Hotel n'est pas Ajouté");
-        // header('location:Hotel');
+        header('location:Hotel');
  
       } 
        } 

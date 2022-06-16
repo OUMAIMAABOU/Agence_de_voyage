@@ -19,8 +19,8 @@
         <div class="list-group ">
             <img src="views\assets\images\client\ulzzangs.jpg" alt="profile picture" class=" profile img-fluid rounded-circle mx-auto my-2   d-block" style="height: 116px;width: 153px;">
             <div class="text-center ">
-                <h2 class="fs-4 merriweather " style="color : #dcdcdc"> Admin name </h2>
-                <span class="fs-4 merriweather green ">Admin</span>
+                <h2 class="fs-4 merriweather " style="color : #dcdcdc"> <?=  $_SESSION['name'] ?></h2> 
+                <span class="fs-4 merriweather green "><?=  $_SESSION['role']?></span>
             </div>
 
             <a href="chart" class="list-group-item mx-5 border-0  merriweather bg-transparent mt-3" style="color:#90f5d7;">
