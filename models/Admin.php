@@ -20,7 +20,7 @@ class Administrateur extends Dbconnect
   }
   static  public  function Afficher()
   {
-    return  static :: SELECTJoin('users, types','users.* , types.type'," users.type=types.id and types.type!='client'");
+    return  static :: SELECTJoin('users, types','users.* , types.type'," users.type=types.id and types.type!='client' ORDER BY id DESC");
 
   }
   public function insert()
@@ -39,10 +39,12 @@ class Administrateur extends Dbconnect
   }
   public function Updateadmin()
   {
-    if($this->password ==""||$this->type==""){
+    if($this->password ==""){
       return Dbconnect::Update('users', "name =?,email=?,genre=?,type=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->type,  $this->image, $this->phone, $this->adresse, $this->id]);
 
-    }else{
+    }else if($this->type ==""){
+      return Dbconnect::Update('users', "name =?,email=?,genre=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->image, $this->phone, $this->adresse, $this->id]);
+     } else{
     $this->password = password_hash($this->password, PASSWORD_DEFAULT);
     return Dbconnect::Update('users', "name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone, $this->adresse, $this->id]);
   }

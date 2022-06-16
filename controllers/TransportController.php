@@ -13,7 +13,14 @@ class TransportController
         Transport::Setville($_POST['ville']);
         Transport::SetType($_POST['Type']);
         Transport::SetIdUser(1);
-      if (Transport::insert())header('location:transport'); 
+      if (Transport::insert()){
+        cookies::set('success','transport a été Ajouté'); 
+        header('location:transport');
+      }else{
+        cookies::set('error',"transport n'est pas Ajouté");
+        header('location:transport');
+      } 
+       
     }  
   }
 
@@ -24,7 +31,14 @@ class TransportController
    public function Delete(){
     if(isset($_POST['delete'])){
        Transport::SetId($_POST['id']);
-       if(Transport::DeleteModele()) header('location:transport');
+       if(Transport::DeleteModele()) {
+        cookies::set('success','transport a été Supprimé'); 
+        header('location:transport');
+      }else{
+        cookies::set('error',"transport n'est pas Supprimé");
+        header('location:transport');
+ 
+      }
       } 
   }
   Public function Update()
@@ -40,7 +54,14 @@ class TransportController
         Transport::Setville($_POST['ville']);
         Transport::SetType($_POST['Type']);
         Transport::SetIdUser(1);
-      if (Transport::UpdateTransport())header('location:transport'); 
+      if (Transport::UpdateTransport()){
+        cookies::set('success','transport a été Modifié'); 
+        header('location:transport');
+      }else{
+        cookies::set('error',"transport n'est pas Modifié");
+        header('location:transport');
+ 
+      }
     }  
   }
 

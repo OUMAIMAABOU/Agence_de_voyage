@@ -51,16 +51,14 @@
                       <tr>
                         <td hidden data-target="id"><?= $hotel[0] ?></td>
                         <td><?= $x + 1 ?></td>
-                        <td><?= $hotel[5] ?></td>
-                        <td> <?= $hotel[1] ?> </td>
-                        <td><?= $hotel[8] ?></td>
-                        <td><?= $hotel[3] ?></td>
-                        <td><?= $hotel[4] ?></td>
-                        <td><?= $hotel[6] ?></td>
-                        <td><?= $hotel[2] ?></td>
-                        <td><?= $hotel[7] ?></td>
-                        <td><?= $hotel[9] ?></td>
-
+                        <td><?= $hotel['name'] ?></td>
+                        <td> <?= $hotel['email'] ?> </td>
+                        <td><?= $hotel['adresse'] ?></td>
+                        <td><?= $hotel['ville'] ?></td>
+                        <td><?= $hotel['telephone'] ?></td>
+                        <td><?= $hotel['etoile'] ?></td>
+                        <td><?= $hotel['restaurant'] ?></td>
+                        <td><?= $hotel['username'] ?></td>
                         <td class="d-flex  align-items-start">
                           <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#agentModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
                           <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?"> <button type="submit" name="deleteHotel" class="btn btn-outline-danger" style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $hotel[0] ?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png" /></button></form>
@@ -131,14 +129,6 @@
                             </select>
                           </div>
                           <div class="col-md-6 ">
-                            <select class="form-control" name="Chamber" required data-parsley-trigger="keyup">
-                              <option value="default">type Chamber </option>
-                              <option value="1">2 </option>
-                              <option value="2">3 </option>
-                              <option value="5">4 </option>
-                            </select>
-                          </div>
-                          <div class="col-md-6 ">
 
                             <select class="form-control" name="Restauran" required data-parsley-trigger="keyup">
                               <option value="default">Restaurant </option>
@@ -153,7 +143,7 @@
 
 
                           <div class="col-md-12 text-center">
-                            <button type="submit" class="btn  w-25 mb-3" name="add" style="background:#90f5d7 ; color: #012970; ">Ajouter
+                            <button type="submit" class="btn  w-25 mb-3" name="addHotel" style="background:#90f5d7 ; color: #012970; ">Ajouter
                             </button>
                           </div>
 

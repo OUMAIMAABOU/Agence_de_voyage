@@ -5,34 +5,29 @@ require_once('./controllers/HomeController.php');
 
 
 // require_once('./views/includes/alerts.php');
-if( basename($_SERVER['REQUEST_URI'])=="Acueille"||basename($_SERVER['REQUEST_URI'])=="login1"||basename($_SERVER['REQUEST_URI'])=="inscription"||basename($_SERVER['REQUEST_URI'])=="Agence_de_voyage"||basename($_SERVER['REQUEST_URI'])=="formreservation"||basename($_SERVER['REQUEST_URI'])=="login"){
-include ('./views/includes/navbar.php');
-
+if (basename($_SERVER['REQUEST_URI']) == "Acueille" || basename($_SERVER['REQUEST_URI']) == "login1" || basename($_SERVER['REQUEST_URI']) == "inscription" || basename($_SERVER['REQUEST_URI']) == "Agence_de_voyage" || basename($_SERVER['REQUEST_URI']) == "formreservation" || basename($_SERVER['REQUEST_URI']) == "login") {
+    include('./views/includes/navbar.php');
 }
 
+require_once('./views/includes/alerts.php');
 
 
 
 
-$home =new HomeController();
-$page=['login','voyage','image','login1','client','inscription','transport','Hotel','Acueille','test','reservation','operation','index1','admin','chart','tableReservation','setting','formreservation'];
+$home = new HomeController();
+$page = ['login', 'voyage', 'image', 'login1', 'client', 'inscription', 'transport', 'Hotel', 'Acueille', 'test', 'reservation', 'operation', 'index1', 'admin', 'chart', 'tableReservation', 'setting', 'formreservation'];
 
-if(isset($_GET['page'])){
-    if(in_array($_GET['page'],$page)){
+if (isset($_GET['page'])) {
+    if (in_array($_GET['page'], $page)) {
         $home->index($_GET['page']);
-    } else{
-      include('views/includes/404.php');
+    } else {
+        include('views/includes/404.php');
     }
-}else{
-        $home->index('Acueille');
-    }
+} else {
+    $home->index('Acueille');
+}
 
-    if( basename($_SERVER['REQUEST_URI'])=="Acueille"){
-     
-        include('./views/includes/footer.php');}
- 
+if (basename($_SERVER['REQUEST_URI']) == "Acueille") {
 
-
-
-
-
+    include('./views/includes/footer.php');
+}

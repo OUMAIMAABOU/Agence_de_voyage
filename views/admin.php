@@ -62,7 +62,7 @@
                                                 <td class="d-flex  align-items-start">
                                                     <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
                                                     <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?">
-                                                        <button type="submit" name="deletAsmin" class="btn btn-outline-danger" style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $admine['id'] ?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png" /></button>
+                                                        <button type="submit" name="deletADMIN" class="btn btn-outline-danger" style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $admine['id'] ?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png" /></button>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -110,8 +110,7 @@
                                                         <select class="form-control" name="type" required data-parsley-trigger="keyup">
 
                                                             <option value="1">admin general </option>
-                                                            <option value="2">admin secondaire </option>
-                                                            <option value="5">Agent </option>
+                                                            <option value="2">Agent </option>
 
                                                         </select>
                                                     </div>
@@ -161,73 +160,67 @@
                                                         <input type="text" hidden class="form-control" id="id" name="id">
 
                                                     </div>
-                                                    <!-- <div class="mb-3 fw-bold col-6" > -->
-                                                    <!-- <label for="exampleFormControlInput1" class="form-label">Image</label> -->
-                                                    <!-- <input type="file" class="form-control"  id ="image"  name="image"  placeholder="Enter name complet" > -->
+                                                    <div class="mb-3 fw-bold col-6">
+                                                        <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
+                                                        <input type="text" class="form-control" id="name" name="nom" placeholder="Enter name complet">
+                                                    </div>
+                                                    <div class="mb-3 fw-bold col-6">
+                                                        <label for="exampleFormControlInput1" class="form-label">cin</label>
+                                                        <input type="text" class="form-control" id="cin" name="cin" placeholder="Enter name complet">
+                                                    </div>
+                                                    <div class="mb-3  fw-bold col-6">
+                                                        <label for="exampleFormControlInput1" class="form-label">Genre</label>
+                                                        <select class="form-control" name="genre" id="genre">
+                                                            <option value="Femme">Femme </option>
+                                                            <option value="Homme" selected>Homme </option>
+                                                        </select>
+                                                    </div>
 
+                                                    <div class="mb-3  fw-bold col-6">
+                                                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter votre email">
+                                                    </div>
+                                                    <div class="mb-3  fw-bold col-6">
+                                                        <label for="exampleFormControlInput1" class="form-label">Type</label>
+                                                        <select class="form-select" name="type" id="type">
 
-                                            </div>
-                                            <div class="mb-3 fw-bold col-6">
-                                                <label for="exampleFormControlInput1" class="form-label">Nom complet</label>
-                                                <input type="text" class="form-control" id="name" name="nom" placeholder="Enter name complet">
-                                            </div>
-                                            <div class="mb-3 fw-bold col-6">
-                                                <label for="exampleFormControlInput1" class="form-label">cin</label>
-                                                <input type="text" class="form-control" id="cin" name="cin" placeholder="Enter name complet">
-                                            </div>
-                                            <div class="mb-3  fw-bold col-6">
-                                                <label for="exampleFormControlInput1" class="form-label">Genre</label>
-                                                <select class="form-control" name="genre" id="genre">
-                                                    <option value="Femme">Femme </option>
-                                                    <option value="Homme" selected>Homme </option>
-                                                </select>
-                                            </div>
+                                                            <option value="1">admin general </option>
+                                                            <option value="2">Agent </option>
 
-                                            <div class="mb-3  fw-bold col-6">
-                                                <label for="exampleFormControlInput1" class="form-label">Email</label>
-                                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter votre email">
-                                            </div>
-                                            <div class="mb-3  fw-bold col-6">
-                                                <label for="exampleFormControlInput1" class="form-label">Type</label>
-                                                <select class="form-select" name="type" id="type">
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-3  fw-bold col-6">
+                                                        <label for="exampleFormControlInput1" class="form-label">password</label>
+                                                        <input type="text" class="form-control" name="password" id="password" placeholder="Enter votre password">
 
-                                                    <option value="1">admin general </option>
-                                                    <option value="5">Agent </option>
+                                                    </div>
+                                                    <div class="mb-3  fw-bold col-6">
+                                                        <label for="exampleFormControlInput1" class="form-label">Phone</label>
+                                                        <input type="text" class="form-control" id="phone" name="Phone" placeholder="Enter phone">
+                                                    </div>
+                                                    <div class="mb-3  fw-bold col-6">
+                                                        <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+                                                        <textarea class="form-control" name="adres" id="adress" rows="3"></textarea>
+                                                    </div>
 
-                                                </select>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="submit" name="update" class="btn btn-warning mT-3">Update</button>
+                                                    </div>
+                                                </form>
                                             </div>
-                                            <div class="mb-3  fw-bold col-6">
-                                                <label for="exampleFormControlInput1" class="form-label">password</label>
-                                                <input type="text" class="form-control" name="password" id="password" placeholder="Enter votre password">
+                                        </div>
+                                        <div class="modal-footer">
 
-                                            </div>
-                                            <div class="mb-3  fw-bold col-6">
-                                                <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                                                <input type="text" class="form-control" id="phone" name="Phone" placeholder="Enter phone">
-                                            </div>
-                                            <div class="mb-3  fw-bold col-6">
-                                                <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                                                <textarea class="form-control" name="adres" id="adress" rows="3"></textarea>
-                                            </div>
-
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" name="update" class="btn btn-warning mT-3">Update</button>
-                                            </div>
-                                            </form>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-
-                                    </div>
                                 </div>
+                                <script src="views/assets/bootstrap.bundle.min.js"></script>
+                                <script src="views/assets/js/bootstrap.bundle.min.js"></script>
+
+
                             </div>
-                            <script src="views/assets/bootstrap.bundle.min.js"></script>
-                            <script src="views/assets/js/bootstrap.bundle.min.js"></script>
-
-
                         </div>
-                    </div>
     </main>
     <script src="views\js\script.js"></script>
     <script>

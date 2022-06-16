@@ -13,7 +13,14 @@ class ResrvationController{
           Reservation::Setlocal($_POST['Local']);
           Reservation::Setdate_depart($_POST['date_depart']);
           Reservation::Setdate_retour($_POST['date_retour']);
-        if (Reservation::insert())header('location:formreservation'); 
+        if (Reservation::insert())
+        {
+          cookies::set('success', 'votre reservation a été Ajouté voueillez attandre ');
+          header('location:formreservation');
+        } else {
+          cookies::set('error', "Hotel n'est pas Ajouté");
+          header('location:formreservation');
+        } 
       }  
     }
 
