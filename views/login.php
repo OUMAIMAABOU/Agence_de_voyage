@@ -1,54 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-</head>
+<div class="container mt-5">
+    <div class="body d-md-flex align-items-center justify-content-between">
+        <div class="box-1 mt-md-0 ">
 
-<body>
-  <main>
-
-
-    <div class="login d-flex justify-content-center align-items-center">
-      <div class=" w-25 " style=" margin-top: 110px;">
-     
-
-     
-
-
-      <div class="login d-flex justify-content-center align-items-center">
-  <div class="  " style=" margin-top: 110px;">
-
-
-    <div class=" text-center mt-5  mb-5">
-      <h1 class=" fs-3 fw-bold m-5  mt-5" style="border-bottom: #20c997 3px solid;">Connexion </h1>
+            <img src="views/assets/img/background/pexels-spencer-davis-4353813.jpg" class="" alt="">
+        </div>
+        <div class=" box-2 d-flex flex-column h-100">
+            <div class="mt-5">
+                <p class="mb-1 h-1 merriweather fs-3 text-center">Connexion.</p>
+                <p class=" mb-2">Explorez la beauté du beau monde.</p>
+                <div class="d-flex flex-column ">
+                    <p class=" mb-2">Continue avec...</p>
+                    <div class="d-flex align-items-center">
+                        <form class="form-container row" action="operation" method="POST" data-parsley-validate>
+                            <div class="my-4 fw-bold">
+                                <input type="email" class="form-control" name="email" placeholder="Enter votre email">
+                            </div>
+                            <div class="my-4 fw-bold">
+                                <input type="password" class="form-control" name="password" placeholder="Enter votre password">
+                            </div>
+                            <div class="my-4 fw-bold  text-center">
+                                <button type="submit" name="loginconnect" class="btn btn-order btn-lg rounded-3 merriweather ">Connexion</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="my-4">
+                        <p class="mb-0 fs-5  merriweather">Vous avez déjà un compte? <a  href="inscription" class="text-decoration-none fs-5 merriweather" style="color: #20c997;">S'inscrire</a></p>
+                        <div class="btn btn-primary"><span class="fas fa-chevron-right ms-1"></span></div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
     </div>
-
-        <form class="form-container row" action="operation" method="POST" data-parsley-validate>
-          <div class="mb-3 fw-bold">
-            <input type="email" class="form-control" name="email"  placeholder="Enter votre email">
-          </div>
-          <div class="mb-3 fw-bold">
-            <input type="text" class="form-control" name="password"  placeholder="Enter votre password">
-          </div>
-          <div class="mb-3 fw-bold col-12">
-                      <button type="submit" name="loginconnect" class="btn btn-order btn-lg rounded-3 merriweather ">Connexion</button>
-          </div>
-        </form>
-       
-          <div class="mt-3 text-center">
-            <a class=" text-decoration-underline" style="color: #012970;" href="inscrire">
-              <span>S'inscrire</span></a>
-          </div>
-      </div>
-    </div>
-      </div>
-    </div> 
-
-  </main>
-</body>
-
-</html>
+</div>

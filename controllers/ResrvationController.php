@@ -16,11 +16,12 @@ class ResrvationController{
         if (Reservation::insert())
         {
           cookies::set('success', 'votre reservation a été Ajouté voueillez attandre ');
-          header('location:formreservation');
+          header('location:Acueille');
         } else {
           cookies::set('error', "Hotel n'est pas Ajouté");
           header('location:formreservation');
         } 
+        $_SESSION['id_voyage'];
       }  
     }
 

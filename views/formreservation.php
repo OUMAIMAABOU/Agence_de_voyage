@@ -22,7 +22,7 @@
             <?php $controller = new VoyageController();
             $controller = $controller->select();
             foreach ($controller as  $rows) {
-              // $_SESSION['id_voyage'] = $rows[0]; ?>
+              $_SESSION['id_voyage'] = $rows[0]; ?>
               <div class="col bg-light vogare-item ">
                 <div class="d-flex">
                   <img src="views/assets/img/voyage/<?= $rows[4] ?>" alt="package-place" style=" BORDER-RADIUS: 40px; width: 100%;height: 250px; max-width: 50%; box-sizing: border-box;">

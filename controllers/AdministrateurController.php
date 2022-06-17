@@ -111,8 +111,6 @@ class AdministrateurController
     if (isset($_POST['inscription'])) {
 
       $admin = new Administrateur();
-
-      // if(!empty([$_POST['nom']])|| !empty([$_POST['genre']])|| !empty($_POST['Phone']))
       $admin->Setname($_POST['nom']);
       $admin->Setemail($_POST['email']);
       $admin->Setpassword($_POST['password']);
@@ -122,9 +120,14 @@ class AdministrateurController
       $admin->Settype(3);
       $admin->SetGenre($_POST['genre']);
       $admin->Setcin($_POST['cin']);
-      if ($admin->insert()) {
-        print_r($_POST);
-        echo "b1 ajouter";
+      if ($admin->insert())  {
+        cookies::set('success', 'Le compte a été Ajouté');
+        header('location:login');
+      } else {
+        cookies::set('error', 'Compte ne pas Ajouté');
+        header('location:inscription');
+      
+     
       }
     }
   }

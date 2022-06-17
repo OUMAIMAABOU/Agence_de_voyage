@@ -9,7 +9,7 @@
 
     <nav class="cc-navbar navbar navbar-expand-lg fixed-top navbar-dark w-100">
 			<div class="container-fluid">
-				<a class="navbar-brand text-uppercase mx-4  py-3 fw-bolder redressed fs-3"  href="#"><span style="color:#20c997;">Happy</span>Travel</a>
+				<a class="navbar-brand text-uppercase mx-4 py-3 fw-bolder redressed fs-3"  href="#"><span style="color:#20c997;">Happy</span>Travel</a>
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -42,7 +42,21 @@
 						<li class="nav-item pe-4">
 							<a class="nav-link" href="#propos">À propos</a>
 						</li>
-					
+						<li class="nav-item pe-4">
+							<a class="nav-link" href="reservationClient">Reservation</a>
+						</li>
+						<?php if(empty($_SESSION['id'])){
+							echo '<li class="nav-item pe-4">
+							<a class="btn btn-order rounded-0" href="login">Login</a>
+						</li>';
+						}else{
+							echo ' <form method="POST" action="operation"> <li class="nav-item pe-4">
+							<button type="submit"  name="logout" class="btn btn-order rounded-0" href="">Log out</button></form>
+						</li>';
+						}
+							?>
+			
+						
 					</ul>
 				</div>
 			</div>
