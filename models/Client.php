@@ -15,7 +15,7 @@ class Client extends Dbconnect{
     }
     static  public  function Addcommantaire()
     {
-      return  static :: add('clients','(?,?)',[null,self::$commantaire,self::$id_users]);
+      return  static :: add('clients','(Null,?,?)',[self::$commantaire,self::$id_users]);
   
     }
 }

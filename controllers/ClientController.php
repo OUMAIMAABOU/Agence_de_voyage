@@ -35,13 +35,20 @@ class ClientController{
     } 
 }
   static public function Addcommantaire(){
-  if(Client::Addcommantaire()){
+    Client::$id_users=$_SESSION['id'];
+    Client::$commantaire=$_POST['comataira'];
+    if(isset($_POST['Addcommantaire'])){
+      if(Client::Addcommantaire()){
     cookies::set('success', 'le commantaire a été envoyé');
-    header('location:reservation');
+    header('location:Acueille');
   } else {
     cookies::set('error', "le commantaire n'est pas envoyé");
-    header('location:reservation');
-  }
+
+    header('location:Acueille');
+
+  } 
+    }
+ 
   
 }
  

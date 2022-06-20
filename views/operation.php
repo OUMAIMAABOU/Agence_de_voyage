@@ -8,9 +8,9 @@ if(isset($_POST['logout']) ){
   }
  
 $CLIENT= new ClientController();
-// $CLIENT->InsertContact();
 $Controllers= new AdministrateurController();
 $Controllers->insert();
+ClientController::Addcommantaire();
 
 if($_SESSION['role']=='Admin'){
   $Controllers->Delete(); 

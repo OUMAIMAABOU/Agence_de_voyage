@@ -7,9 +7,16 @@ class ContactController{
         Contact::Setmessage($_POST['msg']);
         Contact::Setsubject($_POST['Subject']);
         if(Contact::insert()){
-            echo "b1";
-        } 
+                cookies::set('success', 'le Message a été envoyé');
+                header('location:Acueille');
+              } else {
+                cookies::set('error', "le Message n'est pas envoyé");
+            
+                header('location:Acueille');
+            
+              
         }
-       
+    
     }
+}
 }

@@ -19,8 +19,8 @@
 						Explorez la beauté du beau monde
 					</h1>
 					<div style="text-align: end;">
-					<p class=" text-light text-uppercase mx-4 py-3 fw-bolder redressed fs-3">bienvenue sur  <span style="color:#20c997;">Happy</span>Travel</p>
-</div>
+						<p class=" text-light text-uppercase mx-4 py-3 fw-bolder redressed fs-3">bienvenue sur <span style="color:#20c997;">Happy</span>Travel</p>
+					</div>
 				</div>
 			</div>
 
@@ -57,7 +57,7 @@
 									<div class="about-btn">
 										<form action="formreservation" method="POST">
 											<button type="submit" name="idclient" class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-bottom: 24px;">
-												<input type="hidden"  name="id" value="<?= $rows[0] ?>">Reserve</button>
+												<input type="hidden" name="id" value="<?= $rows[0] ?>">Reserve</button>
 										</form>
 									</div>
 								</div>
@@ -66,17 +66,23 @@
 				</div>
 			</div>
 	</section>
-	<section>
-	 <form>
-              <label>Commantaire</label>
-              <div class="col-md-6">
-                <p>Ajouter commantaire:</p>
+	<section class="mt-5">
+		<button class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-left: 647px;" onclick="myFunction()">Ajouter commantaire:</button>
+		<div class="container mt-5 vogare-item ">
+			<form action="operation" method="POST" id="formares" style="display:none;">
+				<div class="text-center">
+					<h2>Commantaire </h2>
+					<p>Ajouter commantaire: </p>
+				</div>
+				<div >
+					<div class="col-12"><input type="text"  name="comataira" style="WIDTH: 100% ;HEIGHT: 10%;"></div>
 
-                <textarea id="story" name="story" rows="5" cols="100"> </textarea>
-                <button type="submit" class="btn  w-25 mb-3" name="Addcommantaire" style="background:#90f5d7 ; color: #012970; ">Add reservation</button>
+					<button type="submit" class="btn  w-25 mb-3" name="Addcommantaire" style="background:#90f5d7 ; color: #012970; ">Add Commantaire</button>
 
-              </div>
-            </form>
+				</div>
+			</form>
+		</div>
+
 	</section>
 
 	<section class="cc-menu merriweather py-1" id="Destination">
@@ -196,3 +202,13 @@
 </body>
 
 </html>
+
+<script>
+	function myFunction() {
+		if (document.getElementById("formares").style.display === "none") {
+			document.getElementById("formares").style.display = "block";
+		} else {
+			document.getElementById("formares").style.display = "none";
+		}
+	}
+</script>
