@@ -13,9 +13,11 @@ class VoyageController
   }
 
   public function select()
-  {
+  { 
+      $_SESSION['voyage']=$_POST['id'];
     if(empty($_SESSION['id'])) header('location:login');
-   else  return  voyage::selectOne($_POST['id']);
+ 
+   else  return  voyage::selectOne($_GET['id']);
   }
   public function insert()
   {

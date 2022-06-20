@@ -1,32 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Redressed&family=Merriweather:wght@300;400;700&display=swap');
 
-.gallery{
-    background: #f9f9f9;
-}
-.gallery-details{
-    margin-top:117px;
-    margin-bottom:109px;
-}
-.gallery-content {
-    margin-top:62px;
-}
-
-.gallary-header h2{
-    position:relative;
-    color:#565a5c;  
-    font-size:30px;
-    font-weight:500;
-    text-transform:capitalize;
-    font-family: 'Poppins', sans-serif;
-    padding-bottom:14px;
-}
-.gallary-header p{
-    position:relative;
-    color:#aaa;  
-    font-size:16px;
-    font-family: 'Poppins', sans-serif;
-    margin-top: 17px;
-}
 
 .vogare-item {
 	margin: 13px;
@@ -46,14 +19,12 @@
 .cc-navbar {
 	background-color: rgba(0, 0, 0, 0.55);
 	font-family: 'Merriweather', serif;
-	box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.54);
-	z-index: 99;
 
 }
 
 .cc-navbar .nav-link {
 	border-bottom: 1px solid transparent;
-	transition: padding-bottom 0.4s ease-in-out, border-color 0.3s ease;
+	transition: padding-bottom 0.4s ease-in, border-color 0.3s ease;
 }
 .bg{
     background: white;
@@ -68,7 +39,7 @@
 .landing_page{
 	background:url(../img/background/AGADIR.jpg) center center fixed no-repeat;
 	background-size: cover;
-	height: 800px;
+	height: 400px;
  }  
 .order-form {
 	background:  url(../img/background/AGADIR.jpg) center center fixed no-repeat;

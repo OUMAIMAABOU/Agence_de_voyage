@@ -14,10 +14,11 @@
                     <div class="d-flex align-items-center">
                         <form class="form-container row" action="operation" method="POST" data-parsley-validate>
                             <div class="my-4 fw-bold">
-                                <input type="email" class="form-control" name="email" placeholder="Enter votre email">
+                                <input type="email" class="form-control" name="email" placeholder="Enter votre email" required data-parsley-trigger="change" data-parsley-type="email">
                             </div>
                             <div class="my-4 fw-bold">
-                                <input type="password" class="form-control" name="password" placeholder="Enter votre password">
+                                <input type="password" class="form-control" name="password" placeholder="Enter votre password" required data-parsley-trigger="change"
+>
                             </div>
                             <div class="my-4 fw-bold  text-center">
                                 <button type="submit" name="loginconnect" class="btn btn-order btn-lg rounded-3 merriweather ">Connexion</button>
@@ -29,8 +30,11 @@
                         <div class="btn btn-primary"><span class="fas fa-chevron-right ms-1"></span></div>
                     </div>
                 </div>
+
             </div>
            
         </div>
     </div>
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type=" text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>

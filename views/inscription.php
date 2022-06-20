@@ -23,10 +23,10 @@
                                        
                                    </div>
                                             <div class="mb-3 col-6 fw-bold">
-                                                <input type="text" class="form-control" id="name" name="nom" placeholder="Enter name complet">
+                                                <input type="text" class="form-control" id="name" name="nom" placeholder="Enter name complet"required data-parsley-trigger="change">
                                             </div>
                                             <div class="mb-3 col-6 fw-bold">
-                                                <input type="text" name="cin" class="form-control" placeholder="Enter votre CIN" class="form-label">
+                                                <input type="text" name="cin" class="form-control" placeholder="Enter votre CIN" class="form-label"required data-parsley-trigger="change">
 
                                             </div>
 
@@ -39,26 +39,26 @@
                                             </div>
 
                                             <div class="mb-3 col-6 fw-bold">
-                                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter votre email">
+                                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter votre email" required data-parsley-trigger="change" data-parsley-type="email">
                                             </div>
 
                                             <div class="mb-3 col-6 fw-bold">
-                                                <input type="text" class="form-control" name="password" id="password" placeholder="Enter votre password">
+                                                <input type="text" class="form-control" name="password" id="password" placeholder="Enter votre password" required data-parsley-trigger="change" data-parsley-length="[4, 20]">
 
                                             </div>
                                             <div class="mb-3 col-6 fw-bold">
-                                                <input type="text" class="form-control" id="phone" name="Phone" placeholder="Enter phone">
+                                                <input type="text" class="form-control" id="phone" name="Phone" placeholder="Enter phone"  required data-parsley-trigger="change" data-parsley-type="digits" data-parsley-length="[10, 20]">
 
                                             </div>
                                             <div class="mb-3 col-6 fw-bold">
-                                                <input type="text" class="form-control" name="configpassword" placeholder="Config Password">
+                                                <input type="text" class="form-control" name="configpassword" placeholder="Config Password" data-parsley-equalto="#password"  required data-parsley-trigger="change">
                                             </div>
 
                                             <div class="mb-3 col-6 fw-bold">
-                                                <input type="text" class="form-control" id="adrees" name="adresse" placeholder="Enter Adresse">
+                                                <input type="text" class="form-control" id="adrees" name="adresse" placeholder="Enter Adresse"  required data-parsley-trigger="change">
                                             </div>
                                             <div class="mb-3 col-12 fw-bold">
-                                                <input type="file" class="form-control" id="image" name="image" placeholder="Enter name complet">
+                                                <input type="file" class="form-control" id="image" name="image" placeholder="Enter name complet"  required data-parsley-trigger="change">
                                             </div>
                                             <div class="my-4 fw-bold  text-center">
                                                 <button type="submit" name="inscription" class="btn btn-order btn-lg rounded-3 merriweather ">Connexion</button>
@@ -78,3 +78,5 @@
             </div>
         </div>
 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type=" text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>

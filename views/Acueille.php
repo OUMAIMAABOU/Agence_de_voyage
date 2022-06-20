@@ -25,40 +25,7 @@
 			</div>
 
 
-
-			<div class="row bg">
-
-
-				<div class="col">
-					<div class="">
-						<h2>destination</h2>
-						<div class="travel-select-icon">
-							<select class="form-control ">
-								<option value="default">entrez votre pays de destination</option><?php $controller = new VoyageController();
-									$ville = $controller->ShowVille();
-									foreach ($ville as $x => $rows) { ?>
-								<option value="<?= $rows[0]; ?>"><?= $rows[0];}?></oFption>
-							</select>
-						</div>
-					</div>
-				</div>
-
-
-
-				<div class="col">
-					<div class="">
-						<h2>Membres</h2>
-						<div class="travel-select-icon">
-							<select class="form-control">
-								<option value="1">1</option><?php for ($i = 2; $i < 8; $i++) { ?><option value="<?= $i; ?>"><?= $i;} ?></option>
-							</select>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clo-sm-7" style="text-align: end; margin-top: -15px;">
-				<button class="btn btn-order2  btn-lg rounded-0 merriweather" style="margin-top: -8px;"> Chercher</button>
-			</div>
+>
 
 
 		</div>
@@ -73,7 +40,7 @@
 			</div>
 			<div class="mt-5">
 				<div class="row ">
-					<?php $hotel = $controller->Afficher();
+					<?php $controller = new VoyageController(); $hotel = $controller->Afficher();
 					foreach ($hotel as $x => $rows) { ?>
 						<div class="col-md-3 col-sm-6 bg-light vogare-item " data-aos="fade-up">
 							<div class="">
@@ -88,11 +55,11 @@
 										<p><i class="fa fa-angle-right"></i>transportation </p>
 										<p><i class="fa fa-angle-right"></i> food :<?= $rows[5] ?> </p>
 									</div>
-
+                                        
 									<div class="about-btn">
 										<form action="formreservation" method="POST">
 											<button type="submit" name="idclient" class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-bottom: 24px;">
-												<input type="text" hidden name="id" value="<?= $rows[0] ?>">Reserve</button>
+												<input type="text" hidden name="id" value="<?=$rows[0] ?>">Reserve</button>
 										</form>
 									</div>
 								</div>
