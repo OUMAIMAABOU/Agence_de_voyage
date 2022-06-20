@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,10 +61,22 @@
 										</form>
 									</div>
 								</div>
-					</form>
+							</div>
 						</div><?php } ?>
 				</div>
 			</div>
+	</section>
+	<section>
+	 <form>
+              <label>Commantaire</label>
+              <div class="col-md-6">
+                <p>Ajouter commantaire:</p>
+
+                <textarea id="story" name="story" rows="5" cols="100"> </textarea>
+                <button type="submit" class="btn  w-25 mb-3" name="Addcommantaire" style="background:#90f5d7 ; color: #012970; ">Add reservation</button>
+
+              </div>
+            </form>
 	</section>
 
 	<section class="cc-menu merriweather py-1" id="Destination">

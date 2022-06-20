@@ -29,6 +29,7 @@ if(!isset($_POST['id'])){
             <?php $controller = new VoyageController();
             $controller = $controller->select();
             foreach ($controller as  $rows) {
+              $_SESSION['id_voyage']=$rows[0];
              ?>
               <div class="col bg-light vogare-item ">
                 <div class="d-flex">
@@ -42,17 +43,7 @@ if(!isset($_POST['id'])){
                   </div>
                 </div>
               </div><?php } ?>
-            <form>
-              <label>Commantaire</label>
-              <div class="col-md-6">
-                <p>Ajouter commantaire:</p>
-
-                <textarea id="story" name="story" rows="5" cols="100"> </textarea>
-                <button type="submit" class="btn  w-25 mb-3" name="Addcommantaire" style="background:#90f5d7 ; color: #012970; ">Add reservation</button>
-
-              </div>
-            </form>
-            <hr style="    color: #14e2a5; height: 2px;">
+           
 
 
             <form action="operation" method="post" class="php-email-form" data-parsley-validate>
@@ -61,7 +52,7 @@ if(!isset($_POST['id'])){
                   <input type="number" name="adulte" max="30" min="1" class="form-control" placeholder="Nomber Adulte" required data-parsley-trigger="change"data-parsley-type="digits">
                 </div>
                 <div class="col-md-6">
-                  <input type="number" max="30" min="0" name="Enfant" class="form-control" placeholder="Nomber Enfant" required data-parsley-trigger="change"data-parsley-type="digits">
+                  <input type="number" max="30" min="0" name="Enfant" class="form-control" placeholder="Nomber Enfant">
 
                 </div>
 
