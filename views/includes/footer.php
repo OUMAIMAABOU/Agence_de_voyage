@@ -1,4 +1,6 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="views/assets/bootstrap.bundle.min.js" ></script>
+
 <script>
   AOS.init({duration:1500,});
 </script>

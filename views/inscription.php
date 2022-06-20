@@ -6,13 +6,13 @@
 
                 <div class="container mt-5">
                     <div class="body d-md-flex align-items-center justify-content-between">
-                        <div class="box-1 mt-md-0" style="width:40% ;">
+                        <div  class="box-1 mt-md-0 d-none d-md-block" style="width:40% ;">
 
-                            <img src="views/assets/img/background/pexels-michael-block-3225528.jpg" class="" alt="">
+                            <img src="views/assets/img/background/pexels-michael-block-3225528.jpg" alt="">
                         </div>
-                        <div class=" box-2 d-flex flex-column h-100"style="width:60% ;">
+                        <div class=" box-2 d-flex flex-column mx-auto">
                             <div class="mt-5">
-                                <p class="mb-1 h-1 merriweather fs-3 text-center" style="border-bottom: #20c997 3px solid;">Inscription.</p>
+                                <p class="mb-1 h-1 merriweather fs-4 text-center" style="border-bottom: #20c997 3px solid;">Inscription.</p>
                                 <p class=" mb-2">Explorez la beauté du beau monde.</p>
                                 <div class="d-flex flex-column ">
                                     <p class=" mb-2">Continue avec...</p>
@@ -22,15 +22,15 @@
                                        <input type="text" hidden class="form-control"  name="type" value="6"  >
                                        
                                    </div>
-                                            <div class="mb-3 col-6 fw-bold">
+                                            <div class="mb-3 col-md-6 fw-bold">
                                                 <input type="text" class="form-control" id="name" name="nom" placeholder="Enter name complet"required data-parsley-trigger="change">
                                             </div>
-                                            <div class="mb-3 col-6 fw-bold">
+                                            <div class="mb-3 col-md-6 fw-bold">
                                                 <input type="text" name="cin" class="form-control" placeholder="Enter votre CIN" class="form-label"required data-parsley-trigger="change">
 
                                             </div>
 
-                                            <div class="mb-3 col-6 fw-bold">
+                                            <div class="mb-3 col-md-6 fw-bold">
                                                 <select class="form-control" name="genre" id="genre">
                                                     <option value="default">Genre </option>
                                                     <option value="Femme">Femme </option>
@@ -38,23 +38,23 @@
                                                 </select>
                                             </div>
 
-                                            <div class="mb-3 col-6 fw-bold">
+                                            <div class="mb-3 col-md-6 fw-bold">
                                                 <input type="email" class="form-control" name="email" id="email" placeholder="Enter votre email" required data-parsley-trigger="change" data-parsley-type="email">
                                             </div>
 
-                                            <div class="mb-3 col-6 fw-bold">
+                                            <div class="mb-3 col-md-6 fw-bold">
                                                 <input type="text" class="form-control" name="password" id="password" placeholder="Enter votre password" required data-parsley-trigger="change" data-parsley-length="[4, 20]">
 
                                             </div>
-                                            <div class="mb-3 col-6 fw-bold">
+                                            <div class="mb-3 col-md-6 fw-bold">
                                                 <input type="text" class="form-control" id="phone" name="Phone" placeholder="Enter phone"  required data-parsley-trigger="change" data-parsley-type="digits" data-parsley-length="[10, 20]">
 
                                             </div>
-                                            <div class="mb-3 col-6 fw-bold">
+                                            <div class="mb-3 col-md-6 fw-bold">
                                                 <input type="text" class="form-control" name="configpassword" placeholder="Config Password" data-parsley-equalto="#password"  required data-parsley-trigger="change">
                                             </div>
 
-                                            <div class="mb-3 col-6 fw-bold">
+                                            <div class="mb-3 col-md-6 fw-bold">
                                                 <input type="text" class="form-control" id="adrees" name="adresse" placeholder="Enter Adresse"  required data-parsley-trigger="change">
                                             </div>
                                             <div class="mb-3 col-12 fw-bold">

@@ -14,18 +14,15 @@
 	<section class="banner landing_page d-flex justify-content-center align-items-center pt-5  ">
 		<div class="container">
 			<div class="row">
-				<div class=" banner-desc lh-lg">
+				<div class="">
 					<h1 class=" py-3 redressed">
 						Explorez la beauté du beau monde
 					</h1>
-					<p style="text-align: end;">
-						<button class="btn btn-order  btn-lg rounded-0 merriweather">explorer maintenant</button>
-					</p>
+					<div style="text-align: end;">
+					<p class=" text-light text-uppercase mx-4 py-3 fw-bolder redressed fs-3">bienvenue sur  <span style="color:#20c997;">Happy</span>Travel</p>
+</div>
 				</div>
 			</div>
-
-
->
 
 
 		</div>
@@ -40,7 +37,8 @@
 			</div>
 			<div class="mt-5">
 				<div class="row ">
-					<?php $controller = new VoyageController(); $hotel = $controller->Afficher();
+					<?php $controller = new VoyageController();
+					$hotel = $controller->Afficher();
 					foreach ($hotel as $x => $rows) { ?>
 						<div class="col-md-3 col-sm-6 bg-light vogare-item " data-aos="fade-up">
 							<div class="">
@@ -55,11 +53,11 @@
 										<p><i class="fa fa-angle-right"></i>transportation </p>
 										<p><i class="fa fa-angle-right"></i> food :<?= $rows[5] ?> </p>
 									</div>
-                                        
+
 									<div class="about-btn">
 										<form action="formreservation" method="POST">
 											<button type="submit" name="idclient" class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-bottom: 24px;">
-												<input type="text" hidden name="id" value="<?=$rows[0] ?>">Reserve</button>
+												<input type="text" hidden name="id" value="<?= $rows[0] ?>">Reserve</button>
 										</form>
 									</div>
 								</div>
@@ -84,17 +82,17 @@
 
 			<div class="container-fluid">
 
-				<div class="row" >
-					<?php $voyage=ResrvationController::Topdestination();
+				<div class="row">
+					<?php $voyage = ResrvationController::Topdestination();
 					foreach ($voyage as $x => $rows) { ?>
 
 						<div class="col-lg-3 col-sm-12 mt-2 p-2 mx-3">
 							<div class="card" style="height: 360px;">
-								<img src="views/assets/img/voyage/<?= $rows['image']; ?>" class="card-img-top" alt="..." style="height:40%;"/>
+								<img src="views/assets/img/voyage/<?= $rows['image']; ?>" class="card-img-top" alt="..." style="height:40%;" />
 								<div class="card-body">
-									<h5 class="card-title"><?= $rows['destination']; ?> , <?= $rows['prix']; ?>Dh</h5>
+									<h5 class="card-title" style="width:100%"><?= $rows['destination']; ?> , <?= $rows['prix']; ?>Dh</h5>
 									<p class="card-text">
-									<?= $rows['description']; ?>
+										<?= $rows['description']; ?>
 									</p>
 								</div>
 							</div>
@@ -103,16 +101,10 @@
 					<?php } ?>
 
 				</div>
-				
 
 			</div>
 		</div>
 	</section>
-
-
-
-
-
 
 	<section class="container  " id="review">
 		<h1 class="text-center mt-5">Client's Review</h1>
@@ -127,15 +119,13 @@
 					<p class="text-center fs-4" style="#2b5448"><?= $rows['commentaire'] ?></p>
 					<p class="text-center"><?= $rows['name'] ?></p>
 				</div>
-				
+
 
 			<?php } ?>
-			
+
 		</div>
-		
+
 	</section>
-
-
 
 
 	<section class="order-form py-1" id="Contact-nous">
