@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,11 +58,11 @@
 									<div class="about-btn">
 										<form action="formreservation" method="POST">
 											<button type="submit" name="idclient" class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-bottom: 24px;">
-												<input type="text" hidden name="id" value="<?= $rows[0] ?>">Reserve</button>
+												<input type="hidden"  name="id" value="<?= $rows[0] ?>">Reserve</button>
 										</form>
 									</div>
 								</div>
-							</div>
+					</form>
 						</div><?php } ?>
 				</div>
 			</div>

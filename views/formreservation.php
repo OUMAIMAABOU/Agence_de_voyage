@@ -1,3 +1,10 @@
+<?php 
+if(!isset($_POST['id'])){
+    header('location: Acueille');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +35,6 @@
                   <img src="views/assets/img/voyage/<?= $rows[4] ?>" alt="package-place" style=" BORDER-RADIUS: 40px; width: 100%;height: 250px; max-width: 50%; box-sizing: border-box;">
                   <div class="p-2">
                  
-                    <input type="text" value="<?=  $_SESSION['voyage']?>">
                     <h3> <?= $rows[6] ?> <span class=""><?= $rows[2] ?> Dh</span></h3>
                     <div class="">
                       <p><?= $rows[3] ?></p>
