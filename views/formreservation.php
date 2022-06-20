@@ -34,14 +34,29 @@
                   </div>
                 </div>
               </div><?php } ?>
+              <form>
+                <label>Commantaire</label>
+                <div class="col-md-6">
+                  <p>Ajouter commantaire:</p>
+
+                  <textarea id="story" name="story" rows="5" cols="100"> </textarea>
+                  <button type="submit" class="btn  w-25 mb-3" name="Addcommantaire" style="background:#90f5d7 ; color: #012970; ">Add reservation
+
+                </div>
+               </form>
+               <hr style="    color: #14e2a5; height: 2px;">   
+             
+
             <form action="operation" method="post" class="php-email-form">
               <div class="row gy-4 mt-4">
                 <div class="col-md-6">
-                  <input type="number" name="adulte" class="form-control" placeholder="Nomber Adulte" required>
+                  <input type="number" name="adulte" max="30" min="1" class="form-control" placeholder="Nomber Adulte" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="number" name="Enfant" class="form-control" placeholder="Nomber Enfant" required>
+                  <input type="number" max="30" min="0" name="Enfant" class="form-control" placeholder="Nomber Enfant" required>
+
                 </div>
+                
 
                 <div class="col-md-6">
                   <select class="form-control " name="transport">
@@ -49,14 +64,15 @@
                     <option value="Non">Non</option>
                     <option value="train">train</option>
                     <option value="car">car</option>
+                    <option value="car">vol</option>
                   </select>
                 </div>
                 <div class="col-md-6">
                   <select class="form-control" name="Local">
                     <option value="default">Local</option>
-                    <option value="Non">Hotel</option>
-                    <option value="train">villa</option>
-                    <option value="car">Maison</option>
+                    <option value="Hotel">Hotel</option>
+                    <option value="villa">villa</option>
+                    <option value="Maison">Maison</option>
                   </select>
                 </div>
                 <div class="col-md-6">

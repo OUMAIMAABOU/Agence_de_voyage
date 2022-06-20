@@ -32,14 +32,13 @@
 
                       <th></th>
                       <th>image</th>
-                      <th>Distination</th>
-                      <th>Durée</th>
-                      <th>Date de depart</th>
-                      <th>Prix</th>
-                      <th>Food</th>
-                      <th>Hotol</th>
-                      <th>Ville</th>
-                      <th>Etat</th>
+                      <th class="Destination">Distination</th>
+                      <th class ="Duree">Durée</th>
+                      <th class ="depart">Date de depart</th>
+                      <th class="prix">Prix</th>
+                      <th class ="food">Food</th>
+                      <th class="hotel">Hotol</th>
+                      <th class ="ville">Ville</th>
                       <th hidden></th>
                       <th></th>
                     </tr>
@@ -59,7 +58,6 @@
                         <td class="food"><?= $voyage['Food'] ?></td>
                         <td class="hotel"><?= $voyage[11] ?></td>
                         <td class="ville"><?= $voyage['ville'] ?></td>
-                        <td class="etat text-danger"><?= $voyage['etat'] ?></td>
 
                         <td class="descript" hidden><?= $voyage[4] ?></td>
 
@@ -96,7 +94,7 @@
                             <input type="text" name="duree" class="form-control" placeholder="Durée" required>
                           </div>
                           <div class="col-md-6 ">
-                            <input type="date" class="form-control" name="date" placeholder="Date de depart" required>
+                            <input type="date" class="form-control" name="date"  placeholder="Date de depart" required>
                           </div>
                           <div class="col-md-6 ">
                             <input type="text" class="form-control" name="prix" placeholder="Prix" required>
@@ -121,23 +119,16 @@
                             </select>
                           </div>
                           <div class="col-md-6 ">
-                            <span>Ville</span>
-                            <select class="form-control" id="ville" name="ville" required data-parsley-trigger="keyup">
+                            <select class="form-control"  name="ville" required data-parsley-trigger="keyup">
                               <option value="default">Ville </option>
                               <?php $ville = new ClientController();
                               $ville = $ville->getallville();
                               foreach ($ville as $ville) { ?>
-                                <option value="<?= $ville[1] ?>"><?= $ville[1];
+                                <option value="<?= $ville[0] ?>"><?= $ville[0];
                                                                 } ?></option>
                             </select>
                           </div>
-                          <div class="col-md-6 ">
-                            <select class="form-control" name="etat" required data-parsley-trigger="keyup">
-                              <option value="default">Etats </option>
-                              <option value="Enable">Enable </option>
-                              <option value="disable">disable</option>
-                            </select>
-                          </div>
+                        
                           <div class="col-md-6 ">
                             <input type="file" class="form-control" name="image" placeholder="Image" required>
                           </div>
@@ -178,7 +169,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <form action="operation" method="post" class="php-email-form">
+                    <form action="operation" method="post" class="php-email-form" enctype="multipart/form-data">
                       <div class="row gy-4 mt-4">
                         <input type="text" name="id" id="id" hidden class="form-control" required>
                         <div class="col-md-6">
@@ -192,6 +183,7 @@
                       <div class="col-md-6 ">
                         <span>Date</span>
                         <input type="date" class="form-control" id="date" name="date" required>
+                        <span id="datetest"></span>
                       </div>
                       <div class="col-md-6 ">
                         <span>Prix</span>
@@ -216,7 +208,7 @@
                           <?php $ville = new ClientController();
                           $ville = $ville->getallville();
                           foreach ($ville as $ville) { ?>
-                            <option value="<?= $ville[1] ?>"><?= $ville[1];
+                            <option value="<?= $ville[0] ?>"><?= $ville[0];
                                                             } ?></option>
                         </select>
                       </div>
@@ -229,13 +221,10 @@
                         </select>
                       </div>
                       <div class="col-md-6 ">
-                        <span>etat</span>
-                        <select class="form-control" name="etat" id="etat" required data-parsley-trigger="keyup">
-                          <option value="default">Etats </option>
-                          <option value="Enable">Enable </option>
-                          <option value="disable">disable</option>
-                        </select>
-                      </div>
+                      <span>image</span>
+
+                            <input type="file" class="form-control" name="image" placeholder="Image" >
+                          </div>
 
                       <div class="col-md-12 ">
                         <span>Discription</span>
@@ -279,15 +268,16 @@
       $('#prix').val(currentRow.find(".prix").text());
       $('#hotel').val(currentRow.find(".hotel").text());
       $('#food').val(currentRow.find(".food").text());
-      $('#etat').val(currentRow.find(".etat").text());
       $('#Discrip').val(currentRow.find(".descript").text());
       $('#distination').val(currentRow.find(".Destination").text());
+      $('#ville').val(currentRow.find(".ville").text());
 
 
 
 
     })
   })
+
 </script>
 
 <!-- if(isset($_FILES['image'])){

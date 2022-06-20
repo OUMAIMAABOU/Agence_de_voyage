@@ -12,9 +12,13 @@ $CLIENT= new ClientController();
 $Controllers= new AdministrateurController();
 $Controllers->insert();
 
-// if($_SESSION['role']=='admin_general'){
+if($_SESSION['role']=='Admin'){
   $Controllers->Delete(); 
-// }
+}else if($_SESSION['role']!='Admin') {
+  echo '<div class="alert alert-danger">cant delete this user</div>';
+header('location:admin');
+}
+
  
 $Controllers->update();
 $Controllers->login();
@@ -29,16 +33,19 @@ $hotel-> update();
 $Transport=new TransportController();
 $Transport->insert();
 $Transport->Delete();
-$Transport->Update();$Voyage=new VoyageController();
+$Transport->Update();
+$Voyage=new VoyageController();
 
 $Voyage->insert();
 $Voyage->Delete();
-$Voyage->Update();
+VoyageController::Update();
 
 $Resrvation=new ResrvationController();
 $Resrvation->insert();
 $Resrvation->Updaterefuse();
 $Resrvation->Update();
+$Resrvation->Annule();
+$Resrvation-> Delete();
 
 ClientController::Delete();
 ContactController::insert();

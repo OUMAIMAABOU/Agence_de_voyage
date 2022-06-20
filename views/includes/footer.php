@@ -7,34 +7,29 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-6 mb-4 col-sm">
-						<h6 class="redressed ps-3 fs-5">Menu</h6>
+						<h6 class=" ps-3 fs-5">NOS EXCURSIONS </h6>
 						<nav class="nav flex-column">
-							<a class="nav-link py-1 merriweather fs-6 text-secondary active" aria-current="page" href="#">Active</a>
-							<a class="nav-link py-1 merriweather fs-6 text-secondary" href="#">Link</a>
-								>Disabled</a
-							>
+						<p>Essaouira</p>
+						<p>La Vallée d'ourika</p>
+						<p>Marrakech</p>
+						<p>Imlil</p>
 						</nav>
 					</div>
 					<div class="col-lg-3 col-md-6 mb-4 col-sm">
-						<h6 class="redressed ps-3 fs-5">Nos Partenaire</h6>
-						<nav class="nav flex-column">
-							<a class="nav-link py-1 merriweather fs-6 text-secondary active" aria-current="page" href="#">Active</a>
-							<a class="nav-link py-1 merriweather fs-6 text-secondary" href="#">Link</a>
-								>Disabled</a
-							>
-						</nav>
+						<h6 class=" ps-3 fs-5">SERVICES CLIENTS  </h6> 
+						<p>Contact</p>
+						<p>Qui sommes nous ?</p>
+                        <p>Nos agences</p>
+                     
 					</div>
 					<div class="col-lg-3 col-md-6 mb-4 col-sm">
-						<h6 class="redressed ps-3 fs-5">Liens utiles</h6>
-						<nav class="nav flex-column">
-							<a class="nav-link py-1 merriweather fs-6 text-secondary active" aria-current="page" href="#">Active</a>
-							<a class="nav-link py-1 merriweather fs-6 text-secondary" href="#">Link</a>
-								>Disabled</a
-							>
-						</nav>
+						<h6 class=" ps-3 fs-5">INFOS & RÉSERVATIONS  </h6> 
+						<p>+2126000000</p>
+						<p>happtarvel@gmail.com</p>
 					</div>
+				
 					
-					<div class="col-12 text-center py-4 text-muted">
+					<div class="col-12 text-center  text-muted">
 						&copy; Happy travel 
 						<script>
 							document.write(new Date().getFullYear());

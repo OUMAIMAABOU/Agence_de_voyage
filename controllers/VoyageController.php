@@ -31,10 +31,16 @@ class VoyageController
       Voyage::Setdiscription($_POST['Discription']);
       Voyage::Setfood($_POST['food']);
       Voyage::Setimage($_FILES['image']['name']);
-      Voyage::Setetat($_POST['etat']);
       Voyage::Sethotel($_POST['Hotel']);
       Voyage::Setdistination($_POST['distination']);
-      if (Voyage::insert()) header('location:voyage');
+      Voyage::Setville($_POST['ville']);
+      if (Voyage::insert()){ 
+      cookies::set('success','Voyage a été Ajouté'); 
+      header('location:voyage');
+        }else{
+      cookies::set('error',"Voyage n'est pas Ajouté");
+      header('location:voyage');
+    }
     }
   }
 
@@ -46,17 +52,23 @@ class VoyageController
     }
   }
 
-  public function update()
+  static public function update()
   {
     if (isset($_POST['UPDATEVoyage'])) {
+      $file_name = $_FILES['image']['name'];
+      $file_tmp =$_FILES['image']['tmp_name'];
+      move_uploaded_file($file_tmp,"views/assets/img/voyage/".$file_name);   
+
       Voyage::Setid($_POST['id']);
       Voyage::Setduree($_POST['duree']);
       Voyage::Setdate_de_depart($_POST['date']);
       Voyage::SetPrix($_POST['prix']);
       Voyage::Setdiscription($_POST['Discription']);
       Voyage::Setfood($_POST['food']);
-      // Voyage::Setimage($_POST['image']);
-      Voyage::Setetat($_POST['etat']);
+      Voyage::Setimage($_FILES['image']['name']);
+      Voyage::Setville($_POST['ville']);
+      Voyage::Setdistination($_POST['distination']);
+
       Voyage::Sethotel($_POST['Hotel']);
       if (Voyage::UpdateVoyage()) header('location:voyage');
     }

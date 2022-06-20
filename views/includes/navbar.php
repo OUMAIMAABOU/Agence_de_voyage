@@ -7,7 +7,7 @@
 
 
 
-    <nav class="cc-navbar navbar navbar-expand-lg fixed-top navbar-dark w-100">
+    <nav class="cc-navbar navbar navbar-expand-lg fixed navbar-dark w-100">
 			<div class="container-fluid">
 				<a class="navbar-brand text-uppercase mx-4 py-3 fw-bolder redressed fs-3"  href="#"><span style="color:#20c997;">Happy</span>Travel</a>
 				<button
@@ -24,7 +24,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						<li class="nav-item pe-4">
-							<a class="nav-link active" aria-current="page" href="#">Accueil</a>
+							<a class="nav-link active" aria-current="page" href="Acueille">Accueil</a>
 						</li>
 						<li class="nav-item pe-4">
 							<a class="nav-link" href="#Destination" >Destination</a>

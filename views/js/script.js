@@ -19,6 +19,24 @@
         
             })
         })
+        $(document).ready(function()
+        {
+            $("#agentHotel").on('click','.update',function()
+            {
+                var currentRow=$(this).closest("tr"); 
+                $('#id').val(currentRow.find("td:eq(0)").text());
+                $('#name').val(currentRow.find(".name").text());
+                $('#ville').val(currentRow.find(".ville").text());
+                $('#Adresse').val(currentRow.find(".adrs").text());
+                $('#Telephone').val(currentRow.find(".tele").text());
+                $('#Restauran').val(currentRow.find(".rest").text());
+                $('#emaill').val(currentRow.find(".email").text());
+                $('#Etoile').val(currentRow.find(".etoil").text());
+                $('#typ').val(currentRow.find(".Type").text());
+        
+        
+            })
+        })
 
 
 

@@ -3,7 +3,7 @@ class Dbconnect
 {
   static public function connect()
     {
-      try { return new PDO("mysql:host=localhost; dbname=agence_voyage" ,"root" ,"");
+      try { return new PDO("mysql:host=127.0.0.1; dbname=agence_voyage" ,"root" ,"root");
       }catch (PDOException $ex) {echo $ex->getMessage();}
     }
 
@@ -12,6 +12,7 @@ class Dbconnect
   {
     try{return self::connect()->query("select * from $table")->fetchALL();}catch (PDOException $ex) {echo $ex->getMessage();} 
   }
+
   static  public  function SELECTJoin($table,$array,$condition)
   {
     try{return self::connect()->query("select $array from $table where $condition")->fetchALL();}catch (PDOException $ex) {echo $ex->getMessage();} 

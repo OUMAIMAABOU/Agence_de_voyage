@@ -19,8 +19,9 @@ class Reservation extends Dbconnect
 
    static  public  function Afficher()
    {
-      return static::SELECTJoin('reservation,users,voyage_organises ', 'reservation.* ,users.name,users.adresse,users.email,voyage_organises.Prix ,voyage_organises.destination', "reservation.id_voyage=voyage_organises.id and reservation.id_client=users.id");
+      return static::SELECTJoin('reservation,users,voyage_organises ', 'reservation.* ,users.name as name,users.adresse,users.email,voyage_organises.Prix ,voyage_organises.destination', "reservation.id_voyage=voyage_organises.id and reservation.id_client=users.id");
    }
+
 
    static public function insert()
    {
@@ -30,7 +31,12 @@ class Reservation extends Dbconnect
          return $e->getMessage();
       }
    }
+   static public  function Deletereservation(){ return Dbconnect :: delete('reservation',"id",[self::$id]);}
 
+   static  public  function Afficherreservation($id)
+   {
+      return static::SELECTJoin('reservation,users,voyage_organises ', 'reservation.* ,users.name,users.adresse,users.email,voyage_organises.Prix as prix ,voyage_organises.destination', "reservation.id_voyage=voyage_organises.id and reservation.id_client=users.id and users.id=$id");
+   }
   static public function AceptReservation()
    {
      return Dbconnect::Update('reservation', "etat='Accepte'", [self::$id]);
@@ -39,6 +45,16 @@ class Reservation extends Dbconnect
    {
      return Dbconnect::Update('reservation', "etat='Refuse'", [self::$id]);
    }
+   static public function Annulerservation()
+   {
+     return Dbconnect::Update('reservation', "etat='Annuler'", [self::$id]);
+   }
+   static public function Topdestination()
+   {
+     return Dbconnect::connect()->query("select count(id_voyage) as som,reservation.id,voyage_organises.image as image,voyage_organises.destination as destination,voyage_organises.Discription as description,voyage_organises.Prix as prix from 
+     reservation , voyage_organises  where voyage_organises.id =reservation.id_voyage group by id_voyage order by som desc limit 3")->fetchAll();
+   }
+
 
 
 

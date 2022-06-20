@@ -30,6 +30,9 @@ class Administrateur extends Dbconnect
       return Dbconnect::add('users', "(NULL,?,?,?,?,?,?,?,?,?)", [$this->name, $this->cin, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone, $this->adresse]);
  
   }
+  // static function selectone(){
+  //   return  GetOne('users','id',[$this->id]);
+  // }
 
   public function login()
   {

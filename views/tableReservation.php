@@ -35,9 +35,9 @@
                                             <th>Transport</th>
                                             <th>Local</th>
                                             <th>Date de depart</th>
-                                            <th>Date de retour</th>
                                             <th>Date de reservation</th>
                                             <th>Etat</th>
+                                            <th></th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -54,18 +54,18 @@
                                                 <td ><?= $reservation[1] ?></td>
                                                 <td><?= $reservation[2] ?></td>
                                                 <td ><?= $reservation[4] ?></td>
-                                                <td > <?= $reservation[5] ?> </td>
+                                                <td > <?= $reservation['local'] ?> </td>
                                                 <td ><?= $reservation[6] ?></td>
-                                                <td><?= $reservation[7] ?></td>
-                                                <td ><?= $reservation[9] ?></td>
+                                                <td ><?= $reservation['date_reservation'] ?></td>
                                                 <td ><?= $reservation[10] ?></td>
-                                                                                        
-                                                <td class="d-flex  align-items-start">
                                                     <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?">
-                                                    <button type="submit" name="Refuse" class="btn btn-outline-danger" ><input type="text" hidden name="id" value="<?= $reservation['id'] ?>">Refuse</button>
-                                                    <button type="submit" name="Accepte" class="btn btn-outline-primary" ><input type="text" hidden name="id" value="<?= $reservation['id'] ?>">Accepte</button>
-                                                    </form>
-                                                </td>
+                                                   <!-- <td><button type="submit" name="Refuse" class="btn btn-outline-danger" ><input type="text" hidden name="id" value="<?= $reservation['id'] ?>">Refuse</button></td>  -->
+                                                   <td><button type="submit" name="Accepte" class="btn btn-outline-primary" ><input type="text" hidden name="id" value="<?= $reservation['id'] ?>">Accepte</button></td> 
+                                                 <td>  <?php  if($reservation[10]=='Annuler'){
+                                               echo "<button type='submit' name='Supprimerresveration' class='btn btn-outline-danger' ><input type='text' hidden name='id' value=' $reservation[0]' > Supprimer</button>"; }else
+                                                echo"<button type='submit' name='Refuse' class='btn btn-outline-danger' ><input type='text' hidden name='id' value=' $reservation[0]'>Refuse</button>";?>   </td> 
+                                                </form>
+                                                
                                             </tr>
                                         <?php } ?>
                                     </tbody>

@@ -40,8 +40,8 @@ class AdministrateurController
         $_SESSION['id'] = $admin['id'];
         $_SESSION['name'] = $admin['name'];
         $_SESSION['image'] = $admin['image'];
-        $_SESSION['role'] = $admin['type'];
-        if ($admin[3] == "Agent" || $admin[3] == "admin_general") {
+        $_SESSION['role'] = $admin[3];
+        if ($admin[3] == "Agent" || $admin[3] == "Admin") {
           header('location:admin');
           var_dump($admin->login());
         } else if ($admin[3] == "client") {

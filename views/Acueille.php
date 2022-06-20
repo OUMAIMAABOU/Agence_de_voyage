@@ -10,7 +10,8 @@
 <body>
 
 
-	<section class="banner d-flex justify-content-center align-items-center pt-5">
+
+	<section class="banner landing_page d-flex justify-content-center align-items-center pt-5  ">
 		<div class="container">
 			<div class="row">
 				<div class=" banner-desc lh-lg">
@@ -28,57 +29,28 @@
 			<div class="row bg">
 
 
-				<div class="col-lg-4 col-md-4 col-sm-12">
+				<div class="col">
 					<div class="">
 						<h2>destination</h2>
 						<div class="travel-select-icon">
 							<select class="form-control ">
 								<option value="default">entrez votre pays de destination</option><?php $controller = new VoyageController();
-										$ville = $controller->ShowVille();
-										foreach ($ville as $x => $rows) { ?>
-									<option value="<?= $rows[0]; ?>"><?= $rows[0];} ?></option>
-							</select>
-						</div>
-
-
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-3 col-sm-4">
-					<div class="">
-						<h2>Depart</h2>
-						<div class="">
-							<input type="date" name="check_in" class="form-control" data-toggle="" placeholder="<?= date('d-m-y'); ?> ">
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-2 col-md-3 col-sm-4">
-					<div class="">
-						<h2>check out</h2>
-						<div class="">
-							<input type="date" name="check_out" class="form-control" data-toggle="" placeholder="<?= date('d-m-y'); ?>">
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-2 col-md-1 col-sm-4">
-					<div class="">
-						<h2>Durée</h2>
-						<div class="travel-select-icon">
-							<select class="form-control ">
-								<option value="default">5</option><?php for ($i = 6; $i <= 20; $i++) { ?><option value="<?= $i; ?>"><?= $i;
-																																} ?></option>
+									$ville = $controller->ShowVille();
+									foreach ($ville as $x => $rows) { ?>
+								<option value="<?= $rows[0]; ?>"><?= $rows[0];}?></oFption>
 							</select>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-1 col-sm-4">
+
+
+
+				<div class="col">
 					<div class="">
 						<h2>Membres</h2>
 						<div class="travel-select-icon">
 							<select class="form-control">
-								<option value="1">1</option><?php for ($i = 2; $i < 8; $i++) { ?><option value="<?= $i; ?>"><?= $i;
-																														} ?></option>
+								<option value="1">1</option><?php for ($i = 2; $i < 8; $i++) { ?><option value="<?= $i; ?>"><?= $i;} ?></option>
 							</select>
 						</div>
 					</div>
@@ -108,7 +80,7 @@
 								<img src="views/assets/img/voyage/<?= $rows[6] ?>" alt="package-place" style=" BORDER-RADIUS: 40px; width: 100%;height: 200px; max-width: 100%; box-sizing: border-box;">
 								<div class="">
 
-									<h3> <?= $rows[8] ?> <span class=""><?= $rows[3] ?> Dh</span></h3>
+									<h3> <?= $rows['ville'] ?> <span class=""><?= $rows[3] ?> Dh</span></h3>
 									<div class="">
 										<p><span><i class="fa fa-angle-right"></i> <?= $rows[2] ?> daays 6 nights</span>
 											<i class="fa fa-angle-right"></i> <?= $rows[7] ?> star accomodation
@@ -118,9 +90,10 @@
 									</div>
 
 									<div class="about-btn">
-									  <form action="formreservation" method="POST" >
-                                       <button type="submit" name ="idclient" class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-bottom: 24px;">
-									  <input type="text" hidden name="id" value="<?= $rows[0] ?>">Reserve</button></form>    
+										<form action="formreservation" method="POST">
+											<button type="submit" name="idclient" class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-bottom: 24px;">
+												<input type="text" hidden name="id" value="<?= $rows[0] ?>">Reserve</button>
+										</form>
 									</div>
 								</div>
 							</div>
@@ -129,33 +102,32 @@
 			</div>
 	</section>
 
-	<section class="cc-menu merriweather py-5" id="Destination">
+	<section class="cc-menu merriweather py-1" id="Destination">
 		<div class="container">
 
 			<div class="row">
-				<h3 class="text-center text-light  merriweather">Top Destination</h3>
+				<h3 class="text-center text-dark  merriweather">Top Destination</h3>
 				<div class="card bg-transparent text-center mb-4">
-				
+
 					<div class="card-body">
-						<p class="text-center text-light  merriweather">Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla.</p>
+						<p class="text-center text-dark  merriweather">Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla.</p>
 					</div>
 				</div>
 			</div>
 
-			<div class="container">
+			<div class="container-fluid">
 
-				<div class="row">
-					<?php $voyage = $controller->Afficher();
+				<div class="row" >
+					<?php $voyage=ResrvationController::Topdestination();
 					foreach ($voyage as $x => $rows) { ?>
 
-						<div class="col-3">
-							<div class="card">
-								<img src="views/assets/img/voyage/<?= $rows[6]; ?>" class="card-img-top" alt="..." />
+						<div class="col-lg-3 col-sm-12 mt-2 p-2 mx-3">
+							<div class="card" style="height: 360px;">
+								<img src="views/assets/img/voyage/<?= $rows['image']; ?>" class="card-img-top" alt="..." style="height:40%;"/>
 								<div class="card-body">
-									<h5 class="card-title"><?= $rows[2]; ?></h5>
+									<h5 class="card-title"><?= $rows['destination']; ?> , <?= $rows['prix']; ?>Dh</h5>
 									<p class="card-text">
-										This is a longer card with supporting text below as a natural lead-in to additional content. This
-										content is a little bit longer.
+									<?= $rows['description']; ?>
 									</p>
 								</div>
 							</div>
@@ -164,6 +136,7 @@
 					<?php } ?>
 
 				</div>
+				
 
 			</div>
 		</div>
@@ -180,23 +153,27 @@
 			<?php $client = new ClientController();
 			$client = $client->getallcommentair();
 			foreach ($client as $x => $rows) { ?>
-				<div class="col-3 d-flex flex-column vogare-item p-3">
+				<div class="col-6 d-flex flex-column vogare-item p-1">
 					<div>
-						<img src="views\assets\images\client\<?= $rows[3] ?>" alt="" class="rounded-circle mx-auto d-block" style="width: 73px;  height: 73px;">
+						<img src="views/assets/img/client/<?= $rows['image'] ?>" alt="" class="rounded-circle mx-auto d-block" style="width: 73px;  height: 73px;">
 					</div>
-					<h3 class="text-center" style="color:#40c29b"><?= $rows[1] ?></h3>
-					<p class="text-center"><?= $rows[2] ?></p>
+					<p class="text-center fs-4" style="#2b5448"><?= $rows['commentaire'] ?></p>
+					<p class="text-center"><?= $rows['name'] ?></p>
 				</div>
+				
+
 			<?php } ?>
+			
 		</div>
+		
 	</section>
 
 
 
 
-	<section class="order-form py-5" id="Contact-nous">
+	<section class="order-form py-1" id="Contact-nous">
 		<div class="container">
-			<h2 class="merriweather text-center text-light mb-4">Contactez-Nous</h2>
+			<h2 class="merriweather text-center text-light mb-1">Contactez-Nous</h2>
 			<h4 class="merriweather text-center text-light mb-4">Avez-vous des questions? N'hésitez pas à nous contacter directement. Notre équipe reviendra vers vous dans une question d'heures pour vous aider</h4>
 
 
@@ -246,7 +223,7 @@
 
 
 
-	<!-- <script src="assets/js/bootstrap.bundle.min.js"></script> -->
+
 </body>
 
 </html>

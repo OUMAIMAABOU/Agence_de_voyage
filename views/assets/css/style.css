@@ -65,9 +65,14 @@
 	border-bottom-color: var(--bs-teal) !important;
 }
 
-.banner,
+.landing_page{
+	background:url(../img/background/AGADIR.jpg) center center fixed no-repeat;
+	background-size: cover;
+	height: 800px;
+ }  
 .order-form {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/AGADIR.jpg') center center fixed no-repeat;
+	background:  url(../img/background/AGADIR.jpg) center center fixed no-repeat;
+
 	background-size: cover;
 	height: 800px;
 }
@@ -83,9 +88,10 @@
 }
 
 .cc-menu {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/thailande.jpg') center center fixed no-repeat;
+    background:  url(../img/background/image2.jpg) center center fixed no-repeat;
 	background-size: cover;
-	height: 1200px;
+    height: 669px ;
+
 }
 
 .btn-order {
@@ -107,3 +113,12 @@
 	color: #fff !important;
 	background-color: var(--bs-teal) !important;
 }
+@media (max-width: 768px) {
+
+
+    .cc-menu {
+		height: 1383px;
+	
+	}
+}
+

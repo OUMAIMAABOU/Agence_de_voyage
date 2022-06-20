@@ -24,27 +24,27 @@
             </div>
 
             <a href="chart" class="list-group-item mx-5 border-0  merriweather bg-transparent mt-3" style="color:#90f5d7;">
-                <i class="fas fa-home"></i> Home</a>
-                <?php if($_SESSION['role']=='Client'){
+                <span style="<?php if(basename($_SERVER['REQUEST_URI']) == "chart") echo 'color:#90f5d7;'; else echo 'color:white ;' ?>"><i class="fas fa-home"></i><span> Home</span></a></span>
+                <?php if($_SESSION['role']=='Admin'){
            echo' <a href="admin" class="list-group-item  mx-5 border-0 merriweather bg-transparent ">
-           <i class="far fa-bookmark"></i> Admin </a>';
+          <span style="color:white;"> <i class="far fa-bookmark"></i> Admin </span> </a>';
          }?>
-         <a href="admin" class="list-group-item  mx-5 border-0 merriweather bg-transparent ">
-           <i class="far fa-bookmark"></i> Admin </a>
+         <!-- <a href="admin" class="list-group-item  mx-5 border-0 merriweather bg-transparent ">
+           <span style="color:#90f5d7 ;"><i class="far fa-bookmark"></i> Admin</span> </a> -->
             <a href="Hotel" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
-                <i class="fas fa-graduation-cap"></i>Hotel</a>
+              <span style="<?php if(basename($_SERVER['REQUEST_URI']) == "Hotel") echo 'color:#90f5d7;'; else echo 'color:white ;' ?> "><i class="fas fa-graduation-cap"></i>Hotel</a></span> 
             <a href="transport" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
-                <i class="fas fa-graduation-cap"></i>transport</a>
+            <span style="<?php if(basename($_SERVER['REQUEST_URI']) == "transport") echo 'color:#90f5d7;'; else echo 'color:white ;' ?>"> <i class="fas fa-graduation-cap"></i>transport</a></span>
             <a href="voyage" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
-                <i class="fas fa-graduation-cap"></i>voyage</a>
+            <span style="<?php if(basename($_SERVER['REQUEST_URI']) == "voyage") echo 'color:#90f5d7;'; else echo 'color:white ;' ?>">  <i class="fas fa-graduation-cap"></i>voyage</a></span>
             <a href="tableReservation" class="list-group-item merriweather mx-5 border-0 bg-transparent">
-                <i class="fas fa-dollar-sign "></i> Reservation </a>
+            <span style="<?php if(basename($_SERVER['REQUEST_URI']) == "tableReservation") echo 'color:#90f5d7;'; else echo 'color:white ;' ?>"><i class="fas fa-dollar-sign "></i> Reservation </a></span>
             <a href="client" class="list-group-item mx-5 border-0  merriweather bg-transparent ">
-                <i class="far fa-file-alt"></i> client </a>
-            <a href="setting" class="list-group-item mx-5 border-0 merriweather bg-transparent ">
-                <i class="fas fa-sliders-h"></i> Settings</a>
+             <span style="<?php if(basename($_SERVER['REQUEST_URI']) == "client") echo 'color:#90f5d7;'; else echo 'color:white ;' ?>"><i class="far fa-file-alt"></i> client </a></span>    
+             <a href="Acueille" class="list-group-item mx-5 border-0 merriweather bg-transparent ">
+             <span style="<?php if(basename($_SERVER['REQUEST_URI']) == "setting") echo 'color:#90f5d7;'; else echo 'color:white ;' ?>"><i class="fas fa-sliders-h"></i> Acueille</a></span>   
           <form method="POST" action="operation"><button type="submit"  name="logout" class="list-group-item mx-5 border-0 merriweather bg-transparent  mt-4 mb-2 ">
-          Logout   <i class="fas fa-sign-out-alt"></i></button></form>   
+         <span style="color:white ;"><i class="fas fa-sign-out-alt">Logout </i></span>   </button></form>   
         </div>
 
 

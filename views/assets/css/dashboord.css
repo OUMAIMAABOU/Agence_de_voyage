@@ -22,7 +22,8 @@ border-radius: 0% !important;
 }
 #sidebar-dashboard {
  min-height: 100%;
- margin-left: -240px;
+ margin-left: -278px;
+
 
 }
 
@@ -65,6 +66,6 @@ border-radius: 0% !important;
    }
  
    #dashboard.toggled #sidebar-dashboard {
-     margin-left: -240px;
+     margin-left: -278px;;
    }
  }

@@ -18,7 +18,7 @@ class ResrvationController{
           cookies::set('success', 'votre reservation a été Ajouté voueillez attandre ');
           header('location:Acueille');
         } else {
-          cookies::set('error', "Hotel n'est pas Ajouté");
+          cookies::set('error', "Reservation n'est pas Ajouté");
           header('location:formreservation');
         } 
         $_SESSION['id_voyage'];
@@ -26,7 +26,7 @@ class ResrvationController{
     }
 
   static public function select(){
-    return Reservation::Afficher();
+    return Reservation::Afficherreservation($_SESSION['id']);
    }
 
 
@@ -47,5 +47,30 @@ class ResrvationController{
          if (Reservation::refosereservation())header('location:tableReservation'); 
      }  
    }
+   Public function Annule()
+   {
+     if(isset($_POST['Annuler']))
+     {
+         Reservation::SetId($_POST['id']);
+
+         if (Reservation::Annulerservation())header('location:reservationClient'); 
+     }  
+   }
+   public function Delete()
+  {
+    if (isset($_POST['Supprimerresveration'])) {
+      Reservation::SetId($_POST['id']);
+      if (Reservation::Deletereservation()) {
+        cookies::set('success', 'Reservation a été Supprimé');
+        header('location:tableReservation');
+      } else {
+        cookies::set('error', "Reservation n'est pas supprimé");
+        header('location:tableReservation');
+      }
+    }
+  }
+  public static function Topdestination(){
+   return Reservation:: Topdestination();
+  }
 
 }

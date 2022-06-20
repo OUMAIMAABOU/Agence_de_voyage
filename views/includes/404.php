@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     <title>error 404</title>
-    <?php include('script.php'); ?>
     
 </head>
-<body style="background-color: #9573D4;">
+<body style="background-color:#61c5a8 ">
 
-      <div class="d-flex flex-column align-items-center mt-5 ">
-            <div class="d-flex flex-column align-items-center mt-5">
-                <h1 class="text-light " style="FONT-SIZE: XXX-LARGE;">404</h1>
-                <h2 class="text-light">The Page You Requested Could Not Be Found</h2>
+      <div style="display: flex;flex-direction: column;  align-items: center;">
+            
+              <div><h1 >404</h1></div>  
+              <div>  <h2 >The Page You Requested Could Not Be Found</h2>
             </div>
-            <div class="mt-5"><img src="views/img/Premium Vector _ 404 error web template with mad cat.png" alt="" width="700px"></div>
+            <div class="mt-5"><img src="views\assets\img\background\Premium Vector _ 404 error web template with mad cat.png" alt="" width="700px"></div>
       </div>
  
 </body>
