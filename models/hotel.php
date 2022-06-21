@@ -3,7 +3,6 @@
 class Hotel extends Dbconnect{
 
 static public $id;
-static public $Chamber;
 static public $Restauran;
 static public $ville;
 static public $Etoile;
@@ -40,7 +39,6 @@ static public function UpdateHotel(){ return Dbconnect::Update('hotel',"name=?,e
         static public function Setname($name){self::$name=$name;}
         static public function Setemail($email){self::$email=$email;}
 
-        static public function SetChamber($Chamber){self::$Chamber=$Chamber;}
         static public function Setville($ville){self::$ville=$ville;}
         static public function SetTelephone($Telephone){self::$Telephone=$Telephone;}
         static public function SetEtoile($Etoile){self::$Etoile=$Etoile;}

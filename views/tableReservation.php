@@ -53,13 +53,12 @@
                                                 <td><?= $reservation[13] ?></td>
                                                 <td ><?= $reservation[1] ?></td>
                                                 <td><?= $reservation[2] ?></td>
-                                                <td ><?= $reservation[4] ?></td>
+                                                <td ><?= $reservation['transport'] ?></td>
                                                 <td > <?= $reservation['local'] ?> </td>
                                                 <td ><?= $reservation[6] ?></td>
                                                 <td ><?= $reservation['date_reservation'] ?></td>
                                                 <td ><?= $reservation[10] ?></td>
                                                     <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?">
-                                                   <!-- <td><button type="submit" name="Refuse" class="btn btn-outline-danger" ><input type="text" hidden name="id" value="<?= $reservation['id'] ?>">Refuse</button></td>  -->
                                                    <td><button type="submit" name="Accepte" class="btn btn-outline-primary" ><input type="text" hidden name="id" value="<?= $reservation['id'] ?>">Accepte</button></td> 
                                                  <td>  <?php  if($reservation[10]=='Annuler'){
                                                echo "<button type='submit' name='Supprimerresveration' class='btn btn-outline-danger' ><input type='text' hidden name='id' value=' $reservation[0]' > Supprimer</button>"; }else

@@ -48,8 +48,13 @@ class Administrateur extends Dbconnect
      
     }else if($this->image ==""){
       $this->password = password_hash($this->password, PASSWORD_DEFAULT);
-      return Dbconnect::Update('users', "name =?,email=?,genre=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->phone, $this->adresse, $this->id]);
-     }else{
+      return Dbconnect::Update('users', "name =?,email=?,genre=?,Phone=?,adresse=?,type=?,password=?", [$this->name, $this->email, $this->genre, $this->phone, $this->adresse, $this->type,$this->password,$this->id]);
+     
+    }else if($this->password == "" && $this->image == "" ){
+      $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+      return Dbconnect::Update('users', "name =?,email=?,genre=?,Phone=?,adresse=?,type=?", [$this->name, $this->email, $this->genre, $this->phone, $this->adresse, $this->type,$this->id]);
+     }
+     else{
     $this->password = password_hash($this->password, PASSWORD_DEFAULT);
     return Dbconnect::Update('users', "name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone, $this->adresse, $this->id]);
   }
