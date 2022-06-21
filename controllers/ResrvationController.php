@@ -28,6 +28,9 @@ class ResrvationController{
   static public function select(){
     return Reservation::Afficherreservation($_SESSION['id']);
    }
+   static public function selectAll(){
+    return Reservation::Afficher();
+   }
 
 
    Public function Update()

@@ -131,4 +131,14 @@ class AdministrateurController
       }
     }
   }
+  static public function femme(){
+    $Administrateur=new Administrateur();
+return count($Administrateur->genrFemme());
+  }
+  static public function homme(){
+    $Administrateur=new Administrateur();
+
+    return count($Administrateur->genreHomme());
+
+  }
 }

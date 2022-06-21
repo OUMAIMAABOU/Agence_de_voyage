@@ -40,7 +40,7 @@
               <div class="table-wrapper">
                 <div class="container-fluid px-4">
                   <div class="row my-2 d-flex justify-content-center">
-                    <div class="col-lg-3 col-md-5 mb-4 ">
+                    <div class="col mb-4 ">
                       <div class="p-1 flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 300px;">
                         <div>
                           <p class="fs-4 text-center Secondary-text">Partenariat</p>
@@ -52,7 +52,7 @@
                       </div>
                     </div>
 
-                    <div class="col-lg-3  col-md-5  mb-4 ">
+                    <div class="col mb-4 ">
                       <div class="p-1 flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 300px;">
                         <div>
                           <p class="fs-4 text-center Secondary-text">Client</p>
@@ -64,7 +64,7 @@
                       </div>
                     </div>
 
-                    <div class=" col-lg-3  col-md-5  mb-4">
+                    <div class=" col  mb-4">
                       <div class="p-1 flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 300px;">
                         <div>
                           <p class="fs-4 text-center  Secondary-text">Genre</p>
@@ -78,30 +78,16 @@
                       </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-5  mb-4">
-                      <div class="p-1 text-center flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 300px">
-                        <div>
-                          <p class="fs-4">Réservation</p>
-                          <hr>
-                          </hr>
-                          <h3 class="fs-5"><canvas id="Reservation" style="width:100%;max-width:700px ;"></canvas> </canvas>
-
-                            <hr>
-                            </hr>
-                        </div>
-                      </div>
-                    </div>
+                 
 
                   </div>
                   <div class=" col-12">
                     <div class="p-1 flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 400px;">
                       <div>
-                        <p class="fs-4 text-center  Secondary-text">Voyage</p>
+                        <p class="fs-4 text-center  Secondary-text">Réservation</p>
                         <hr>
                         </hr>
-
-
-                        <h3 class="fs-5"><canvas id="myChart3" style="width:100%;max-width:700px ;"></canvas> </canvas>
+                        <h3 class="fs-5"><canvas id="Reservation" style="width:100%;max-width:707px;height: 353px;"></canvas> </canvas>
 
                           <hr>
                           </hr>
@@ -189,37 +175,10 @@
     }
   });
 </script>
-<script>
-  var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-  var yValues = [55, 49, 44, 24, 15];
-  var barColors = [
-    "#b91d47",
-    "#00aba9",
-    "#2b5797",
-    "#e8c3b9",
-    "#1e7145"
-  ];
 
-  new Chart("myChart3", {
-    type: "doughnut",
-    data: {
-      labels: xValues,
-      datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-      }]
-    },
-    options: {
-      title: {
-        display: true,
-        text: "World Wide Wine Production 2018"
-      }
-    }
-  });
-  </script>
   <script>
-var xValues = ["Client", "Agent", "Admin"];
-var yValues = [<?=count(ClientController::select())?>, 49, 44];
+var xValues = ["Client", "Femme", "Homme"];
+var yValues = [<?=count(ClientController::select())?>,<?= AdministrateurController::femme();?>, <?= AdministrateurController::homme();?>];
 var barColors = [
   "#b91d47",
   "#00aba9",
@@ -243,7 +202,7 @@ new Chart("Chart", {
                     
 <script>
     var xValues = ["Voyage", "reservation"];
-  var yValues = [<?=  $voyage->Afficher();?>, <?= ResrvationController::select()?>, 0];
+  var yValues = [<?=  count($voyage->Afficher());?>, <?= count(ResrvationController::selectAll())?>, 0];
   var barColors = [
     "#b91d47",
     "#00aba9",
@@ -260,11 +219,6 @@ new Chart("Chart", {
         data: yValues
       }]
     },
-    options: {
-      title: {
-        display: true,
-        text: "World Wide Wine Production 2018"
-      }
-    }
+
   });
 </script>

@@ -15,7 +15,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="">
-					<h1 class=" py-3 redressed">
+					<h1 class=" py-3 redressed text-light">
 						Explorez la beauté du beau monde
 					</h1>
 					<div style="text-align: end;">

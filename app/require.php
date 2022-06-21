@@ -6,7 +6,7 @@ if( basename($_SERVER['REQUEST_URI'])=="Acceuille" || basename($_SERVER['REQUEST
     include_once('models/voyage.php');
 }
 
-if( basename($_SERVER['REQUEST_URI'])=="admin" || basename($_SERVER['REQUEST_URI'])=="operation"){
+if( basename($_SERVER['REQUEST_URI'])=="admin" || basename($_SERVER['REQUEST_URI'])=="operation"|| basename($_SERVER['REQUEST_URI'])=="chart"){
     require_once('models/admin.php');
 }
 
