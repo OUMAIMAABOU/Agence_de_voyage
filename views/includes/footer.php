@@ -1,5 +1,5 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="views/assets/bootstrap.bundle.min.js" ></script>
+<!-- <script src="views/assets/bootstrap.bundle.min.js" ></script> -->
 
 <script>
   AOS.init({duration:1500,});
@@ -31,13 +31,7 @@
 					</div>
 				
 					
-					<div class="col-12 text-center  text-muted">
-						&copy; Happy travel 
-						<script>
-							document.write(new Date().getFullYear());
-						</script>
 					
-					</div>
 				</div>
 			</div>
 			

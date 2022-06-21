@@ -12,12 +12,9 @@ $Controllers= new AdministrateurController();
 $Controllers->insert();
 ClientController::Addcommantaire();
 
-if($_SESSION['role']=='Admin'){
+
   $Controllers->Delete(); 
-}else if($_SESSION['role']!='Admin') {
-  echo '<div class="alert alert-danger">cant delete this user</div>';
-header('location:admin');
-}
+
 
  
 $Controllers->update();

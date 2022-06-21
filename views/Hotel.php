@@ -137,11 +137,7 @@
                               <option value="NON">NON </option>
                             </select>
                           </div>
-                          <div class="col-md-6 ">
-                            <input type="file" class="form-control" name="image" required>
-
-                          </div>
-
+                        
 
                           <div class="col-md-12 text-center">
                             <button type="submit" class="btn  w-25 mb-3" name="addHotel" style="background:#90f5d7 ; color: #012970; ">Ajouter
@@ -232,10 +228,7 @@
 
                             </select>
                           </div>
-                          <!-- <div class="col-md-6 ">
-                   <input type="file" class="form-control" name="image"  required>
-
-                   </div> -->
+                      
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" name="updateHotel" class="btn btn-warning mT-3">Update</button>

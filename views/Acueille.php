@@ -5,88 +5,85 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Happy travel</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
 <body>
 
-
-
-	<section class="banner landing_page d-flex justify-content-center align-items-center pt-5  ">
-		<div class="container">
-			<div class="row">
-				<div class="">
-					<h1 class=" py-3 redressed text-light">
-						Explorez la beauté du beau monde
-					</h1>
-					<div style="text-align: end;">
-						<p class=" text-light text-uppercase mx-4 py-3 fw-bolder redressed fs-3">bienvenue sur <span style="color:#20c997;">Happy</span>Travel</p>
+	<section class="bg-dark landing_page">
+		<div class="container-fluid">
+			<div class="row d-flex align-content-between flex-wrap">
+				<div class="mb-5">
+					<h1 class="py-3 text-light">Explorez la beauté du beau monde</h1>
+				</div>
+				<div class="text-end mt-5">
+					<p class="text-light mt-5 mb-0 text-uppercase me-4 py-3 fw-bolder fs-3">bienvenue sur <span style="color:#20c997;">Happy</span>Travel</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<div class="container-fluid mt-5" id="Voyage">
+		<div class="text-center">
+			<h2>Voyage organise </h2>
+			<p>Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla. </p>
+		</div>
+		<div class="container-fluid mt-5">
+			<div class="row p-1">
+				<?php $controller = new VoyageController();
+				$hotel = $controller->Afficher();
+				foreach ($hotel as $x => $rows) { ?>
+					<div class="card pt-2 rounded-5 mx-auto mb-3" style="width: 25rem;">
+					<div>
+						<img src="views/assets/img/voyage/<?= $rows[6] ?>" class="card-img-top rounded-4" alt="package-place"  style=" height: 80%;">
+					</div>	
+					
+						<div class="card-body">
+							<h5 class="card-title"><?= $rows[9]?>&nbsp;<?= $rows[3] ?> Dh</h5>
+							<p class="card-text"><?= $rows[8]?></p>
+							<p class="card-text"><span>
+								<i class="fa fa-angle-right"></i> <?= $rows[2] ?> daays </span>
+								<i class="fa fa-angle-right"></i> <?= $rows[7] ?> </p>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">transportation</li>
+							<li class="list-group-item"><i class="fa fa-angle-right"></i> food :<?= $rows[5] ?></li>
+						</ul>
+						<div class="card-body">
+							<form action="formreservation" method="POST">
+								<button type="submit" name="idclient" class="btn btn-lg btn-outline-success">
+								<input type="hidden" name="id" value="<?= $rows[0] ?>">Reserve</button>
+							</form>
+						</div>
 					</div>
-				</div>
+				<?php }?>
 			</div>
-
-
 		</div>
-	</section>
-
-
-	<section class="mt-5" id="Voyage">
-		<div class="container mt-5 ">
-			<div class="text-center">
-				<h2>Voyage organise </h2>
-				<p>Duis aute irure dolor in velit esse cillum dolore eu fugiat nulla. </p>
+	</div>
+	
+	<section class="container-fluid mt-5">
+		<div class="row">
+			<button class="btn btn-outline-success col-lg-3 col-md-4 col-sm-6 col-10 btn-lg mx-auto" onclick="myFunction()">Ajouter commantaire</button>
+			<div class="container mt-5">
+				<form action="operation" method="POST" id="formares" style="display:none;">
+					<div class="text-center">
+						<h2>Commantaire </h2>
+						<p>Ajouter commantaire: </p>
+					</div>
+					<div class="row">
+						<div class="col-10 mx-auto">
+							<textarea class="form-control" name="comataira" id="exampleFormControlTextarea1" rows="3"></textarea>
+						</div>
+						<button type="submit" class="btn mt-2 mx-auto w-25 mb-3" name="Addcommantaire" style="background:#90f5d7 ; color: #012970; ">Add Commantaire</button>
+					</div>
+				</form>
 			</div>
-			<div class="mt-5">
-				<div class="row ">
-					<?php $controller = new VoyageController();
-					$hotel = $controller->Afficher();
-					foreach ($hotel as $x => $rows) { ?>
-						<div class="col-md-3 col-sm-6 bg-light vogare-item " data-aos="fade-up">
-							<div class="">
-								<img src="views/assets/img/voyage/<?= $rows[6] ?>" alt="package-place" style=" BORDER-RADIUS: 40px; width: 100%;height: 200px; max-width: 100%; box-sizing: border-box;">
-								<div class="">
-
-									<h3> <?= $rows['ville'] ?> <span class=""><?= $rows[3] ?> Dh</span></h3>
-									<div class="">
-										<p><span><i class="fa fa-angle-right"></i> <?= $rows[2] ?> daays 6 nights</span>
-											<i class="fa fa-angle-right"></i> <?= $rows[7] ?> star accomodation
-										</p>
-										<p><i class="fa fa-angle-right"></i>transportation </p>
-										<p><i class="fa fa-angle-right"></i> food :<?= $rows[5] ?> </p>
-									</div>
-
-									<div class="about-btn">
-										<form action="formreservation" method="POST">
-											<button type="submit" name="idclient" class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-bottom: 24px;">
-												<input type="hidden" name="id" value="<?= $rows[0] ?>">Reserve</button>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div><?php } ?>
-				</div>
-			</div>
-	</section>
-	<section class="mt-5">
-		<button class="btn btn-order  btn-lg rounded-0 merriweather" style="margin-left: 647px;" onclick="myFunction()">Ajouter commantaire:</button>
-		<div class="container mt-5 vogare-item ">
-			<form action="operation" method="POST" id="formares" style="display:none;">
-				<div class="text-center">
-					<h2>Commantaire </h2>
-					<p>Ajouter commantaire: </p>
-				</div>
-				<div >
-					<div class="col-12"><input type="text"  name="comataira" style="WIDTH: 100% ;HEIGHT: 10%;"></div>
-
-					<button type="submit" class="btn  w-25 mb-3" name="Addcommantaire" style="background:#90f5d7 ; color: #012970; ">Add Commantaire</button>
-
-				</div>
-			</form>
 		</div>
-
 	</section>
 
 	<section class="cc-menu merriweather py-1" id="Destination">
-		<div class="container">
+		<div class="container-fluid">
 
 			<div class="row">
 				<h3 class="text-center text-dark  merriweather">Top Destination</h3>
@@ -99,27 +96,27 @@
 			</div>
 
 			<div class="container-fluid">
-
 				<div class="row">
 					<?php $voyage = ResrvationController::Topdestination();
 					foreach ($voyage as $x => $rows) { ?>
-
-						<div class="col-lg-3 col-sm-12 mt-2 p-2 mx-3">
-							<div class="card" style="height: 360px;">
-								<img src="views/assets/img/voyage/<?= $rows['image']; ?>" class="card-img-top" alt="..." style="height:40%;" />
+						
+						<div class="col-lg-3 col-md-4 col-sm-12 mt-2 p-2 mx-3">
+							<div class="card" >
+								<div >
+									<img src="views/assets/img/voyage/<?= $rows['image']; ?>" class="card-img-top" alt="..." style=" height: 80%;"/>
+								</div>
+								
 								<div class="card-body">
-									<h5 class="card-title" style="width:100%"><?= $rows['destination']; ?> , <?= $rows['prix']; ?>Dh</h5>
+									<h5 class="card-title" style="width:100%"><?= $rows['prix']; ?>Dh</h5>
+									<p><?= $rows['destination']; ?></p>
 									<p class="card-text">
 										<?= $rows['description']; ?>
 									</p>
 								</div>
 							</div>
-
 						</div>
 					<?php } ?>
-
 				</div>
-
 			</div>
 		</div>
 	</section>
@@ -197,8 +194,7 @@
 	</section>
 
 
-
-
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>

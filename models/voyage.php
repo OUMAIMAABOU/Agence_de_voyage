@@ -12,16 +12,10 @@ class  Voyage extends Dbconnect
     static public $id_hotel;
     static public $ville;
     static public $distination;
-
-
-
-
     public function getAllville()
     {
         return $this->GetALL('ville');
     }
-
-
     static public function insert()
     {
         try {
@@ -33,13 +27,13 @@ class  Voyage extends Dbconnect
     }
     static  public  function Afficher()
     {
-        return static::SELECTJoin('voyage_organises,hotel', 'voyage_organises.id,voyage_organises.Dure,voyage_organises.date_de_depart,voyage_organises.Prix, voyage_organises.Discription,voyage_organises.Food,voyage_organises.image ,voyage_organises.destination, hotel.ville,hotel.etoile,hotel.id,hotel.name ', " hotel.id = voyage_organises.id_Hotel ORDER BY voyage_organises.id DESC");
+        return static::SELECTJoin('voyage_organises,hotel', 'voyage_organises.*, hotel.ville,hotel.etoile,hotel.id,hotel.name ', " hotel.id = voyage_organises.id_Hotel ORDER BY voyage_organises.id DESC");
     }
     static  public  function selectOne($id)
     {
         return static::SELECTJoin('voyage_organises,hotel', 'voyage_organises.id , voyage_organises.Dure,voyage_organises.Prix,voyage_organises.Discription,voyage_organises.image,voyage_organises.Food,hotel.ville,hotel.etoile', "  voyage_organises.id_Hotel=hotel.id and voyage_organises.id=$id");
     }
-    static public  function DeleteModele()
+    static public  function Deletevoyage()
     {
         return Dbconnect::delete('voyage_organises', "id", [self::$id]);
     }

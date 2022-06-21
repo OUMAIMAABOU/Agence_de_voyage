@@ -6,12 +6,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
-<?php
-//  if(empty($_SESSION['role'])) header("Location:Acueille");?>
+
 <div class="d-flex m-3" id="dashboard">
     <div class="bg" id="sidebar-dashboard">
-
-
         <div class=" redressed fw-bolder m-2 dark-text fs-5 fw-bold border-start border-3 px-2">
             <h1 class="text-light"> <span style="color:#90f5d7;">Happy</span>Travel</a></h1>
 
@@ -29,8 +26,7 @@
            echo' <a href="admin" class="list-group-item  mx-5 border-0 merriweather bg-transparent ">
           <span style="color:white;"> <i class="far fa-bookmark"></i> Admin </span> </a>';
          }?>
-         <!-- <a href="admin" class="list-group-item  mx-5 border-0 merriweather bg-transparent ">
-           <span style="color:#90f5d7 ;"><i class="far fa-bookmark"></i> Admin</span> </a> -->
+    
             <a href="Hotel" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">
               <span style="<?php if(basename($_SERVER['REQUEST_URI']) == "Hotel") echo 'color:#90f5d7;'; else echo 'color:white ;' ?> "><i class="fas fa-graduation-cap"></i>Hotel</a></span> 
             <a href="transport" class="list-group-item mx-5 merriweather border-0 bg-transparent rounded-3">

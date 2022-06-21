@@ -39,7 +39,7 @@
 .landing_page{
 	background:url(../img/background/AGADIR.jpg) center center fixed no-repeat;
 	background-size: cover;
-	height: 400px;
+	height: 50vh;
  }  
 .order-form {
 	background:  url(../img/background/AGADIR.jpg) center center fixed no-repeat;
@@ -61,7 +61,7 @@
 .cc-menu {
     background:  url(../img/background/image2.jpg) center center fixed no-repeat;
 	background-size: cover;
-    height: 669px ;
+    
 
 }
 
@@ -84,12 +84,5 @@
 	color: #fff !important;
 	background-color: var(--bs-teal) !important;
 }
-@media (max-width: 768px) {
 
-
-    .cc-menu {
-		height: 1383px;
-	
-	}
-}
 

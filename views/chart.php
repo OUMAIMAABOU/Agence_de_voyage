@@ -64,19 +64,7 @@
                       </div>
                     </div>
 
-                    <div class=" col  mb-4">
-                      <div class="p-1 flex-column  shadow-sm d-flex justify-content-around align-items-center bg-light" style="height: 300px;">
-                        <div>
-                          <p class="fs-4 text-center  Secondary-text">Genre</p>
-                          <hr>
-                          </hr>
-                          <h3 class="fs-5"><canvas id="myChart1" style="width:100%;max-width:700px ;"></canvas> </canvas>
-
-                            <hr>
-                            </hr>
-                        </div>
-                      </div>
-                    </div>
+                 
 
              
 
@@ -142,47 +130,14 @@
         data: yValues
       }]
     },
-    options: {
-      legend: {
-        display: false
-      },
-     
-    }
-  });
-</script>
-<script>
-  var xValues = ["Etudiant", "Professeur", "Class"];
 
-  var yValues = [3, 1, 4, 0];
-  var barColors = ["red", "green", "blue"];
-  new Chart("myChart1", {
-    type: "bar",
-    data: {
-      labels: xValues,
-      datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-      }]
-    },
-    options: {
-      legend: {
-        display: false
-      },
-      title: {
-        display: true,
-        text: "Ecole"
-      }
-    }
   });
 </script>
 
   <script>
 var xValues = ["Client", "Femme", "Homme"];
 var yValues = [<?=count(ClientController::select())?>,<?= ClientController::femme();?>, <?= ClientController::homme();?>];
-var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
+var barColors = [ "#b91d47", "#00aba9", "#2b5797",
 
 ];
 
@@ -203,10 +158,7 @@ new Chart("Chart", {
 <script>
     var xValues = ["Voyage", "reservation"];
   var yValues = [<?=  count($voyage->Afficher());?>, <?= count(ResrvationController::selectAll())?>, 0];
-  var barColors = [
-    "#b91d47",
-    "#00aba9",
-    "#2b5797",
+  var barColors = [  "#b91d47","#00aba9", "#2b5797",
     
   ];
   new Chart("Reservation", {

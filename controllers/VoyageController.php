@@ -49,7 +49,7 @@ class VoyageController
   {
     if (isset($_POST['Voyagedelete'])) {
       Voyage::SetId($_POST['id']);
-      if (Voyage::DeleteModele()) header('location:voyage');
+      if (Voyage::Deletevoyage()) header('location:voyage');
     }
   }
 

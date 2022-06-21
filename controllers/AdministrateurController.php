@@ -14,7 +14,7 @@ class AdministrateurController
       $admin->Setemail($_POST['email']);
       $admin->Setpassword($_POST['password']);
       $admin->SetAdress($_POST['adres']);
-      $admin->Setimage( $file_name);
+      $admin->Setimage($file_name);
       $admin->SetPhone($_POST['Phone']);
       $admin->Settype($_POST['type']);
       $admin->SetGenre($_POST['genre']);
@@ -31,43 +31,49 @@ class AdministrateurController
 
   public function login()
   {
-  
+
     $admin = new Administrateur();
     if (isset($_POST['loginconnect'])) {
       $admin->Setemail($_POST['email']);
       $admin = $admin->login();
-      if ($admin && password_verify($_POST['password'], $admin['pass'])) {
+      if ($admin && password_verify($_POST['password'], $admin['pass'])) 
+      {
         $_SESSION['id'] = $admin['id'];
         $_SESSION['name'] = $admin['name'];
         $_SESSION['image'] = $admin['image'];
         $_SESSION['role'] = $admin[3];
         if ($admin[3] == "Agent" || $admin[3] == "Admin") {
-          header('location:admin');
+          header('location:chart');
           var_dump($admin->login());
         } else if ($admin[3] == "client") {
           header('location:Acueille');
-        } 
+        }
+      } else {
+        cookies::set('error', "Utilisateur n'est exsite pas ");
+        header('location:login');
+      }
     }
-    var_dump($admin->login());
-      cookies::set('error', "Utilisateur n'est exsite pas ");
-      header('location:login');
   }
-  
-}
 
 
   public function Delete()
   {
     if (isset($_POST['deletADMIN'])) {
-      $p = new Administrateur();
-      $p->Setid($_POST['id']);
-      if ($p->DeleteAdmin()) {
-        cookies::set('success', 'Utilisateur a été Supprimer');
+      if ($_SESSION['role'] == 'Admin') {
+        $p = new Administrateur();
+        $p->Setid($_POST['id']);
+        if ($p->DeleteAdmin()) {
+          cookies::set('success', 'Utilisateur a été Supprimer');
+          header('location:admin');
+        } else {
+          cookies::set('error', 'Tu na pas les droit de supprimer cette utilisateur');
+          var_dump($p->DeleteAdmin());
+          header('location:admin');
+        }
+      } else if ($_SESSION['role'] != 'Admin') {
+        cookies::set('error', 'Tu na pas les droit de supprimer les admins');
+
         header('location:admin');
-      } else {
-        cookies::set('error', 'Tu na pas les droit de supprimer cette utilisateur');
-        var_dump($p->DeleteAdmin());
-        // header('location:admin');
       }
     }
   }
@@ -95,7 +101,7 @@ class AdministrateurController
       $admin->SetAdress($_POST['adres']);
       $admin->SetPhone($_POST['Phone']);
       $admin->Settype($_POST['type']);
-      $admin->Setimage( $file_name);
+      $admin->Setimage($file_name);
       $admin->SetGenre($_POST['genre']);
 
       if ($admin->Updateadmin()) {
@@ -122,16 +128,13 @@ class AdministrateurController
       $admin->Settype(3);
       $admin->SetGenre($_POST['genre']);
       $admin->Setcin($_POST['cin']);
-      if ($admin->insert())  {
+      if ($admin->insert()) {
         cookies::set('success', 'Le compte a été Ajouté');
         header('location:login');
       } else {
         cookies::set('error', 'Compte ne pas Ajouté');
         header('location:inscription');
-      
-     
       }
     }
   }
-
 }
