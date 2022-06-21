@@ -16,7 +16,7 @@ class Administrateur extends Dbconnect
 
   public  function DeleteAdmin()
   {
-    return Dbconnect::delete('users', "id", [$this->id]);
+    return Dbconnect::delete('users', "type!=1 and id", [$this->id]);
   }
   static  public  function Afficher()
   {
@@ -46,21 +46,19 @@ class Administrateur extends Dbconnect
       return Dbconnect::Update('users', "name =?,email=?,genre=?,type=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->type,  $this->image, $this->phone, $this->adresse, $this->id]);
 
     }else if($this->type ==""){
+      $this->password = password_hash($this->password, PASSWORD_DEFAULT);
       return Dbconnect::Update('users', "name =?,email=?,genre=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->image, $this->phone, $this->adresse, $this->id]);
-     } else{
+     
+    }else if($this->image ==""){
+      $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+      return Dbconnect::Update('users', "name =?,email=?,genre=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->phone, $this->adresse, $this->id]);
+     }else{
     $this->password = password_hash($this->password, PASSWORD_DEFAULT);
     return Dbconnect::Update('users', "name =?,email=?,genre=?,type=?,password=?,image=?,Phone=?,adresse=?", [$this->name, $this->email, $this->genre, $this->type, $this->password, $this->image, $this->phone, $this->adresse, $this->id]);
   }
 }
 
-  public function genreHomme()
-  {
-    return  static :: SELECTJoin('users','*'," genre='Homme'");
-  }
-  public function genrFemme()
-  {
-    return  static :: SELECTJoin('users','*'," genre='Femme'");
-  }
+ 
 
   // public function search($search){
   //   try{

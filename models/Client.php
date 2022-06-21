@@ -18,4 +18,12 @@ class Client extends Dbconnect{
       return  static :: add('clients','(Null,?,?)',[self::$commantaire,self::$id_users]);
   
     }
+   static public function genreHomme()
+    {
+      return  static :: SELECTJoin('users','*',"type=1 and genre='Homme'");
+    }
+   static public function genrFemme()
+    {
+      return  static :: SELECTJoin('users','*',"type=1 and genre='Femme'");
+    }
 }

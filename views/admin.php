@@ -155,7 +155,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body container">
-                                                <form class="form-container row" action="operation" method="POST" data-parsley-validate>
+                                                <form class="form-container row" action="operation" method="POST" enctype="multipart/form-data" data-parsley-validate >
                                                     <div class="mb-3 fw-bold">
                                                         <input type="text" hidden class="form-control" id="id" name="id">
 
@@ -199,9 +199,14 @@
                                                         <input type="text" class="form-control" id="phone" name="Phone" placeholder="Enter phone">
                                                     </div>
                                                     <div class="mb-3  fw-bold col-6">
+                                                        <label for="exampleFormControlTextarea1" class="form-label">Image</label>
+                                                        <input type="file" name="image" class="form-control" placeholder="img">
+                                                    </div>
+                                                    <div class="mb-3  fw-bold col-12">
                                                         <label for="exampleFormControlTextarea1" class="form-label">Address</label>
                                                         <textarea class="form-control" name="adres" id="adress" rows="3"></textarea>
                                                     </div>
+
 
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

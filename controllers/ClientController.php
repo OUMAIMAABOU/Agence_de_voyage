@@ -49,4 +49,13 @@ class ClientController
       }
     }
   }
+  static public function femme(){
+return count(Client::genrFemme());
+  }
+  static public function homme(){
+    $Administrateur=new Administrateur();
+
+    return count(Client::genreHomme());
+
+  }
 }

@@ -78,7 +78,7 @@
                       </div>
                     </div>
 
-                 
+             
 
                   </div>
                   <div class=" col-12">
@@ -178,7 +178,7 @@
 
   <script>
 var xValues = ["Client", "Femme", "Homme"];
-var yValues = [<?=count(ClientController::select())?>,<?= AdministrateurController::femme();?>, <?= AdministrateurController::homme();?>];
+var yValues = [<?=count(ClientController::select())?>,<?= ClientController::femme();?>, <?= ClientController::homme();?>];
 var barColors = [
   "#b91d47",
   "#00aba9",

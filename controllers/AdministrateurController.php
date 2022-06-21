@@ -14,7 +14,7 @@ class AdministrateurController
       $admin->Setemail($_POST['email']);
       $admin->Setpassword($_POST['password']);
       $admin->SetAdress($_POST['adres']);
-      $admin->Setimage($_FILES['image']['name']);
+      $admin->Setimage( $file_name);
       $admin->SetPhone($_POST['Phone']);
       $admin->Settype($_POST['type']);
       $admin->SetGenre($_POST['genre']);
@@ -52,7 +52,6 @@ class AdministrateurController
       cookies::set('error', "Utilisateur n'est exsite pas ");
       header('location:login');
   }
-    echo "aaa";
   
 }
 
@@ -67,7 +66,8 @@ class AdministrateurController
         header('location:admin');
       } else {
         cookies::set('error', 'Tu na pas les droit de supprimer cette utilisateur');
-        header('location:admin');
+        var_dump($p->DeleteAdmin());
+        // header('location:admin');
       }
     }
   }
@@ -84,7 +84,9 @@ class AdministrateurController
   {
 
     if (isset($_POST['update'])) {
-
+      $file_name = $_FILES['image']['name'];
+      $file_tmp = $_FILES['image']['tmp_name'];
+      move_uploaded_file($file_tmp, "views/assets/img/client/" . $file_name);
       $admin = new Administrateur();
       $admin->SetId($_POST['id']);
       $admin->Setname($_POST['nom']);
@@ -93,7 +95,7 @@ class AdministrateurController
       $admin->SetAdress($_POST['adres']);
       $admin->SetPhone($_POST['Phone']);
       $admin->Settype($_POST['type']);
-      $admin->Setimage($_POST['image']);
+      $admin->Setimage( $file_name);
       $admin->SetGenre($_POST['genre']);
 
       if ($admin->Updateadmin()) {
@@ -131,14 +133,5 @@ class AdministrateurController
       }
     }
   }
-  static public function femme(){
-    $Administrateur=new Administrateur();
-return count($Administrateur->genrFemme());
-  }
-  static public function homme(){
-    $Administrateur=new Administrateur();
 
-    return count($Administrateur->genreHomme());
-
-  }
 }
