@@ -19,7 +19,7 @@ class Reservation extends Dbconnect
 
    static  public  function Afficher()
    {
-      return static::SELECTJoin('reservation,users,voyage_organises ', 'reservation.* ,users.name as name,users.adresse,users.email,voyage_organises.Prix ,voyage_organises.destination', "reservation.id_voyage=voyage_organises.id and reservation.id_client=users.id");
+      return static::SELECTJoin('reservation,users,voyage_organises ', 'reservation.* ,users.name as name,users.adresse,users.email,voyage_organises.Prix ,voyage_organises.destination', "reservation.id_voyage=voyage_organises.id and reservation.id_client=users.id ORDER BY id DESC ");
    }
 
 
@@ -35,7 +35,7 @@ class Reservation extends Dbconnect
 
    static  public  function Afficherreservation($id)
    {
-      return static::SELECTJoin('reservation,users,voyage_organises ', 'reservation.* ,users.name,users.adresse,users.email,voyage_organises.Prix as prix ,voyage_organises.destination', "reservation.id_voyage=voyage_organises.id and reservation.id_client=users.id and users.id=$id");
+      return static::SELECTJoin('reservation,users,voyage_organises ', 'reservation.* ,users.name,users.adresse,users.email,voyage_organises.Prix as prix ,voyage_organises.destination', "reservation.id_voyage=voyage_organises.id and reservation.id_client=users.id and users.id=$id ORDER BY id DESC");
    }
   static public function AceptReservation()
    {

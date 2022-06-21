@@ -20,7 +20,7 @@ class Administrateur extends Dbconnect
   }
   static  public  function Afficher()
   {
-    return  static :: SELECTJoin('users, types','users.* , types.type'," users.type=types.id and types.type!='client' ORDER BY id DESC");
+    return  static :: SELECTJoin('users, types','users.* , types.type'," users.type=types.id and types.type!='client'");
 
   }
   public function insert()

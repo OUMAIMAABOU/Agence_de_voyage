@@ -20,7 +20,7 @@ static public $Type;
 
 
 static public function insert(){try{ return Dbconnect::add('hotel',"(NULL,?,?,?,?,?,?,?,?,?)",[self::$name, self::$Etoile, self::$ville, self::$Adresse,self::$Telephone,self::$Restauran,self::$Agent,self::$email,self::$Type]); }catch(PDOException $e){ return $e->getMessage();}}
-static  public  function Afficher(){return static :: SELECTJoin('hotel,users','hotel.*,users.name as username',"hotel.id_users=users.id");}
+static  public  function Afficher(){return static :: SELECTJoin('hotel,users','hotel.*,users.name as username',"hotel.id_users=users.id ORDER BY id DESC");}
 static public  function DeleteModele(){ return Dbconnect :: delete('hotel',"id",[self::$id]);}
 static public function UpdateHotel(){ return Dbconnect::Update('hotel',"name=?,etoile=?,ville=?,adresse=?,telephone=?,restaurant=?,email=?,type=?",[self::$name,self::$Etoile,self::$ville, self::$Adresse, self::$Telephone, self::$Restauran,self::$email,self::$Type,self::$id]);}
 
