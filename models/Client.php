@@ -5,7 +5,7 @@ class Client extends Dbconnect{
   static public $commantaire;
     
     static  public  function SelectCommantaire(){
-    return static :: SELECTJoin('users, clients','clients.commentaire , users.name as name,users.image as image'," users.id=clients.id_client ORDER BY id DESC");
+    return static :: SELECTJoin('users, clients','clients.commentaire , users.name as name,users.image as image'," users.id=clients.id_client");
 
     }
     static  public  function Afficher()
