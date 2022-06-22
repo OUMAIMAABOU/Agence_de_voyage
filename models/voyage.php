@@ -48,9 +48,6 @@ class  Voyage extends Dbconnect
         }
     }
 
-
-
-
     static public function SetId($id)
     {
         self::$id = $id;

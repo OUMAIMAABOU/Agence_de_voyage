@@ -18,7 +18,7 @@ static public $idUSER;
 
 static public function insert()
 { try{ return Dbconnect::add('transport',"(NULL,?,?,?,?,?,?,?)",[self::$name,self::$Adresse, self::$Telephone, self::$ville, self::$Type,self::$Email,self::$idUSER]);}catch(PDOException $e){ return $e->getMessage();}}
- static public function Afficher(){return static :: GetALL('transport');}
+ static public function Afficher(){return Dbconnect :: GetALL('transport');}
 // static public function Afficher(){return static :: SELECTJoin('transport,users',"transport.id,transport.name ,transport.adresse,transport.tele,transport.type,transport.email,users.name","users.id = transport.id_users");}
  static public function DeleteModele(){ return Dbconnect :: delete('transport',"id",[self::$id]);}
  static public function UpdateTransport(){

@@ -1,3 +1,9 @@
+<?php  
+if(isset($_SESSION['id'])&& $_SESSION['role']!="Admin"){
+            
+                header('location:Acueille');
+            }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 

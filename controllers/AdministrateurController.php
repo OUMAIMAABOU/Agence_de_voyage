@@ -78,9 +78,8 @@ class AdministrateurController
     }
   }
   public function getAllAdmin()
-  {
-    $admin = Administrateur::Afficher();
-    return  $admin;
+  {     
+    return  Administrateur::Afficher();
   }
   public function getType()
   {
@@ -137,4 +136,6 @@ class AdministrateurController
       }
     }
   }
+
+  
 }

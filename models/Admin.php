@@ -62,18 +62,7 @@ class Administrateur extends Dbconnect
 
  
 
-  // public function search($search){
-  //   try{
-  //      $query="SELECT * FROM parents WHERE Matricule LIKE ? OR Nom_complet LIKE ? OR Genre LIKE ? OR Job LIKE ? OR Adresse LIKE ? OR Phone LIKE ?" ;
-  //      $query=$this->GetData($query);
-  //      $query->execute(['%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%','%'.$search.'%']);
-  //      return $query->fetchAll();
-  //      return  static :: SELECTJoin('users','*'," genre='Homme'");
-  //      $query->close;
-  //     }catch(PDOException $e){ return $e->getMessage();} 
 
-  // }
-  
   
 
 

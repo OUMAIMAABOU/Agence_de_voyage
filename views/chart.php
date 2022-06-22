@@ -47,7 +47,7 @@
                           <hr>
                           </hr>
                         </div>
-                        <h3 class="fs-5"><canvas id="myChart" style="width:100%;max-width:700px ;"></canvas> </canvas>
+                        <h3 class="fs-5"><canvas id="myChart" style="width:100%;"></canvas>
                         </h3>
                       </div>
                     </div>
@@ -58,7 +58,7 @@
                           <p class="fs-4 text-center Secondary-text">Client</p>
                           <hr>
                           </hr>
-                          <h3 class="fs-5"><canvas id="Chart" style="width:100%;max-width:700px ;"></canvas> </canvas>
+                          <h3 class="fs-5"><canvas id="Chart" style="width:100%;"></canvas> </canvas>
 
                         </div>
                       </div>
@@ -83,22 +83,11 @@
                     </div>
                   </div>
 
-
                 </div>
                 <script src="views/assets/js/bootstrap.bundle.min.js"></script>
-
-
-
-
               </div>
-
             </div>
-
-
-
-
             <div class="modal-footer">
-
             </div>
           </div>
         </div>

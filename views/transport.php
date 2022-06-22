@@ -34,7 +34,6 @@
                             <th>Ville</th>
                             <th>type</th>
                             <th>Email</th>
-                            <th>Nom Agent</th>
                           
                             <th></th>
                         </tr>
@@ -50,7 +49,6 @@
                                 <td ><?= $Transport[4] ?></td>
                                 <td><?= $Transport[5] ?></td>
                                 <td ><?= $Transport[6] ?></td>  
-                                <td ><?= $Transport[7] ?></td>                              
                                 <td class="d-flex  align-items-start">
                                 <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#transportModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
                                 <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?" ><button type="submit" name ="delete" class="btn btn-outline-danger"      
@@ -83,7 +81,7 @@
                                           <select class="form-control" id="ville" name="ville"   required data-parsley-trigger="keyup">
                                           <option value="default">Ville </option> 
                                           <?php $ville =new ClientController(); $ville = $ville->getallville(); foreach($ville as $ville ) {?>
-                                            <option value="<?= $ville[1]?>"><?= $ville[1];  } ?></option> </select>                                          </div>
+                                            <option value="<?= $ville[0]?>"><?= $ville[0];  } ?></option> </select>                                          </div>
                   
                                           <div class="col-md-6 ">
                                             <input type="text" class="form-control" name="Telephone" placeholder="Telephone" required>
@@ -97,9 +95,9 @@
                                           <select class="form-control" name="Type"   required data-parsley-trigger="keyup">
                                           <option value="default">Type d'agente </option> 
 
-                                           <option value="1">Train </option>
-                                           <option value="2">CAR</option>
-                                           <option value="5">vole</option>
+                                           <option value="Train">Train </option>
+                                           <option value="CAR">CAR</option>
+                                           <option value="vol">vol</option>
   
                                            </select>                                          
                                           </div>
@@ -155,7 +153,7 @@
                   <select class="form-control" id="ville" name="ville"   required data-parsley-trigger="keyup">
                      <option value="default">Ville </option> 
                      <?php $ville =new ClientController(); $ville = $ville->getallville(); foreach($ville as $ville ) {?>
-                      <option value="<?= $ville[1]?>"><?= $ville[1];  } ?></option> </select> 
+                      <option value="<?= $ville[0]?>"><?= $ville[0];  } ?></option> </select> 
                   </div> 
                   <div class="col-md-6 ">
                   <span>Adresse</span>
@@ -178,7 +176,7 @@
                   <select class="form-control" name="Type"  id="type" required data-parsley-trigger="keyup">
                   <option value="default">type  </option> 
                   <option value="car">car </option>
-                   <option value="vole">vole </option>
+                   <option value="vol">vol </option>
                    <option value="train">train </option>
                    </select>
                   </div>
