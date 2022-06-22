@@ -59,7 +59,7 @@ class AdministrateurController
   public function Delete()
   {
     if (isset($_POST['deletADMIN'])) {
-      if ($_SESSION['role'] == 'Admin') {
+      if ($_SESSION['role'] == 'Admin' && $_POST['role']!='Admin')  {
         $p = new Administrateur();
         $p->Setid($_POST['id']);
         if ($p->DeleteAdmin()) {
@@ -67,10 +67,13 @@ class AdministrateurController
           header('location:admin');
         } else {
           cookies::set('error', 'Tu na pas les droit de supprimer cette utilisateur');
-          var_dump($p->DeleteAdmin());
           header('location:admin');
         }
       } else if ($_SESSION['role'] != 'Admin') {
+        cookies::set('error', 'Tu na pas les droit de supprimer les admins');
+
+        header('location:admin');
+      }else{
         cookies::set('error', 'Tu na pas les droit de supprimer les admins');
 
         header('location:admin');

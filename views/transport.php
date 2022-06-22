@@ -51,7 +51,7 @@
                                 <td ><?= $Transport[6] ?></td>  
                                 <td class="d-flex  align-items-start">
                                 <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#transportModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
-                                <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?" ><button type="submit" name ="delete" class="btn btn-outline-danger"      
+                                <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?" ><button type="submit" name ="delete" class="btn btn-outline-danger btn-lg"      
                                 style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $Transport[0]?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button></form>    
                                 </td>
                             </tr>

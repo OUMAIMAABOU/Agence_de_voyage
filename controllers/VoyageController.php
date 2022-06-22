@@ -51,17 +51,15 @@ class VoyageController
       Voyage::SetId($_POST['id']);
       if (Voyage::Deletevoyage()) {
         header('location:voyage');
+        cookies::set('success', 'le Voyage bien supprimer');
+
 
       } else {
         cookies::set('error', 'Tu na pas les droit de supprimer cette Voyage');
-        var_dump($p->DeleteAdmin());
         header('location:admin');
-      }
-    } else if ($_SESSION['role'] != 'Admin') {
-      cookies::set('error', 'Tu na pas les droit de supprimer Voyage');
-
-      header('location:admin');
+        } 
     }
+ 
     }
   
 

@@ -61,8 +61,8 @@
                         <td class="rest"><?= $hotel['restaurant'] ?></td>
                         <td class="usrname"><?= $hotel['username'] ?></td>
                         <td class="d-flex  align-items-start">
-                          <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#hotelModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
-                          <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?"> <button type="submit" name="deleteHotel" class="btn btn-outline-danger" style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $hotel[0] ?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png" /></button></form>
+                          <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" data-bs-toggle="modal" data-bs-target="#hotelModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
+                          <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?"> <button type="submit" name="deleteHotel" class="btn btn-outline-danger btn-lg ms-2" data-toggle="modal"><input type="text" hidden name="id" value="<?= $hotel[0] ?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png" /></button></form>
                         </td>
                       </tr>
                     <?php } ?>

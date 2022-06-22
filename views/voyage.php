@@ -63,9 +63,9 @@
 
 
                         <td class="d-flex  align-items-start">
-                          <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#VoyageModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
+                          <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" data-bs-toggle="modal" data-bs-target="#VoyageModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
                           <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?">
-                            <button type="submit" name="Voyagedelete" class="btn btn-outline-danger" style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $voyage[0] ?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png" /></button>
+                            <button type="submit" name="Voyagedelete" class="btn btn-outline-danger btn-lg" style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $voyage[0] ?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png" /></button>
                           </form>
                         </td>
                       </tr>

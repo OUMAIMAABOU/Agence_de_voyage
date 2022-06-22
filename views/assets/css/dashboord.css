@@ -52,7 +52,7 @@ font-family: 'Montserrat', sans-serif!important;
 }
 
 
- @media (min-width: 768px) {
+ @media (min-width: 1000px) {
    #sidebar-dashboard {
      margin-left: 0;
    }

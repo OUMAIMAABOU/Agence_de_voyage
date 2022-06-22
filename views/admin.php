@@ -54,10 +54,10 @@ if(isset($_SESSION['id'])&& $_SESSION['role']!="Admin"){
                                         foreach ($admines as $x => $admine) { ?>
 
                                             <!-- <?php echo $_SESSION['role']; ?> -->
-                                            <tr>
+                                            <tr class="align-middle ">
                                                 <td hidden class="id"><?= $admine['id'] ?></td>
                                                 <td><?= $x + 1 ?></td>
-                                                <td class="image" style="width: 40px;"><img src="views/assets/img/client/<?= $admine['image'] ?>" class="rounded-circle w-100" alt=""></td>
+                                                <td class="image" style="width: 70px;"><img src="views/assets/img/client/<?= $admine['image'] ?>" class="rounded-circle w-50 align-items-center" alt=""></td>
                                                 <td class="nom"> <?= $admine['name'] ?> </td>
                                                 <td class="CIN"> <?= $admine['CIN'] ?> </td>
                                                 <td class="Email"><?= $admine['email'] ?></td>
@@ -65,10 +65,13 @@ if(isset($_SESSION['id'])&& $_SESSION['role']!="Admin"){
                                                 <td class="Type"><?= $admine['type'] ?></td>
                                                 <td class="Phone"><?= $admine['Phone'] ?></td>
                                                 <td class="adres"><?= $admine['adresse'] ?></td>
-                                                <td class="d-flex  align-items-start">
-                                                    <a href="#" class="btn btn-outline-primary btn-lg fw-bold update" style="  color:primary;" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
-                                                    <form action="operation" method="POST" class="confirm-submit" data-confirm-msg="etes vous sure de vouloir continuez ?">
-                                                        <button type="submit" name="deletADMIN" class="btn btn-outline-danger" style=" margin-left: 10PX;" data-toggle="modal"><input type="text" hidden name="id" value="<?= $admine['id'] ?>"><img src="https://img.icons8.com/color/20/000000/delete-forever.png" /></button>
+                                                <td class="d-flex flex-row">
+                                                    <a href="#" class="btn btn-outline-primary  update" data-bs-toggle="modal" data-bs-target="#myModel"><img src="https://img.icons8.com/fluency/20/000000/edit-user-female.png" /></a>
+                                                    <form action="operation" method="POST" class="confirm-submit p-0 m-0" data-confirm-msg="etes vous sure de vouloir continuez ?">
+                                                        <button type="submit" name="deletADMIN" class="btn btn-outline-danger ms-2" data-toggle="modal"><input type="text" hidden name="id" value="<?= $admine['id'] ?>">
+                                                        <input type="text" hidden name="role" value="<?= $admine['type'] ?>">
+                                                  
+                                                        <img src="https://img.icons8.com/color/20/000000/delete-forever.png"/></button>
                                                     </form>
                                                 </td>
                                             </tr>
